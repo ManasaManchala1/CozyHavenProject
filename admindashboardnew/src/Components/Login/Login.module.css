@@ -1,0 +1,158 @@
+﻿/* 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+
+.wrapperr{
+    background: #ececec;
+    padding: 0 20px 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif; 
+}
+.main1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+} 
+.row1{
+    width:  900px;
+    height:550px;
+    border-radius: 10px;
+    background: #fff;
+    padding: 0px;
+    box-shadow: 5px 5px 10px 1px rgba(0,0,0,0.2);
+}
+text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+text p{
+    color: #fff;
+    font-size: 20px; 
+}
+i{
+    font-weight: 400;
+    font-size: 15px;
+}
+.right1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.input-boxx{
+    width: 350px;
+    box-sizing: border-box;
+}
+.loginheaderr{
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 45px;
+}
+.input-fieldd{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 0 10px 0 10px;
+}
+.inputt{
+    height: 45px;
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    outline: none;
+    margin-bottom: 20px;
+    color: #40414a;
+}
+.input-boxx .input-fieldd label{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    pointer-events: none;
+    transition: .5s;
+}
+.input-fieldd input:focus ~ label
+{
+    top: -10px;
+    font-size: 13px;
+}
+.input-fieldd input:valid ~ label
+{
+    top: -10px;
+    font-size: 13px;
+    color: #5d5076;
+}
+.input-fieldd .inputt:focus, .input-fieldd .inputt:valid{
+    border-bottom: 1px solid #8bbe1b;
+}
+.submitt{
+    border: none;
+    outline: none;
+    height: 45px;
+    background: #ececec;
+    border-radius: 5px;
+    transition: .4s;
+}
+.submitt:hover{
+    background: #8bbe1b;
+    color: #fff;
+}
+.signin,.signup{
+    text-align: center;
+    font-size: small;
+    margin-top: 25px;
+}
+.forgot-password{
+    text-align: left;
+    font-size: small;
+    margin-bottom: 20px;
+    padding-left: 10px; 
+}
+
+span a{
+    text-decoration: none;
+    font-weight: 700;
+    color: #000;
+    transition: .5s;
+}
+span a:hover{
+    text-decoration: underline;
+    color: #000;
+}
+.scrollable-form {
+    max-height: 400px; 
+    overflow-y: auto; 
+}
+
+.close-symbol {
+    position: absolute;
+    top: 30px; 
+    right: 50px; 
+    cursor: pointer;
+    font-size: 35px;
+    color: #000;
+}
+@media only screen and (max-width: 768px){
+    .inputt text{
+        position: absolute;
+        top: 70%;
+        text-align: center;
+    }
+    .inputt text p, i{
+        font-size: 16px;
+    }
+    .row1{
+        max-width:420px;
+        width: 100%;
+    }
+} 
+
+
+ */
