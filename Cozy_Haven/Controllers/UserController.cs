@@ -90,7 +90,6 @@ namespace Cozy_Haven.Controllers
             try
             {
                 var user=await _userService.GetUser(username);
-                if (user == null) return NotFound("User not found.");
                 return Ok(user);
             }
             catch (UserNotFoundException ex)

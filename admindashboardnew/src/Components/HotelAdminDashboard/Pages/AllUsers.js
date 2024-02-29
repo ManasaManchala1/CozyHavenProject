@@ -2,10 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 function AllUsers() {
   const [users, setUsers] = useState([]);
-  const [selectedUser, setSelectedUser] = useState(null);
-  const handleEdit = (user) => {
-    setSelectedUser(user);
-  };
+  
 
   useEffect(() => {
     fetch('http://localhost:5272/api/User/GetAllUsers')
@@ -14,6 +11,7 @@ function AllUsers() {
       .catch((error) => console.error('Error fetching users:', error));
   }, []);
   const handleDelete = (username) => {
+    if (window.confirm('Are you sure you want to delete this user?')) {
     fetch(`http://localhost:5272/api/User/DeleteUser?username=${username}`, {
       method: 'DELETE',
     })
@@ -27,6 +25,7 @@ function AllUsers() {
         }
       })
       .catch((error) => console.error('Error deleting user:', error));
+    }
   };
 
   return (
@@ -75,7 +74,7 @@ function AllUsers() {
                               <i className="fas fa-ellipsis-v ellipse_color" />
                               </Link>
                             <div className="dropdown-menu dropdown-menu-right">
-                            <Link to="#" className="dropdown-item" onClick={() => handleEdit(user)}>
+                            <Link to={`edit-user/${user.username}`} className="dropdown-item">
                                   <i className="fas fa-pencil-alt m-r-5" /> Edit
                             </Link>
                             <Link to="#" className="dropdown-item" onClick={() => handleDelete(user.username)}>

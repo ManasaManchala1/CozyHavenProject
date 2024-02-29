@@ -94,4 +94,73 @@ function donutChart() {
 //     })
 //     .catch((error) => console.error("Error fetching donut chart data:", error));
 // }
+// $(document).ready(function () {
+//   if ($("#line-chart").length) {
+//     lineChart();
+//   }
+//   if ($("#donut-chart").length) {
+//     donutChart();
+//   }
+//   $(window).resize(function () {
+//     if ($("#line-chart").length) {
+//       // Update the chart data and redraw the chart
+//       window.lineChart.setData([
+//         { y: "2006", a: 80, b: 70 },
+//         { y: "2007", a: 65, b: 55 },
+//         { y: "2008", a: 40, b: 30 },
+//         { y: "2009", a: 65, b: 55 },
+//         { y: "2010", a: 40, b: 30 },
+//         { y: "2011", a: 65, b: 55 },
+//         { y: "2012", a: 80, b: 70 },
+//       ]);
+//     }
+//     if ($("#donut-chart").length) {
+//       // Update the chart data and redraw the chart
+//       window.donutChart.setData([
+//         { label: "Normal Room", value: 40 },
+//         { label: "Ac Room", value: 30 },
+//         { label: "Special Room", value: 10 },
+//         { label: "DoubleBed room", value: 10 },
+//         { label: "Video Room", value: 10 },
+//       ]);
+//     }
+//   });
+// });
 
+// function lineChart() {
+//   window.lineChart = Morris.Line({
+//     element: "line-chart",
+//     data: [
+//       { y: "2006", a: 100, b: 90 },
+//       { y: "2007", a: 75, b: 65 },
+//       { y: "2008", a: 50, b: 40 },
+//       { y: "2009", a: 75, b: 65 },
+//       { y: "2010", a: 50, b: 40 },
+//       { y: "2011", a: 75, b: 65 },
+//       { y: "2012", a: 100, b: 90 },
+//     ],
+//     xkey: "y",
+//     ykeys: ["a", "b"],
+//     labels: ["Series A", "Series B"],
+//     lineColors: ["#8bbe1b", "#cdc6c6"],
+//     lineWidth: "3px",
+//     resize: true,
+//   });
+// }
+
+// function donutChart() {
+//   window.donutChart = Morris.Donut({
+//     element: "donut-chart",
+//     data: [
+//       { label: "Normal Room", value: 50 },
+//       { label: "Ac Room", value: 25 },
+//       { label: "Special Room", value: 5 },
+//       { label: "DoubleBed room", value: 10 },
+//       { label: "Video Room", value: 10 },
+//     ],
+//     backgroundColor: "#f2f5fa",
+//     labelColor: "#8bbe1b",
+//     colors: ["#7ba818", "#8bbe1b", "#9bd41e", "#a8e12b"],
+//     resize: true,
+//   });
+// }

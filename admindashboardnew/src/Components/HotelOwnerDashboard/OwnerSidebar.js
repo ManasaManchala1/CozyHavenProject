@@ -24,7 +24,7 @@ function Sidebar() {
         <div id="sidebar-menu" className="sidebar-menu">
           <ul>
             <li className="active">
-              <Link to="/owner-dashboard">
+              <Link onClick={() => window.location.href='/owner-dashboard'}>
                 <i className="fas fa-tachometer-alt" /> <span>Dashboard</span>
               </Link>
             </li>
@@ -81,9 +81,9 @@ function Sidebar() {
                 <li>
                   <Link to="all-rooms">All Rooms</Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link to="edit-room">Edit Room</Link>
-                </li>
+                </li> */}
                 <li>
                   <Link to="add-room">Add Room</Link>
                 </li>

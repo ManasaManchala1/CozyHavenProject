@@ -10,6 +10,7 @@ function AllBookings() {
       .catch((error) => console.error("Error fetching bookings:", error));
   }, []);
   const handleDelete = (id) => {
+    if (window.confirm('Are you sure you want to delete this booking?')) {
     fetch(`http://localhost:5272/api/Booking/DeleteBooking?id=${id}`, {
       method: 'DELETE',
       headers: {
@@ -29,6 +30,7 @@ function AllBookings() {
       .catch(error => {
         console.error('Error deleting booking:', error);
       });
+    }
   };
   return (
     <div className="page-wrapper">
@@ -88,13 +90,15 @@ function AllBookings() {
                               <i className="fas fa-ellipsis-v ellipse_color" />
                               </Link>
                             <div className="dropdown-menu dropdown-menu-right">
-                            <Link
-                              to={{pathname: `edit-booking/${booking.bookingId}`,
-                              state: { booking }
-                              }}
+                            {/* <Link
+                              to="edit-booking"
                               className="dropdown-item">
                             <i className="fas fa-pencil-alt m-r-5" /> Edit
-                            </Link>
+                            </Link> */}
+                            <Link to={`edit-booking/${booking.bookingId}`} className="dropdown-item">
+                           <i className="fas fa-pencil-alt m-r-5" /> Edit
+                           </Link>
+
 
                             <Link to="#" className="dropdown-item" onClick={() => handleDelete(booking.bookingId)}>
                             <i className="fas fa-trash-alt m-r-5" /> Delete

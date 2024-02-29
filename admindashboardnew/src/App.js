@@ -55,14 +55,14 @@ function AdminDashboard() {
         <Route path="/" element={<Main />} />
         <Route path="all-bookings" element={<AllBookings />} />
         <Route path="add-booking" element={<AddBooking />} />
-        <Route path="all-bookings/edit-booking/:id" element={<EditBooking />} />
+        <Route path="all-bookings/edit-booking/:bookingId" element={<EditBooking />} />
         <Route path="pricing" element={<Pricing />} />
         <Route path="all-users" element={<AllUsers />} />
         <Route path="add-user" element={<AddUser />} />
-        <Route path="edit-user" element={<EditUser />} />
+        <Route path="all-users/edit-user/:username" element={<EditUser />} />
         <Route path="all-hotels" element={<AllHotels />} />
         <Route path="add-hotel" element={<AddHotel />} />
-        <Route path="edit-hotel" element={<EditHotel />} />
+        <Route path="all-hotels/edit-hotel/:hotelId" element={<EditHotel />} />
         <Route path="reviews" element={<Reviews />} />
       </Routes>
     </>
@@ -84,7 +84,7 @@ function OwnerDashboard() {
         <Route path="all-bookings" element={<HotelBookings/>}/>
         <Route path="all-rooms" element={<AllRooms/>}/>
         <Route path="add-room" element={<AddRoom/>}/>
-        <Route path="edit-room" element={<EditRoom/>}/>
+        <Route path="all-rooms/edit-room/:roomId" element={<EditRoom/>}/>
         <Route path="all-refunds" element={<Refunds/>}/>
         <Route path="reviews" element={<HotelReviews/>}/>
       </Routes>

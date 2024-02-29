@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-
-const EditHotel = ({ match }) => {
+import { useParams } from "react-router-dom";
+const EditHotel = () => {
+  const {hotelId}=useParams();
   const [hotelData, setHotelData] = useState({
     destinationId: "",
     ownerId: "",
@@ -10,11 +11,11 @@ const EditHotel = ({ match }) => {
   });
 
   useEffect(() => {
-    fetch("http://localhost:5272/api/Hotel/GetHotelById/")
+    fetch(`http://localhost:5272/api/Hotel/GetById?id=${hotelId}`)
       .then((response) => response.json())
       .then((data) => setHotelData(data))
       .catch((error) => console.error("Error fetching hotel:", error));
-  }, []);
+  }, [hotelId]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;

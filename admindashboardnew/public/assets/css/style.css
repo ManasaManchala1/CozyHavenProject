@@ -46,7 +46,7 @@ input:-webkit-autofill:focus {
   height: 40px;
 }
 .form-control:focus {
-  border-color: #6675e9;
+  border-color: #8bbe1b;
   box-shadow: none;
   outline: 0;
 }

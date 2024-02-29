@@ -44,8 +44,8 @@ function Login() {
           }
         } else if (data.role === 'Admin') {
           // Redirect to hotel admin dashboard
-          // window.location.href = '/admin-dashboard';
-          navigate('/admin-dashboard')
+          window.location.href = '/admin-dashboard';
+          // navigate('/admin-dashboard')
         } else {
           // Redirect to guest dashboard
           // window.location.href = '/guest-dashboard';
@@ -64,37 +64,34 @@ function Login() {
 
     return (
       
-        <div className="wrapperr">
-            <div className="containerr main1">
-                <div className="row1">
-                    <div className="col-md-12 right1">
-                        <span className="close-symbol" id="closeSymbol">&times;</span>
-                        <div className="input-boxx">
-                            <header className="loginheaderr">Login</header>
-                            <form onSubmit={handleSubmit}>
-                                <div className="input-fieldd">
-                                    <input type="text" className="inputt" id="email" required="" autoComplete="off" value={username} onChange={(e) => setUsername(e.target.value)} />
-                                    <label htmlFor="email">Username</label>
-                                </div>
-                                <div className="input-fieldd">
-                                    <input type="password" className="inputt" id="pass" required="" value={password} onChange={(e) => setPassword(e.target.value)} />
-                                    <label htmlFor="pass">Password</label>
-                                </div>
-                                <div className="forgot-password">
-                                    <span><a to="/forgot_password">Forgot your password?</a></span>
-                                </div>
-                                <div className="input-fieldd">
-                                    <input type="submit" className="submitt" value="Login" />
-                                </div>
-                                <div className="signup">
-                                    <span>Don't have an account? <Link to="registration">Sign Up here</Link></span>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+      <div className="main-wrapper login-body">
+      <div className="login-wrapper">
+        <div className="container">
+          <div className="loginbox" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+            {/* <div className="login-left"> <img className="img-fluid" src="assets/img/logo.png" alt="Logo" /> </div> */}
+            <div className="login-right">
+              <div className="login-right-wrap">
+                <h1>Login</h1>
+                <p className="account-subtitle"></p>
+                <form onSubmit={handleSubmit}>
+                  <div className="form-group">
+                    <input className="form-control" type="text" placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} /> </div>
+                  <div className="form-group">
+                    <input className="form-control" type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/> </div>
+                  <div className="form-group">
+                    <button className="btn btn-primary btn-block" type="submit">Login</button>
+                  </div>
+                </form>
+                <div className="text-center forgotpass"><a href="forgot-password.html">Forgot Password?</a> </div>
+                <div className="login-or"> <span className="or-line" /> <span className="span-or">or</span> </div>
+                {/* <div className="social-login"> <span>Login with</span> <a href="#" className="facebook"><i className="fab fa-facebook-f" /></a><a href="#" className="google"><i className="fab fa-google" /></a> </div> */}
+                <div className="text-center dont-have">Don’t have an account? <a href="register.html">Register</a></div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
+    </div>
         
     );
 }

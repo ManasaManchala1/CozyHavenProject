@@ -24,9 +24,10 @@ function Sidebar() {
         <div id="sidebar-menu" className="sidebar-menu">
           <ul>
             <li className="active">
-              <Link to="/admin-dashboard">
-                <i className="fas fa-tachometer-alt" /> <span>Dashboard</span>
-              </Link>
+            <Link onClick={() => window.location.href='/admin-dashboard'}>
+            <i className="fas fa-tachometer-alt" /> <span>Dashboard</span>
+            </Link>
+
             </li>
             <li className="list-divider" />
             <li className="submenu">
@@ -41,9 +42,9 @@ function Sidebar() {
                 <li>
                   <Link to="all-bookings"> All Bookings </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link to="edit-booking"> Edit Booking </Link>
-                </li>
+                </li> */}
                 <li>
                   <Link to="add-booking"> Add Booking </Link>
                 </li>
@@ -61,9 +62,9 @@ function Sidebar() {
                 <li>
                   <Link to="all-users"> All users </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link to="edit-user"> Edit User </Link>
-                </li>
+                </li> */}
                 <li>
                   <Link to="add-user"> Add User </Link>
                 </li>
@@ -81,9 +82,9 @@ function Sidebar() {
                 <li>
                   <Link to="all-hotels">All Hotels</Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link to="edit-hotel">Edit Hotel</Link>
-                </li>
+                </li> */}
                 <li>
                   <Link to="add-hotel">Add Hotel</Link>
                 </li>

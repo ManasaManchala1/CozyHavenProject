@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Case Study-Cozy Haven\\Cozy_Haven\\Cozy_Haven.csproj": {}
+    "C:\\CozyHavenProject\\Cozy_Haven\\Cozy_Haven.csproj": {}
   },
   "projects": {
-    "C:\\Case Study-Cozy Haven\\Cozy_Haven\\Cozy_Haven.csproj": {
+    "C:\\CozyHavenProject\\Cozy_Haven\\Cozy_Haven.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Case Study-Cozy Haven\\Cozy_Haven\\Cozy_Haven.csproj",
+        "projectUniqueName": "C:\\CozyHavenProject\\Cozy_Haven\\Cozy_Haven.csproj",
         "projectName": "Cozy_Haven",
-        "projectPath": "C:\\Case Study-Cozy Haven\\Cozy_Haven\\Cozy_Haven.csproj",
+        "projectPath": "C:\\CozyHavenProject\\Cozy_Haven\\Cozy_Haven.csproj",
         "packagesPath": "C:\\Users\\manasa\\.nuget\\packages\\",
-        "outputPath": "C:\\Case Study-Cozy Haven\\Cozy_Haven\\obj\\",
+        "outputPath": "C:\\CozyHavenProject\\Cozy_Haven\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\manasa\\AppData\\Roaming\\NuGet\\NuGet.Config",

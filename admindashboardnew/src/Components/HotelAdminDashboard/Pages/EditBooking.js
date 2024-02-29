@@ -178,7 +178,13 @@
 //                 </div>
 //                 <div className="col-md-4">
 //                   <div className="form-group">
-//                     <label>Total Members</label>
+//                     <label>Adults</label>
+//                     <input type="number" className="form-control" name="totalMembers" />
+//                   </div>
+//                 </div>
+//                 <div className="col-md-4">
+//                   <div className="form-group">
+//                     <label>Children</label>
 //                     <input type="number" className="form-control" name="totalMembers" />
 //                   </div>
 //                 </div>
@@ -211,50 +217,60 @@
 
 // export default EditBooking;
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 function EditBooking() {
-  const location = useLocation();
-  const { booking } = location.state;
-
-  const [formData, setFormData] = useState({
-    bookingId: booking.bookingId,
-    userId: booking.userId,
-    roomId: booking.roomId,
-    checkInDate: booking.checkInDate,
-    checkOutDate: booking.checkOutDate,
-    adults: booking.adults,
-    children:booking.children,
-    status: booking.status,
-    bookedDate: booking.bookedDate,
+  const { bookingId } = useParams();
+  const [bookingData, setBookingData] = useState({
+    userId: '',
+    roomId: '',
+    checkInDate: '',
+    checkOutDate: '',
+    adults: '',
+    children: '',
+    totalPrice:'',
+    status: '',
+    bookedDate: ''
   });
 
   useEffect(() => {
-    setFormData({
-      bookingId: booking.bookingId,
-      userId: booking.userId,
-      roomId: booking.roomId,
-      checkInDate: booking.checkInDate,
-      checkOutDate: booking.checkOutDate,
-      totalMembers: booking.totalMembers,
-      status: booking.status,
-      bookedDate: booking.bookedDate,
-    });
-  }, [booking]);
-
+    fetch(`http://localhost:5272/api/Booking/GetById?id=${bookingId}`)
+      .then((response) => response.json())
+      // .then((data) => setBookingData(data))
+      .then((data) => {
+        const formattedData = {
+          ...data,
+          checkInDate: data.checkInDate.split("T")[0],
+          checkOutDate: data.checkOutDate.split("T")[0]
+        };
+        setBookingData(formattedData);
+      })
+      .catch((error) => console.error('Error fetching booking details:', error));
+  }, [bookingId]);
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      [name]: value,
-    }));
+    setBookingData({
+      ...bookingData,
+      [name]: value
+    });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission, e.g., send data to server
-    console.log(formData);
+  const handleSubmit = () => {
+    fetch(`http://localhost:5272/api/Booking/UpdateBooking/${bookingId}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(bookingData)
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('Booking updated:', data);
+        // Redirect or show a success message
+      })
+      .catch((error) => console.error('Error updating booking:', error));
   };
+  
 
   return (
     <div className="page-wrapper">
@@ -268,89 +284,54 @@ function EditBooking() {
         </div>
         <div className="row">
           <div className="col-lg-12">
-            <form onSubmit={handleSubmit}>
+            <form>
               <div className="row formtype">
                 <div className="col-md-4">
                   <div className="form-group">
-                    <label>Booking ID</label>
-                    <input
-                      className="form-control"
-                      type="text"
-                      name="bookingId"
-                      value={formData.bookingId}
-                      readOnly
-                    />
-                  </div>
-                </div>
-                <div className="col-md-4">
-                  <div className="form-group">
                     <label>User ID</label>
-                    <input
-                      className="form-control"
-                      type="text"
-                      name="userId"
-                      value={formData.userId}
-                      onChange={handleChange}
-                    />
+                    <input className="form-control" type="text" name="userId" value={bookingData.userId} onChange={handleChange} />
                   </div>
                 </div>
                 <div className="col-md-4">
                   <div className="form-group">
                     <label>Room ID</label>
-                    <input
-                      className="form-control"
-                      type="text"
-                      name="roomId"
-                      value={formData.roomId}
-                      onChange={handleChange}
-                    />
+                    <input className="form-control" type="text" name="roomId" value={bookingData.roomId} onChange={handleChange} />
                   </div>
                 </div>
                 <div className="col-md-4">
                   <div className="form-group">
                     <label>Check-In Date</label>
-                    <input
-                      type="date"
-                      className="form-control"
-                      name="checkInDate"
-                      value={formData.checkInDate}
-                      onChange={handleChange}
-                    />
+                    <input type="date" className="form-control" name="checkInDate" value={bookingData.checkInDate} onChange={handleChange} />
                   </div>
                 </div>
                 <div className="col-md-4">
                   <div className="form-group">
                     <label>Check-Out Date</label>
-                    <input
-                      type="date"
-                      className="form-control"
-                      name="checkOutDate"
-                      value={formData.checkOutDate}
-                      onChange={handleChange}
-                    />
+                    <input type="date" className="form-control" name="checkOutDate" value={bookingData.checkOutDate} onChange={handleChange} />
                   </div>
                 </div>
                 <div className="col-md-4">
                   <div className="form-group">
-                    <label>Total Members</label>
-                    <input
-                      type="number"
-                      className="form-control"
-                      name="totalMembers"
-                      value={formData.totalMembers}
-                      onChange={handleChange}
-                    />
+                    <label>Adults</label>
+                    <input type="number" className="form-control" name="adults" value={bookingData.adults} onChange={handleChange} />
+                  </div>
+                </div>
+                <div className="col-md-4">
+                  <div className="form-group">
+                    <label>Children</label>
+                    <input type="number" className="form-control" name="children" value={bookingData.children} onChange={handleChange} />
+                  </div>
+                </div>
+                <div className="col-md-4">
+                  <div className="form-group">
+                    <label>Total Price</label>
+                    <input type="number" className="form-control" name="totalPrice" value={bookingData.totalPrice} onChange={handleChange} />
                   </div>
                 </div>
                 <div className="col-md-4">
                   <div className="form-group">
                     <label>Status</label>
-                    <select
-                      className="form-control"
-                      name="status"
-                      value={formData.status}
-                      onChange={handleChange}
-                    >
+                    <select className="form-control" name="status" value={bookingData.status} onChange={handleChange}>
                       <option>Booked</option>
                       <option>CheckedIn</option>
                       <option>CheckedOut</option>
@@ -361,26 +342,17 @@ function EditBooking() {
                 <div className="col-md-4">
                   <div className="form-group">
                     <label>Booked Date</label>
-                    <input
-                      type="date"
-                      className="form-control"
-                      name="bookedDate"
-                      value={formData.bookedDate}
-                      onChange={handleChange}
-                    />
+                    <input type="date" className="form-control" name="bookedDate" value={bookingData.bookedDate} onChange={handleChange} />
                   </div>
                 </div>
               </div>
-              <button type="submit" className="btn btn-primary buttonedit">
-                Save
-              </button>
             </form>
           </div>
         </div>
+        <button type="button" className="btn btn-primary buttonedit" onClick={handleSubmit}>Save</button>
       </div>
     </div>
   );
 }
 
 export default EditBooking;
-

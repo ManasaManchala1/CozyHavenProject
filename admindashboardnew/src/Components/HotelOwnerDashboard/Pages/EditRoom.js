@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
-
-const EditRoom = ({ match }) => {
+import { useParams } from "react-router-dom";
+const EditRoom = () => {
+  const { roomId } = useParams();
   const [roomData, setRoomData] = useState({
     hotelId: "",
     roomSize: "",
@@ -13,11 +14,11 @@ const EditRoom = ({ match }) => {
   });
 
   useEffect(() => {
-    fetch("http://localhost:5272/api/Room/GetRoomById/")
+    fetch(`http://localhost:5272/api/Room/GetById?id=${roomId}`)
       .then((response) => response.json())
       .then((data) => setRoomData(data))
       .catch((error) => console.error("Error fetching room:", error));
-  }, []);
+  }, [roomId]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;

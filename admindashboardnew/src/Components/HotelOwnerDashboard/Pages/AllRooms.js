@@ -12,6 +12,7 @@ function AllRooms() {
       .catch((error) => console.error("Error fetching rooms:", error));
   }, [hotelid]);
   const handleDelete = (id) => {
+    if (window.confirm('Are you sure you want to delete this room?')) {
     fetch(`http://localhost:5272/api/Room/DeleteRoom?id=${id}`, {
       method: 'DELETE',
     })
@@ -25,6 +26,7 @@ function AllRooms() {
         }
       })
       .catch((error) => console.error('Error deleting room:', error));
+    }
   };
 
   return (
@@ -75,7 +77,7 @@ function AllRooms() {
                               <i className="fas fa-ellipsis-v ellipse_color" />
                               </Link>
                             <div className="dropdown-menu dropdown-menu-right">
-                            <Link to="/edit-room" className="dropdown-item"><i className="fas fa-pencil-alt m-r-5" /> Edit</Link>
+                            <Link to={`edit-room/${room.roomId}`} className="dropdown-item"><i className="fas fa-pencil-alt m-r-5" /> Edit</Link>
                             <Link to="#" className="dropdown-item" onClick={() => handleDelete(room.roomId)}>
                             <i className="fas fa-trash-alt m-r-5" /> Delete
                             </Link>

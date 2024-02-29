@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9zCb/7OXDvvzPaEPw4SMkM0S5ovkxqZ/3sxDZo8g+39HvLflP93LGkJH18GGmvfR4uxMSWyFEIZaa3FF6BzcVw==",
+  "dgSpecHash": "d37iFgROvxM2oBVLlHGHBzAakgSsZX5FMQao0exp9Mn3rt3VRoecm/On+pjT/8y/kk28YhV+4TOGuhLoweDSSw==",
   "success": true,
-  "projectFilePath": "C:\\Case Study-Cozy Haven\\Cozy_Haven\\Cozy_Haven.csproj",
+  "projectFilePath": "C:\\CozyHavenProject\\Cozy_Haven\\Cozy_Haven.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\manasa\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\manasa\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.26\\microsoft.aspnetcore.authentication.jwtbearer.6.0.26.nupkg.sha512",

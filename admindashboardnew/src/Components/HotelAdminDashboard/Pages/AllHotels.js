@@ -11,6 +11,7 @@ function AllHotels() {
       .catch((error) => console.error("Error fetching hotels:", error));
   }, []);
   const handleDelete = (id) => {
+    if (window.confirm('Are you sure you want to delete this hotel?')) {
     fetch(`http://localhost:5272/api/Hotel/DeleteHotel?id=${id}`, {
       method: 'DELETE',
     })
@@ -24,6 +25,7 @@ function AllHotels() {
         }
       })
       .catch((error) => console.error('Error deleting hotel:', error));
+    }
   };
 
   return (
@@ -68,7 +70,7 @@ function AllHotels() {
                               <i className="fas fa-ellipsis-v ellipse_color" />
                               </Link>
                             <div className="dropdown-menu dropdown-menu-right">
-                            <Link to="/edit-hotel" className="dropdown-item"><i className="fas fa-pencil-alt m-r-5" /> Edit</Link>
+                            <Link to={`edit-hotel/${hotel.hotelId}`} className="dropdown-item"><i className="fas fa-pencil-alt m-r-5" /> Edit</Link>
                             <Link to="#" className="dropdown-item" onClick={() => handleDelete(hotel.hotelId)}>
                             <i className="fas fa-trash-alt m-r-5" /> Delete
                             </Link>
