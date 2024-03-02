@@ -207,6 +207,7 @@ function AddHotel() {
         },
         body: JSON.stringify(hotelData)
       })
+        .then(res=>console.log(res))
         .then((response) => response.json())
         .then((data) => {
           console.log("Success:", data);

@@ -47,15 +47,15 @@ function OwnerHeader() {
                 <p className="text-muted mb-0">Hotel Owner</p>
               </div>
             </div>
-            <a className="dropdown-item" href="profile.html">
+            <Link className="dropdown-item" to="profile">
               My Profile
-            </a>
-            <a className="dropdown-item" href="/owned-hotels">
+            </Link>
+            <Link className="dropdown-item" to="/owned-hotels">
               My Hotels
-            </a>
-            <a className="dropdown-item" href="/login" onClick={handlelogout}>
+            </Link>
+            <Link className="dropdown-item" to="/login" onClick={handlelogout}>
               Logout
-            </a>
+            </Link>
           </div>
         </li>
       </ul>

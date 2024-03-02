@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link,useNavigate} from "react-router-dom";
 
 function Sidebar() {
   const [openBookings, setOpenBookings] = useState(false);
   const [openUsers, setOpenUsers] = useState(false);
   const [openRooms, setOpenRooms] = useState(false);
+  const navigate=useNavigate();
 
   const toggleBookings = () => {
     setOpenBookings(!openBookings);
@@ -24,7 +25,7 @@ function Sidebar() {
         <div id="sidebar-menu" className="sidebar-menu">
           <ul>
             <li className="active">
-              <Link onClick={() => window.location.href='/owner-dashboard'}>
+              <Link to='/owner-dashboard'>
                 <i className="fas fa-tachometer-alt" /> <span>Dashboard</span>
               </Link>
             </li>

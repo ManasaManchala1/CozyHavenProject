@@ -1,4 +1,4 @@
-// import logo from './logo.svg';
+import logo from './logo.svg';
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route,Navigate} from 'react-router-dom';
 import Header from './Components/HotelAdminDashboard/Header';
@@ -27,6 +27,7 @@ import EditRoom from './Components/HotelOwnerDashboard/Pages/EditRoom';
 import Refunds from './Components/HotelOwnerDashboard/Pages/Refunds';
 import HotelReviews from './Components/HotelOwnerDashboard/Pages/HotelReviews';
 import OwnedHotels from './Components/HotelOwnerDashboard/Pages/OwnedHotels';
+import Profile from './Components/Profile';
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
         <Route path="/owner-dashboard/*" element={<OwnerDashboard />} />
         <Route path="/owned-hotels/*" element={<OwnedHotels/>}/>
         <Route path="/login" element={<Login />} />
+        
       </Routes>
     </Router>
   );
@@ -51,8 +53,8 @@ function AdminDashboard() {
     <>
       <Header />
       <Sidebar />
-      <Routes>
-        <Route path="/" element={<Main />} />
+      <Routes key="admin-dashboard-routes">
+        <Route index element={<Main />} />
         <Route path="all-bookings" element={<AllBookings />} />
         <Route path="add-booking" element={<AddBooking />} />
         <Route path="all-bookings/edit-booking/:bookingId" element={<EditBooking />} />
@@ -64,7 +66,8 @@ function AdminDashboard() {
         <Route path="add-hotel" element={<AddHotel />} />
         <Route path="all-hotels/edit-hotel/:hotelId" element={<EditHotel />} />
         <Route path="reviews" element={<Reviews />} />
-      </Routes>
+        <Route path="profile" element={<Profile/>}/>
+        </Routes>
     </>
   );
 }
@@ -79,14 +82,15 @@ function OwnerDashboard() {
     <>
       <OwnerHeader />
       <OwnerSidebar />
-      <Routes>
-        <Route path="/" element={<OwnerMain />} />
+      <Routes key="owner-dashboard-routes">
+        <Route index element={<OwnerMain />} />
         <Route path="all-bookings" element={<HotelBookings/>}/>
         <Route path="all-rooms" element={<AllRooms/>}/>
         <Route path="add-room" element={<AddRoom/>}/>
         <Route path="all-rooms/edit-room/:roomId" element={<EditRoom/>}/>
         <Route path="all-refunds" element={<Refunds/>}/>
         <Route path="reviews" element={<HotelReviews/>}/>
+        <Route path="profile" element={<Profile/>}/>
       </Routes>
     </>
   );

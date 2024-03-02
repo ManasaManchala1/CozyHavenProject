@@ -27,7 +27,7 @@ const EditHotel = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch(`http://localhost:5272/api/Hotel/UpdateHotel`, {
+    fetch("http://localhost:5272/api/Hotel/UpdateHotelDetails", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json"
@@ -37,6 +37,7 @@ const EditHotel = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log("Success:", data);
+        alert("Updated Successfully");
         // Optionally, redirect to a different page after successful update
       })
       .catch((error) => {

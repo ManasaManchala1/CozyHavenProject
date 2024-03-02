@@ -44,8 +44,8 @@ function Login() {
           }
         } else if (data.role === 'Admin') {
           // Redirect to hotel admin dashboard
-          window.location.href = '/admin-dashboard';
-          // navigate('/admin-dashboard')
+          // window.location.href = '/admin-dashboard';
+          navigate('/admin-dashboard')
         } else {
           // Redirect to guest dashboard
           // window.location.href = '/guest-dashboard';

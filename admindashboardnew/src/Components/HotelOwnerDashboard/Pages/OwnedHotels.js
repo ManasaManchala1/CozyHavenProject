@@ -1,13 +1,15 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function OwnedHotels() {
   const hotels = JSON.parse(sessionStorage.getItem('hotels')) || [];
+  const navigate=useNavigate();
 
   const handleHotelSelection = (hotelId,name) => {
     sessionStorage.setItem('selectedHotelId', hotelId);
     sessionStorage.setItem('name',name);
     // Redirect to the owner dashboard for the selected hotel
-    window.location.href = '/owner-dashboard';
+    navigate('/owner-dashboard');
   };
 
   return (
