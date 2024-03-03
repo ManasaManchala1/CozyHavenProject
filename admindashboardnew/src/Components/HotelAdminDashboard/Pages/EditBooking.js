@@ -222,26 +222,25 @@ import { useParams } from 'react-router-dom';
 function EditBooking() {
   const { bookingId } = useParams();
   const [bookingData, setBookingData] = useState({
-    userId: '',
-    roomId: '',
+    userId: 0,
+    roomId: 0,
     checkInDate: '',
     checkOutDate: '',
-    adults: '',
-    children: '',
-    totalPrice:'',
-    status: '',
-    bookedDate: ''
+    adults: 0,
+    children: 0,
+    totalPrice: 0,
+    status: "Booked", // Default status
+    bookedDate: new Date().toISOString().slice(0, 10), // Default booked date
   });
-
   useEffect(() => {
     fetch(`http://localhost:5272/api/Booking/GetById?id=${bookingId}`)
       .then((response) => response.json())
-      // .then((data) => setBookingData(data))
       .then((data) => {
         const formattedData = {
           ...data,
-          checkInDate: data.checkInDate.split("T")[0],
-          checkOutDate: data.checkOutDate.split("T")[0]
+          checkInDate: new Date(data.checkInDate).toISOString().split('T')[0],
+          checkOutDate: new Date(data.checkOutDate).toISOString().split('T')[0],
+          bookedDate: new Date(data.bookedDate).toISOString().split('T')[0]
         };
         setBookingData(formattedData);
       })

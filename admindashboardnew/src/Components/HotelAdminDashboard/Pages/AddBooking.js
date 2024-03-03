@@ -121,7 +121,7 @@
 // }
 
 // export default AddBooking
-import React, { useState } from 'react';
+import React, { useState, useEffect } from "react";
 
 function AddBooking() {
   const [bookingData, setBookingData] = useState({
@@ -132,40 +132,121 @@ function AddBooking() {
     adults: 0,
     children: 0,
     totalPrice: 0,
-    status: 'Booked', // Default status
+    status: "Booked", // Default status
     bookedDate: new Date().toISOString().slice(0, 10), // Default booked date
   });
+  const [errors, setErrors] = useState({});
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setBookingData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
+  
+    // Handle date inputs separately
+    if (name === 'checkInDate' || name === 'checkOutDate') {
+      // Ensure that value is a valid date string or empty string
+      if (value === '' || Date.parse(value)) {
+        setBookingData((prevData) => ({
+          ...prevData,
+          [name]: value,
+        }));
+      }
+    } else {
+      setBookingData((prevData) => ({
+        ...prevData,
+        [name]: value,
+      }));
+    }
   };
+  
+  useEffect(() => {
+    const calculateTotalPrice = async () => {
+      console.log("roomId",bookingData.roomId);
+      console.log("checkindate",bookingData.checkInDate);
+      console.log("checkoutdate",bookingData.checkOutDate);
+      console.log("adults",bookingData.adults);
+      console.log("children",bookingData.children);
+      try {
+        const response = await fetch(
+          "http://localhost:5272/api/Booking/CalculateTotalPrice",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              roomId: bookingData.roomId,
+              checkInDate: bookingData.checkInDate,
+              checkOutDate: bookingData.checkOutDate,
+              adults: bookingData.adults,
+              children: bookingData.children,
+            }),
+          }
+        );
+        const data = await response.json();
+          console.log("Total price calculated:", data);
+          setBookingData((prevData) => ({
+          ...prevData,
+          totalPrice: data,
+          }));
+        
+        
+      } catch (error) {
+        console.error("Error calculating total price:", error);
+      }
+    };
+
+    if (bookingData.roomId && bookingData.checkInDate && bookingData.checkOutDate && bookingData.adults && bookingData.children) {
+      calculateTotalPrice();
+    }
+  }, [bookingData.roomId,
+    bookingData.checkInDate,
+    bookingData.checkOutDate,
+    bookingData.adults,
+    bookingData.children,]);
+
+
+  const username = sessionStorage.getItem("username");
 
   const handleSubmit = () => {
+    const newErrors = {};
+    if (!bookingData.roomId) {
+      newErrors.roomId = "Room ID is required";
+    }
+    if (!bookingData.checkInDate) {
+      newErrors.checkInDate = "Check-in date is required";
+    }
+    if (!bookingData.checkOutDate) {
+      newErrors.checkOutDate = "Check-out date is required";
+    }
+    if (!bookingData.adults) {
+      newErrors.adults = "Number of adults is required";
+    }
+    if (!bookingData.children) {
+      newErrors.children = "Number of children is required";
+    }
+
+    // Set errors and prevent submission if there are validation errors
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    }
     // Send a POST request to the server with bookingData
-    let username = 'john_doe';
-    // let username = sessionStorage.getItem('username');
     fetch(`http://localhost:5272/api/Booking/AddBooking?username=${username}`, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(bookingData),
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log('Booking created:', data);
-        alert('Booking created successfully!');
+        console.log("Booking created:", data);
+        alert("Booking created successfully!");
         // Optionally, you can redirect the user to a different page or show a success message
       })
       .catch((error) => {
-        console.error('Error creating booking:', error);
-        alert('Failed to create booking');
+        console.error("Error creating booking:", error);
+        alert("Failed to create booking");
         // Handle error
       });
-      
   };
 
   return (
@@ -280,7 +361,6 @@ function AddBooking() {
                       <option value="CheckedIn">CheckedIn</option>
                       <option value="CheckedOut">CheckedOut</option>
                       <option value="Cancelled">Cancelled</option>
-                      
                     </select>
                   </div>
                 </div>
