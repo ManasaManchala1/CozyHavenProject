@@ -22,6 +22,7 @@ namespace Cozy_Haven.Contexts
         public DbSet<Image> Images { get; set; }
         public DbSet<RoomImage> RoomImages { get; set; }
         public DbSet<HotelImage> HotelImages { get; set; }
+        public DbSet<UserProfilePicture> ProfilePictures { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Favourite>().HasOne(f => f.User)
@@ -99,14 +100,14 @@ namespace Cozy_Haven.Contexts
                 entity.HasIndex(u => u.Username)
                 .IsUnique();
             });
-            modelBuilder.Entity<HotelImage>()
-            .HasOne(hi => hi.Hotel)
-            .WithMany(h => h.Images)
-            .HasForeignKey(hi => hi.HotelId);
-            modelBuilder.Entity<RoomImage>()
-            .HasOne(rm => rm.Room)
-            .WithMany(r => r.Images)
-            .HasForeignKey(rm => rm.RoomId);
+            //modelBuilder.Entity<HotelImage>()
+            //.HasOne(hi => hi.Hotel)
+            //.WithMany(h => h.Images)
+            //.HasForeignKey(hi => hi.HotelId);
+            //modelBuilder.Entity<RoomImage>()
+            //.HasOne(rm => rm.Room)
+            //.WithMany(r => r.Images)
+            //.HasForeignKey(rm => rm.RoomId);
         }
     }
 }

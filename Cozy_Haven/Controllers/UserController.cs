@@ -8,6 +8,9 @@ using Microsoft.AspNetCore.Authorization;
 using System.Collections.ObjectModel;
 using Cozy_Haven.Services;
 using Microsoft.AspNetCore.Cors;
+using Cozy_Haven.Helper;
+using Cozy_Haven.Contexts;
+using Microsoft.EntityFrameworkCore;
 
 namespace Cozy_Haven.Controllers
 {
@@ -18,11 +21,13 @@ namespace Cozy_Haven.Controllers
     {
         private readonly IUserService _userService;
         private readonly ILogger<UserController> _logger;
+        private readonly CozyHavenContext context;
 
-        public UserController(IUserService userService,ILogger<UserController> logger)
+        public UserController(IUserService userService,ILogger<UserController> logger,CozyHavenContext _context)
         {
             _userService=userService;
             _logger=logger;
+            context = _context;
             
         }
         [HttpPost("Register")]
@@ -178,7 +183,7 @@ namespace Cozy_Haven.Controllers
         {
             try
             {
-                var user = await _userService.UpdateUserProfile(username, updateUserDto.FirstName, updateUserDto.LastName, updateUserDto.ContactNumber, updateUserDto.Email, updateUserDto.DateOfBirth);
+                var user = await _userService.UpdateUserProfile(username, updateUserDto.FirstName, updateUserDto.LastName, updateUserDto.ContactNumber, updateUserDto.Email, updateUserDto.DateOfBirth,updateUserDto.Address,updateUserDto.Gender);
                 if (user != null)
                 {
                     return Ok(user);
@@ -225,6 +230,61 @@ namespace Cozy_Haven.Controllers
             {
                 return StatusCode(500, ex.Message);
             }
+        }
+        [HttpPut("UploadProfilePicture")]
+        public async Task<IActionResult> UploadProfilePicture(IFormFile file, string username)
+        {
+            APIResponse response = new APIResponse();
+            try
+            {
+                if (file == null || file.Length == 0)
+                {
+                    response.ResponseCode = 400;
+                    response.Message = "File is empty";
+                    return BadRequest(response);
+                }
+
+                var user = await context.Users.SingleOrDefaultAsync(u => u.Username == username);
+
+                if (user == null)
+                {
+                    response.ResponseCode = 404;
+                    response.Message = "User not found";
+                    return NotFound(response);
+                }
+
+                // Delete previous profile picture if exists
+                var existingProfilePicture = await context.ProfilePictures.FirstOrDefaultAsync(p => p.username == user.Username);
+                if (existingProfilePicture != null)
+                {
+                    context.ProfilePictures.Remove(existingProfilePicture);
+                    await context.SaveChangesAsync();
+                }
+
+                // Save the new profile picture
+                using (MemoryStream stream = new MemoryStream())
+                {
+                    await file.CopyToAsync(stream);
+                    var profilePicture = new UserProfilePicture
+                    {
+                        ImagePath = stream.ToArray(),
+                        username = user.Username,
+                        User = user // Associate the user with the profile picture
+                    };
+                    context.ProfilePictures.Add(profilePicture);
+                    await context.SaveChangesAsync();
+                }
+
+                response.ResponseCode = 200;
+                response.Message = "Profile picture uploaded successfully";
+            }
+            catch (Exception ex)
+            {
+                response.ResponseCode = 500;
+                response.Message = "An error occurred while saving the entity changes. See the inner exception for details.";
+                response.Result = ex.InnerException?.Message; // Include inner exception message
+            }
+            return Ok(response);
         }
 
 

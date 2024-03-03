@@ -136,6 +136,37 @@ namespace Cozy_Haven.Controllers
                 return BadRequest(ex.Message);
             }
         }
+        [HttpPost("CalculateTotalPrice")]
+        public ActionResult<float> CalculateTotalPrice(Booking bookingDetails)
+        {
+            try
+            {
+                var totalPrice = _bookingservice.CalculateTotalPrice(bookingDetails);
+                return Ok(totalPrice);
+            }
+            catch (NoRoomFoundException ex)
+            {
+                return NotFound(ex);
+            }
+        }
+        [HttpPost("RescheduleBooking/{bookingId}")]
+        public async Task<IActionResult> RescheduleBooking(int bookingId, [FromBody] BookingDTO rescheduleBookingDTO)
+        {
+            try
+            {
+                var newCheckInDate = rescheduleBookingDTO.CheckInDate;
+                var newCheckOutDate = rescheduleBookingDTO.CheckOutDate;
+
+                var updatedBooking = await _bookingservice.RescheduleBooking(bookingId, newCheckInDate, newCheckOutDate);
+
+                return Ok(updatedBooking);
+            }
+            
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
         [HttpGet("TotalBookings")]
         public async Task<ActionResult<int>> GetTotalBookings()
         {

@@ -22,5 +22,7 @@ namespace Cozy_Haven.Interfaces
         public Task<bool> CancelBooking(int bookingId);
         public Task<List<Booking>> GetCancelledHotelBookings(int hotelId);
         public Task<Booking> UpdateBooking(int id, Booking updatedBooking);
+        public Task<Booking> RescheduleBooking(int bookingId, DateTime newCheckInDate, DateTime newCheckOutDate);
+        public float CalculateTotalPrice(Booking bookingDetails);
     }
 }

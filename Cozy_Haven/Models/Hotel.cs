@@ -36,7 +36,7 @@ namespace Cozy_Haven.Models
         public ICollection<Favourite>? Favorites { get; set; }
         [JsonIgnore]
         public ICollection<HotelAmenity>? Amenities { get; set; }
-        [JsonIgnore]
-        public ICollection<HotelImage> Images { get; set; }
+        //[JsonIgnore]
+        //public ICollection<HotelImage>? Images { get; set; }
     }
 }

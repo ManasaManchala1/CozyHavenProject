@@ -10,29 +10,20 @@ namespace Cozy_Haven.Models
         [Key]
         public int BookingId { get; set; }
 
-        [Required]
         public int UserId { get; set; }
 
-        [Required]
         public int RoomId { get; set; }
 
-        [Required]
         public DateTime CheckInDate { get; set; }
 
-        [Required]
         public DateTime CheckOutDate { get; set; }
 
-        [Required]
         public int Adults { get; set; }
 
-        [Required]
         public int Children { get; set; }
 
-        [Required]
         public float TotalPrice { get; set; }
-
-        [Required]
-        public string Status { get; set; } 
+        public string? Status { get; set; } 
         public DateTime BookedDate { get; set; }
 
         // Navigation properties

@@ -7,6 +7,10 @@
         {
             message = "No room found";
         }
+        public NoRoomFoundException(string availability)
+        {
+            message = availability;
+        }
         public override string Message => message;
     }
 }

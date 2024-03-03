@@ -164,7 +164,7 @@ namespace Cozy_Haven.Services
         public async Task<Booking> AddBooking(BookingDTO booking1, string username)
         {
             _logger.LogInformation("Adding booking...");
-            Booking booking = new AddBooking(booking1).GetBooking();
+            var booking = new AddBooking(booking1).GetBooking();
             bool isRoomAvailable = await IsRoomAvailable(booking.RoomId, booking.CheckInDate, booking.CheckOutDate);
             if (!isRoomAvailable)
             {
@@ -192,16 +192,70 @@ namespace Cozy_Haven.Services
             {
                 throw new Exception("Room does not exist");
             }
-            TimeSpan span = booking.CheckOutDate - booking.CheckInDate;
-            float totalPrice = (float)span.TotalDays * room.BaseFare;
-
-            booking.TotalPrice = totalPrice;
+            //var bookingDetails = new BookingInfoDTO
+            //{
+            //    RoomId = booking.RoomId,
+            //    Adults = booking1.Adults,
+            //    Children = booking1.Children
+            //};
+            booking.TotalPrice =CalculateTotalPrice(booking);
             booking.Status = "Booked";
             booking.BookedDate = DateTime.UtcNow;
             booking.UserId = user.UserId;
             var addedbooking=await _bookingrepository.Add(booking);
             _logger.LogInformation("Booking added successfully");
             return addedbooking;
+        }
+        public float CalculateTotalPrice(Booking bookingDetails)
+        {
+            // Get the room details
+            var room = _roomrepository.GetById(bookingDetails.RoomId).Result;
+            
+            if (room == null)
+            {
+                throw new NoRoomFoundException("Room does not exist");
+            }
+            //bool available=await IsRoomAvailable(bookingDetails.RoomId, bookingDetails.CheckInDate, bookingDetails.CheckOutDate);
+            //if (!available) throw new NoRoomFoundException("Room is not avilable for the specified dates");
+            // Set the MaxOccupancy based on the BedType
+            switch (room.BedType)
+            {
+                case "SingleBed":
+                    room.MaxOccupancy = 2;
+                    break;
+                case "DoubleBed":
+                    room.MaxOccupancy = 4;
+                    break;
+                case "KingSizeBed":
+                    room.MaxOccupancy = 6;
+                    break;
+                default:
+                    break;
+            }
+
+            // Calculate total price based on room type and number of guests
+            float totalPrice = room.BaseFare;
+
+            int totalGuests = bookingDetails.Adults + bookingDetails.Children;
+            int extraGuests = totalGuests - room.MaxOccupancy;
+
+            if (extraGuests > 0)
+            {
+                int extraAdults = Math.Max(extraGuests - bookingDetails.Children, 0);
+                //int extraChildren = Math.Min(extraGuests, bookingDetails.Children);
+                int extraChildren = extraGuests - extraAdults;
+
+                if (room.BedType == "SingleBed" || room.BedType == "DoubleBed" || room.BedType == "KingSizeBed")
+                {
+                    totalPrice += extraAdults * 0.4f * room.BaseFare;
+                    totalPrice += extraChildren * 0.2f * room.BaseFare;
+                }
+            }
+            // Calculate the duration of the stay and adjust the total price
+            TimeSpan span = bookingDetails.CheckOutDate - bookingDetails.CheckInDate;
+            totalPrice *= (float)span.TotalDays;
+
+            return totalPrice;
         }
         public async Task<int> GetTotalBookings()
         {
@@ -291,6 +345,37 @@ namespace Cozy_Haven.Services
 
             }
             throw new NoBookingFoundException();
+        }
+        public async Task<Booking> RescheduleBooking(int bookingId, DateTime newCheckInDate, DateTime newCheckOutDate)
+        {
+            var booking = await GetBooking(bookingId);
+
+            // Check if the room is available for the new dates
+            bool isRoomAvailable = await IsRoomAvailable(booking.RoomId, newCheckInDate, newCheckOutDate);
+            if (!isRoomAvailable)
+            {
+                throw new Exception("Room is not available for the specified dates");
+            }
+
+            // Update booking details
+            booking.CheckInDate = newCheckInDate;
+            booking.CheckOutDate = newCheckOutDate;
+
+            // Recalculate total price based on new dates
+            var room = await _roomrepository.GetById(booking.RoomId);
+            if (room == null)
+            {
+                throw new Exception("Room does not exist");
+            }
+            //TimeSpan span = newCheckOutDate - newCheckInDate;
+            //float totalPrice = (float)span.TotalDays * room.BaseFare;
+            //booking.TotalPrice = totalPrice;
+            booking.TotalPrice = CalculateTotalPrice(booking);
+
+            // Update the booking in the repository
+            await _bookingrepository.Update(booking);
+
+            return booking;
         }
 
 

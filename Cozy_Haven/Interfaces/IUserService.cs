@@ -12,7 +12,7 @@ namespace Cozy_Haven.Interfaces
         //public Task<User> AddUser(User user);
         public Task<User> DeleteUser(string username);
         public Task<User> UpdatePassword(string username,string password);
-        public Task<User> UpdateUserProfile(string username, string firstName, string lastName, string contactNumber, string email, DateTime dateofbirth);
+        public Task<User> UpdateUserProfile(string username, string firstName, string lastName, string contactNumber, string email, DateTime dateofbirth,string Address,string Gender);
         public Task<ICollection<Booking>> GetUserBookings(string username);
         public Task<ICollection<Review>> GetUserReviews(string username);
         public Task<ICollection<Favourite>> GetUserFavorites(string username);
