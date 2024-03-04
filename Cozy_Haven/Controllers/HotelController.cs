@@ -125,19 +125,19 @@ namespace Cozy_Haven.Controllers
                 return StatusCode(500, ex.Message);
             }
         }
-        [HttpGet("UpdateHotelOwner")]
-        public async Task<IActionResult> UpdateHotelOwner(int id, int ownerId)
-        {
-            try
-            {
-                var updatedHotel = await _hotelService.UpdateHotelOwner(id, ownerId);
-                return Ok(updatedHotel);
-            }
-            catch (NoHotelFoundException ex)
-            {
-                return NotFound(ex.Message);
-            }
-        }
+        //[HttpGet("UpdateHotelOwner")]
+        //public async Task<IActionResult> UpdateHotelOwner(int id, int ownerId)
+        //{
+        //    try
+        //    {
+        //        var updatedHotel = await _hotelService.UpdateHotelOwner(id, ownerId);
+        //        return Ok(updatedHotel);
+        //    }
+        //    catch (NoHotelFoundException ex)
+        //    {
+        //        return NotFound(ex.Message);
+        //    }
+        //}
 
         [HttpGet("HotelReviews")]
         public async Task<IActionResult> GetHotelReviews(int id)
@@ -545,6 +545,24 @@ namespace Cozy_Haven.Controllers
                 response.Message = "An error occurred while deleting images: " + ex.Message;
             }
             return Ok(response);
+        }
+        [HttpGet("AvailableRoomsCount")]
+        public async Task<IActionResult> GetAvailableRoomsCount(int hotelId)
+        {
+            try
+            {
+                var count = await _hotelService.GetAvailableRoomsCount(hotelId);
+                return Ok(count);
+            }
+            catch (NoHotelFoundException ex)
+            {
+                return NotFound(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                // Log the exception
+                return StatusCode(500, "Internal server error");
+            }
         }
 
 

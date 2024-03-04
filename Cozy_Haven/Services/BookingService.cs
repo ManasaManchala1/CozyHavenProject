@@ -31,26 +31,7 @@ namespace Cozy_Haven.Services
             _logger = logger;
 
         }
-        //public async Task<Booking> AddBooking(BookingDTO booking)
-        //{
-        //    Booking booking1 = new AddBooking(booking).GetBooking();
-        //    booking1=await _bookingrepository.Add(booking1);
-        //    return booking1;
-        //}
-
-        //public async Task<int> AvailableRoomsCount()
-        //{
-        //    int count = 0;
-        //    var bookings=await GetAllBookings();
-        //    var rooms=await _roomrepository.GetAll();
-        //    foreach(var room in rooms)
-        //    {
-        //        if(!bookings.Contains(room.RoomId)) { count++; }
-        //    }
-        //    return count;
-
-        //}
-
+        
         public async Task<Booking> DeleteBooking(int id)
         {
             _logger.LogInformation("Deleting booking...");
@@ -267,55 +248,57 @@ namespace Cozy_Haven.Services
             var bookings = await _bookingrepository.GetAll();
             if (bookings == null) throw new NoBookingFoundException();
 
-            float totalRevenue = bookings.Sum(b => b.TotalPrice);
+            float totalRevenue = bookings
+        .Where(b => b.Status != "Cancelled" && b.Status != "Refunded")
+        .Sum(b => b.TotalPrice);
             return totalRevenue;
         }
         public async Task<IEnumerable<object>> GetLineChartData()
         {
             var bookings = await _bookingrepository.GetAll(); // Assuming this method returns all bookings
             var data = bookings
-                .GroupBy(b => b.BookedDate.Year)
+                .GroupBy(b => b.CheckInDate.Year)
                 .Select(g => new { y = g.Key.ToString(), a = g.Count() })
                 .ToList();
 
             return data;
         }
-        public async Task<bool> CancelBooking(int bookingId)
-        {
-            var booking =await GetBooking(bookingId);
+        //public async Task<bool> CancelBooking(int bookingId)
+        //{
+        //    var booking =await GetBooking(bookingId);
 
-            // Check if the booking can be cancelled (e.g., within 24 hours of check-in)
-            if (!IsBookingCancellable(booking))
-            {
-                return false; // Booking cannot be cancelled
-            }
+        //    // Check if the booking can be cancelled (e.g., within 24 hours of check-in)
+        //    if (!IsBookingCancellable(booking))
+        //    {
+        //        return false; // Booking cannot be cancelled
+        //    }
 
-            // Calculate refund amount based on your refund policy
-            float refundAmount = CalculateRefundAmount(booking);
+        //    // Calculate refund amount based on your refund policy
+        //    float refundAmount = CalculateRefundAmount(booking);
 
-            // Update booking status to "Cancelled" and save changes
-            booking.Status= "Cancelled";
-            await _bookingrepository.Update(booking);
+        //    // Update booking status to "Cancelled" and save changes
+        //    booking.Status= "Cancelled";
+        //    await _bookingrepository.Update(booking);
 
-            // Initiate refund process
-            bool refundSuccess = await _paymentservice.Refund(booking.UserId, refundAmount);
+        //    // Initiate refund process
+        //    bool refundSuccess = await _paymentservice.Refund(booking.UserId, refundAmount);
 
-            return refundSuccess; // Return whether refund was successful
-        }
+        //    return refundSuccess; // Return whether refund was successful
+        //}
 
-        private bool IsBookingCancellable(Booking booking)
-        {
-            // Implement your logic to determine if a booking can be cancelled
-            // For example, allow cancellations up to 24 hours before check-in
-            return booking.CheckInDate.Subtract(DateTime.Now).TotalHours > 24;
-        }
+        //private bool IsBookingCancellable(Booking booking)
+        //{
+        //    // Implement your logic to determine if a booking can be cancelled
+        //    // For example, allow cancellations up to 24 hours before check-in
+        //    return booking.CheckInDate.Subtract(DateTime.Now).TotalHours > 24;
+        //}
 
-        private float CalculateRefundAmount(Booking booking)
-        {
-            // Implement your refund calculation logic based on your refund policy
-            // For example, refund 50% if cancelled within 24 hours of booking, etc.
-            return booking.TotalPrice * 0.5f; // Assuming a 50% refund policy
-        }
+        //private float CalculateRefundAmount(Booking booking)
+        //{
+        //    // Implement your refund calculation logic based on your refund policy
+        //    // For example, refund 50% if cancelled within 24 hours of booking, etc.
+        //    return booking.TotalPrice * 0.5f; // Assuming a 50% refund policy
+        //}
         public async Task<List<Booking>> GetCancelledHotelBookings(int hotelId)
         {
             _logger.LogInformation("Getting Cancelled Hotel Bookings");
@@ -327,56 +310,80 @@ namespace Cozy_Haven.Services
 
             return hotelBookings;
         }
-        public async Task<Booking> UpdateBooking(int id, Booking updatedBooking)
+        //public async Task<Booking> UpdateBooking(int id, Booking updatedBooking)
+        //{
+        //    var existingBooking =await GetBooking(id) ;
+        //    if (existingBooking != null)
+        //    {
+        //        existingBooking.UserId = updatedBooking.UserId;
+        //        existingBooking.RoomId = updatedBooking.RoomId;
+        //        existingBooking.CheckInDate = updatedBooking.CheckInDate;
+        //        existingBooking.CheckOutDate = updatedBooking.CheckOutDate;
+        //        existingBooking.Adults = updatedBooking.Adults;
+        //        existingBooking.Children = updatedBooking.Children;
+        //        existingBooking.TotalPrice = updatedBooking.TotalPrice;
+        //        existingBooking.Status = updatedBooking.Status;
+        //        existingBooking.BookedDate = updatedBooking.BookedDate;
+        //        return existingBooking;
+
+        //    }
+        //    throw new NoBookingFoundException();
+        //}
+        //public async Task<Booking> RescheduleBooking(int bookingId, DateTime newCheckInDate, DateTime newCheckOutDate)
+        //{
+        //    var booking = await GetBooking(bookingId);
+
+        //    // Check if the room is available for the new dates
+        //    bool isRoomAvailable = await IsRoomAvailable(booking.RoomId, newCheckInDate, newCheckOutDate);
+        //    if (!isRoomAvailable)
+        //    {
+        //        throw new Exception("Room is not available for the specified dates");
+        //    }
+
+        //    // Update booking details
+        //    booking.CheckInDate = newCheckInDate;
+        //    booking.CheckOutDate = newCheckOutDate;
+
+        //    // Recalculate total price based on new dates
+        //    var room = await _roomrepository.GetById(booking.RoomId);
+        //    if (room == null)
+        //    {
+        //        throw new Exception("Room does not exist");
+        //    }
+        //    //TimeSpan span = newCheckOutDate - newCheckInDate;
+        //    //float totalPrice = (float)span.TotalDays * room.BaseFare;
+        //    //booking.TotalPrice = totalPrice;
+        //    booking.TotalPrice = CalculateTotalPrice(booking);
+
+        //    // Update the booking in the repository
+        //    await _bookingrepository.Update(booking);
+
+        //    return booking;
+        //}
+        public async Task<int> GetHotelBookingsCount(int hotelId)
         {
-            var existingBooking =await GetBooking(id) ;
-            if (existingBooking != null)
-            {
-                existingBooking.UserId = updatedBooking.UserId;
-                existingBooking.RoomId = updatedBooking.RoomId;
-                existingBooking.CheckInDate = updatedBooking.CheckInDate;
-                existingBooking.CheckOutDate = updatedBooking.CheckOutDate;
-                existingBooking.Adults = updatedBooking.Adults;
-                existingBooking.Children = updatedBooking.Children;
-                existingBooking.TotalPrice = updatedBooking.TotalPrice;
-                existingBooking.Status = updatedBooking.Status;
-                existingBooking.BookedDate = updatedBooking.BookedDate;
-                return existingBooking;
+            var allRooms = await _roomrepository.GetAll();
+            var hotelRooms = allRooms.Where(r => r.HotelId == hotelId).Select(r => r.RoomId).ToList();
 
-            }
-            throw new NoBookingFoundException();
+            var allBookings = await GetAllBookings();
+            var hotelBookingsCount = allBookings.Count(b => hotelRooms.Contains(b.RoomId));
+
+            return hotelBookingsCount;
         }
-        public async Task<Booking> RescheduleBooking(int bookingId, DateTime newCheckInDate, DateTime newCheckOutDate)
+        public async Task<float> GetHotelCollections(int hotelId)
         {
-            var booking = await GetBooking(bookingId);
+            var allRooms = await _roomrepository.GetAll();
+            var hotelRooms = allRooms.Where(r => r.HotelId == hotelId).Select(r => r.RoomId).ToList();
 
-            // Check if the room is available for the new dates
-            bool isRoomAvailable = await IsRoomAvailable(booking.RoomId, newCheckInDate, newCheckOutDate);
-            if (!isRoomAvailable)
-            {
-                throw new Exception("Room is not available for the specified dates");
-            }
+            var allBookings = await GetAllBookings();
+            var hotelBookings = allBookings.Where(b => hotelRooms.Contains(b.RoomId) && b.Status !="Canceled" && b.Status!="Refunded").ToList();
 
-            // Update booking details
-            booking.CheckInDate = newCheckInDate;
-            booking.CheckOutDate = newCheckOutDate;
+            var totalCollections = hotelBookings.Sum(b => b.TotalPrice);
 
-            // Recalculate total price based on new dates
-            var room = await _roomrepository.GetById(booking.RoomId);
-            if (room == null)
-            {
-                throw new Exception("Room does not exist");
-            }
-            //TimeSpan span = newCheckOutDate - newCheckInDate;
-            //float totalPrice = (float)span.TotalDays * room.BaseFare;
-            //booking.TotalPrice = totalPrice;
-            booking.TotalPrice = CalculateTotalPrice(booking);
-
-            // Update the booking in the repository
-            await _bookingrepository.Update(booking);
-
-            return booking;
+            return totalCollections;
         }
+
+
 
 
 

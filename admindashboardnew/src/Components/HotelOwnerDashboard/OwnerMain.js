@@ -345,19 +345,20 @@ function OwnerMain() {
   const donutChartData = useSelector((state) => state.donutChartData);
   const lineChartRef = useRef(null);
   const donutChartRef = useRef(null);
+  const hotelId=sessionStorage.getItem('selectedHotelId');
 
   useEffect(() => {
-    fetch("http://localhost:5272/api/Booking/TotalBookings")
+    fetch(`http://localhost:5272/api/Booking/GetHotelBookingsCount?hotelId=${hotelId}`)
       .then((response) => response.json())
       .then((data) => dispatch(setTotalBookings(data)))
       .catch((error) => console.error("Error fetching total bookings:", error));
     
-    fetch("http://localhost:5272/api/Room/AvailableRoomsCount")
+    fetch(`http://localhost:5272/api/Hotel/AvailableRoomsCount?hotelId=${hotelId}`)
       .then((response) => response.json())
       .then((data) => dispatch(setAvailableRooms(data)))
       .catch((error) => console.error("Error fetching available rooms:", error));
     
-    fetch("http://localhost:5272/api/Booking/TotalRevenue")
+    fetch(`http://localhost:5272/api/Booking/GetHotelCollections?hotelId=${hotelId}`)
       .then((response) => response.json())
       .then((data) => dispatch(setTotalRevenue(data)))
       .catch((error) => console.error("Error fetching total revenue:", error));
@@ -371,7 +372,7 @@ function OwnerMain() {
       .then((response) => response.json())
       .then((data) => dispatch(setDonutChartData(data)))
       .catch((error) => console.error("Error fetching donut chart data:", error));
-  }, [dispatch]);
+  }, [dispatch,hotelId]);
 
   useEffect(() => {
     if (lineChartRef.current && lineChartData.length > 0) {
@@ -483,7 +484,7 @@ function OwnerMain() {
           <div className="col-md-12 col-lg-6">
             <div className="card card-chart">
               <div className="card-header">
-                <h4 className="card-title">VISITORS</h4>
+                <h4 className="card-title">BOOKINGS</h4>
               </div>
               <div className="card-body">
                 <div ref={lineChartRef} />

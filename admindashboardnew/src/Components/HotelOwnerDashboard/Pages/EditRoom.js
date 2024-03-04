@@ -71,6 +71,7 @@ const EditRoom = () => {
                       name="hotelId"
                       value={roomData.hotelId}
                       onChange={handleChange}
+                      disabled
                     />
                   </div>
                 </div>

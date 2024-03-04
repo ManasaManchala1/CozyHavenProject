@@ -109,11 +109,11 @@ function Sidebar() {
             </Link>
             </li>
 
-            <li>
+            {/* <li>
               <Link to="pricing">
                 <i className="far fa-money-bill-alt" /> <span>Pricing</span>
               </Link>
-            </li>
+            </li> */}
             {/* <li>
               <Link to="/calendar">
                 <i className="fas fa-calendar-alt" /> <span>Calendar</span>

@@ -43,7 +43,7 @@ namespace Cozy_Haven.Contexts
             modelBuilder.Entity<Review>().HasOne(r => r.Hotel)
                 .WithMany(h => h.Reviews)
                 .HasForeignKey(r => r.HotelId)
-                .OnDelete(DeleteBehavior.NoAction);
+                .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Booking>().HasOne(b => b.User)
                 .WithMany(u => u.Bookings)

@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System;
 using Cozy_Haven.Models.DTOs;
 using Cozy_Haven.Mappers;
+using Microsoft.AspNetCore.Routing;
 
 namespace Cozy_Haven.Services
 {
@@ -52,18 +53,6 @@ namespace Cozy_Haven.Services
             throw new NoHotelFoundException();
         }
 
-        //public async Task<List<Hotel>> GetHotelsByDestinationId(int destinationId)
-        //{
-        //    var hotels=await GetAllHotels();
-        //    if (hotels == null) { throw new NoHotelFoundException(); }
-        //    List<Hotel> hotels1 = new List<Hotel>();
-        //    foreach(var hotel in hotels)
-        //    {
-        //        if (hotel.DestinationId == destinationId) { hotels1.Add(hotel); }
-        //    }
-        //    return hotels1;
-        //}
-
         public async Task<Hotel> UpdateHotelDescription(int id, string description)
         {
             var hotel = await GetHotel(id);
@@ -74,18 +63,18 @@ namespace Cozy_Haven.Services
             }
             throw new NoHotelFoundException();
         }
-        public async Task<Hotel> UpdateHotelOwner(int id, int ownerId)
-        {
-            _logger.LogInformation("Updating owner for hotel with ID: {HotelId}", id);
-            var hotel = await GetHotel(id);
-            if (hotel != null)
-            {
-                hotel.OwnerId = ownerId;
-                await _repository.Update(hotel);
-                return hotel;
-            }
-            throw new NoHotelFoundException(id);
-        }
+        //public async Task<Hotel> UpdateHotelOwner(int id, int ownerId)
+        //{
+        //    _logger.LogInformation("Updating owner for hotel with ID: {HotelId}", id);
+        //    var hotel = await GetHotel(id);
+        //    if (hotel != null)
+        //    {
+        //        hotel.OwnerId = ownerId;
+        //        await _repository.Update(hotel);
+        //        return hotel;
+        //    }
+        //    throw new NoHotelFoundException(id);
+        //}
         public async Task<ICollection<Review>> GetHotelReviews(int hotelId)
         {
             _logger.LogInformation("Getting reviews for hotel with ID: {HotelId}", hotelId);
@@ -169,6 +158,18 @@ namespace Cozy_Haven.Services
             hotels = hotels.Where(h => h.OwnerId == ownerId).ToList();
             return hotels;
         }
+        public async Task<int> GetAvailableRoomsCount(int hotelId)
+        {
+            _logger.LogInformation("Getting available rooms count for hotel with ID: {HotelId}", hotelId);
+            var hotel = await GetHotel(hotelId);
+            if (hotel != null)
+            {
+                return hotel.Rooms.Count(room => room.Available);
+            }
+            throw new NoHotelFoundException(hotelId);
+        }
+        
+
 
     }
 }

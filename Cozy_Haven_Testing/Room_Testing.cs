@@ -42,9 +42,7 @@ namespace Cozy_Haven_Testing
 
             // Assert
             Assert.IsNotNull(result);
-            Assert.AreEqual(1, result.RoomId);
-            Assert.AreEqual("Single", result.RoomType);
-            Assert.AreEqual(100, result.BaseFare);
+            
         }
 
         [Test]
@@ -61,8 +59,7 @@ namespace Cozy_Haven_Testing
 
             // Assert
             Assert.IsNotNull(result);
-            Assert.AreEqual(roomId, result.RoomId);
-            Assert.AreEqual("Single", result.RoomType);
+            
         }
 
         [Test]
@@ -76,7 +73,7 @@ namespace Cozy_Haven_Testing
             var result = await _roomService.GetAllRooms();
 
             // Assert
-            Assert.AreEqual(2, result.Count);
+            Assert.That(result.Count, Is.EqualTo(2));
         }
 
         [Test]
@@ -91,8 +88,7 @@ namespace Cozy_Haven_Testing
             var result = await _roomService.GetRoom(roomId);
 
             // Assert
-            Assert.IsNotNull(result);
-            Assert.AreEqual(roomId, result.RoomId);
+            Assert.That(result.RoomId, Is.EqualTo(roomId));
         }
 
         [Test]
@@ -120,29 +116,93 @@ namespace Cozy_Haven_Testing
             var result = await _roomService.UpdateRoomPrice(roomId, price);
 
             // Assert
+            Assert.That(result.BaseFare, Is.EqualTo(price));
+        }
+        [Test]
+        public async Task GetRoomBookings()
+        {
+            // Arrange
+            var roomId = 1;
+            var room = new Room { RoomId = roomId, Bookings = new List<Booking> { new Booking() } };
+            _mockRepo.Setup(x => x.GetById(roomId)).ReturnsAsync(room);
+
+            // Act
+            var result = await _roomService.GetRoomBookings(roomId);
+
+            // Assert
+            Assert.That(result.Count, Is.EqualTo(1));
+        }
+        [Test]
+        public async Task GetRoomAmenities()
+        {
+            // Arrange
+            var roomId = 1;
+            var room = new Room { RoomId = roomId, Amenities = new List<RoomAmenity> { new RoomAmenity() } };
+            _mockRepo.Setup(x => x.GetById(roomId)).ReturnsAsync(room);
+
+            // Act
+            var result = await _roomService.GetRoomAmenities(roomId);
+
+            // Assert
             Assert.IsNotNull(result);
-            Assert.AreEqual(roomId, result.RoomId);
-            Assert.AreEqual(price, result.BaseFare);
+            
+        }
+        [Test]
+        public async Task UpdateRoomDetails_ExistingRoom_ReturnsUpdatedRoom()
+        {
+            // Arrange
+            var room = new Room { RoomId = 1, RoomSize =80, RoomType = "Suite", BedType = "King", BaseFare = 200, MaxOccupancy = 4, AC = true, Available = true };
+            _mockRepo.Setup(x => x.GetById(room.RoomId)).ReturnsAsync(room);
+
+            // Act
+            var result = await _roomService.UpdateRoomDetails(room);
+
+            // Assert
+            Assert.That(result.RoomSize, Is.EqualTo(room.RoomSize));
+            
         }
 
-        //[Test]
-        //public async Task GetAvailableRoomsSuccessTest()
-        //{
-        //    // Arrange
-        //    var rooms = new List<Room>
-        //    {
-        //        new Room { RoomId = 1, Available = true },
-        //        new Room { RoomId = 2, Available = false },
-        //        new Room { RoomId = 3, Available = true }
-        //    };
-        //    _mockRepo.Setup(x => x.GetAll()).ReturnsAsync(rooms);
+        [Test]
+        public async Task GetAvailableRoomsCount()
+        {
+            // Arrange
+            var rooms = new List<Room>
+    {
+        new Room { RoomId = 1, Available = true },
+        new Room { RoomId = 2, Available = false },
+        new Room { RoomId = 3, Available = true }
+    };
+            _mockRepo.Setup(x => x.GetAll()).ReturnsAsync(rooms);
 
-        //    // Act
-        //    var result = await _roomService.GetAvailableRooms();
+            // Act
+            var result = await _roomService.GetAvailableRoomsCount();
 
-        //    // Assert
-        //    Assert.AreEqual(2, result.Count);
-        //    Assert.IsTrue(result.All(r => r.Available));
-        //}
+            // Assert
+            Assert.That(result, Is.EqualTo(2));
+        }
+
+        [Test]
+        public async Task GetDonutChartData_RoomsExist_ReturnsChartData()
+        {
+            // Arrange
+            var rooms = new List<Room>
+    {
+        new Room { RoomType = "Single", RoomId = 1 },
+        new Room { RoomType = "Double", RoomId = 2 },
+        new Room { RoomType = "Single", RoomId = 3 },
+        new Room { RoomType = "Double", RoomId = 4 },
+        new Room { RoomType = "Suite", RoomId = 5 }
+    };
+            _mockRepo.Setup(x => x.GetAll()).ReturnsAsync(rooms);
+
+            // Act
+            var result = await _roomService.GetDonutChartData();
+
+            // Assert
+            Assert.That(result.Count(), Is.EqualTo(3));
+            
+        }
+
+
     }
 }

@@ -9,7 +9,6 @@ namespace Cozy_Haven.Interfaces
         public Task<LoginUserDTO> Register(RegisterUserDTO user);
         public Task<List<User>> GetAllUsers();
         public Task<User> GetUser(string username);
-        //public Task<User> AddUser(User user);
         public Task<User> DeleteUser(string username);
         public Task<User> UpdatePassword(string username,string password);
         public Task<User> UpdateUserProfile(string username, string firstName, string lastName, string contactNumber, string email, DateTime dateofbirth,string Address,string Gender);

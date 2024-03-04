@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route,Navigate} from 'react-router-dom';
 import Header from './Components/HotelAdminDashboard/Header';
@@ -28,6 +28,7 @@ import Refunds from './Components/HotelOwnerDashboard/Pages/Refunds';
 import HotelReviews from './Components/HotelOwnerDashboard/Pages/HotelReviews';
 import OwnedHotels from './Components/HotelOwnerDashboard/Pages/OwnedHotels';
 import Profile from './Components/Profile';
+import Error from './Components/Error';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
         <Route path="/owner-dashboard/*" element={<OwnerDashboard />} />
         <Route path="/owned-hotels/*" element={<OwnedHotels/>}/>
         <Route path="/login" element={<Login />} />
+        <Route path="*" element={<Error />} />
         
       </Routes>
     </Router>
@@ -67,6 +69,7 @@ function AdminDashboard() {
         <Route path="all-hotels/edit-hotel/:hotelId" element={<EditHotel />} />
         <Route path="reviews" element={<Reviews />} />
         <Route path="profile" element={<Profile/>}/>
+        <Route path="*" element={<Error />} />
         </Routes>
     </>
   );
@@ -91,6 +94,7 @@ function OwnerDashboard() {
         <Route path="all-refunds" element={<Refunds/>}/>
         <Route path="reviews" element={<HotelReviews/>}/>
         <Route path="profile" element={<Profile/>}/>
+        <Route path="*" element={<Error />} />
       </Routes>
     </>
   );

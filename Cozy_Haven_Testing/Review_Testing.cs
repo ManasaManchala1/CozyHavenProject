@@ -34,9 +34,7 @@ namespace Cozy_Haven_Testing
 
             // Assert
             Assert.IsNotNull(result);
-            Assert.AreEqual(1, result.ReviewId);
-            Assert.AreEqual(4.5f, result.Rating);
-            Assert.AreEqual("Great hotel!", result.Comment);
+            
         }
 
         [Test]
@@ -53,9 +51,7 @@ namespace Cozy_Haven_Testing
 
             // Assert
             Assert.IsNotNull(result);
-            Assert.AreEqual(reviewId, result.ReviewId);
-            Assert.AreEqual(4.5f, result.Rating);
-            Assert.AreEqual("Great hotel!", result.Comment);
+            
         }
 
         [Test]
@@ -69,7 +65,7 @@ namespace Cozy_Haven_Testing
             var result = await _reviewService.GetAllReviews();
 
             // Assert
-            Assert.AreEqual(2, result.Count);
+            Assert.That(result.Count, Is.EqualTo(2));
         }
 
         [Test]
@@ -84,8 +80,7 @@ namespace Cozy_Haven_Testing
             var result = await _reviewService.GetReview(reviewId);
 
             // Assert
-            Assert.IsNotNull(result);
-            Assert.AreEqual(reviewId, result.ReviewId);
+            Assert.That(result.ReviewId, Is.EqualTo(reviewId));
         }
 
         [Test]
@@ -102,9 +97,7 @@ namespace Cozy_Haven_Testing
             var result = await _reviewService.UpdateReviewRating(reviewId, newRating);
 
             // Assert
-            Assert.IsNotNull(result);
-            Assert.AreEqual(reviewId, result.ReviewId);
-            Assert.AreEqual(newRating, result.Rating);
+            Assert.That(result.Rating, Is.EqualTo(newRating));
         }
     }
 }

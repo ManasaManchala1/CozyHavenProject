@@ -9,17 +9,14 @@ namespace Cozy_Haven.Models
         [Key]
         public int ReviewId { get; set; }
 
-        [Required]
         public int HotelId { get; set; }
 
         public int UserId { get; set; }
 
-        [Required]
         public float Rating { get; set; }
 
         public string? Comment { get; set; }
 
-        [Required]
         public DateTime DatePosted { get; set; }
 
         // Navigation properties

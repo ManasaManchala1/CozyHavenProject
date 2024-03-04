@@ -216,8 +216,8 @@ function Main() {
         element: lineChartRef.current,
         data: lineChartData,
         xkey: 'y',
-        ykeys: ['a', 'b'],
-        labels: ['Series A', 'Series B'],
+        ykeys: ['a'],
+        labels: ['Series A'],
         lineColors: ['#8bbe1b', '#cdc6c6'],
         lineWidth: '3px',
         resize: true,
@@ -320,7 +320,7 @@ function Main() {
           <div className="col-md-12 col-lg-6">
             <div className="card card-chart">
               <div className="card-header">
-                <h4 className="card-title">VISITORS</h4>
+                <h4 className="card-title">BOOKINGS</h4>
               </div>
               <div className="card-body">
                 <div ref={lineChartRef} />

@@ -10,12 +10,10 @@ namespace Cozy_Haven.Models
         [Key]
         public int HotelId { get; set; }
 
-        [Required]
         public int DestinationId { get; set; }
 
         public int OwnerId { get; set; }
 
-        [Required]
         public string Name { get; set; }
 
         public string Address { get; set; }

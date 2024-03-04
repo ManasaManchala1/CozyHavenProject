@@ -66,7 +66,6 @@ namespace Cozy_Haven.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("Status")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<float>("TotalPrice")
@@ -576,7 +575,7 @@ namespace Cozy_Haven.Migrations
                     b.HasOne("Cozy_Haven.Models.Hotel", "Hotel")
                         .WithMany("Reviews")
                         .HasForeignKey("HotelId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("Cozy_Haven.Models.User", "User")

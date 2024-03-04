@@ -149,24 +149,24 @@ namespace Cozy_Haven.Controllers
                 return NotFound(ex);
             }
         }
-        [HttpPost("RescheduleBooking/{bookingId}")]
-        public async Task<IActionResult> RescheduleBooking(int bookingId, [FromBody] BookingDTO rescheduleBookingDTO)
-        {
-            try
-            {
-                var newCheckInDate = rescheduleBookingDTO.CheckInDate;
-                var newCheckOutDate = rescheduleBookingDTO.CheckOutDate;
+        //[HttpPost("RescheduleBooking/{bookingId}")]
+        //public async Task<IActionResult> RescheduleBooking(int bookingId, [FromBody] BookingDTO rescheduleBookingDTO)
+        //{
+        //    try
+        //    {
+        //        var newCheckInDate = rescheduleBookingDTO.CheckInDate;
+        //        var newCheckOutDate = rescheduleBookingDTO.CheckOutDate;
 
-                var updatedBooking = await _bookingservice.RescheduleBooking(bookingId, newCheckInDate, newCheckOutDate);
+        //        var updatedBooking = await _bookingservice.RescheduleBooking(bookingId, newCheckInDate, newCheckOutDate);
 
-                return Ok(updatedBooking);
-            }
+        //        return Ok(updatedBooking);
+        //    }
             
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-        }
+        //    catch (Exception ex)
+        //    {
+        //        return BadRequest(ex.Message);
+        //    }
+        //}
         [HttpGet("TotalBookings")]
         public async Task<ActionResult<int>> GetTotalBookings()
         {
@@ -204,28 +204,28 @@ namespace Cozy_Haven.Controllers
 
             return Ok(data);
         }
-        [HttpPost("CancelBooking/{bookingId}")]
-        public async Task<IActionResult> CancelBooking(int bookingId)
-        {
-            var booking = await _bookingservice.GetBooking(bookingId);
+        //[HttpPost("CancelBooking/{bookingId}")]
+        //public async Task<IActionResult> CancelBooking(int bookingId)
+        //{
+        //    var booking = await _bookingservice.GetBooking(bookingId);
 
-            if (booking == null)
-            {
-                return NotFound("Booking not found");
-            }
+        //    if (booking == null)
+        //    {
+        //        return NotFound("Booking not found");
+        //    }
 
-            // Cancel the booking
-            var cancelResult = await _bookingservice.CancelBooking(bookingId);
+        //    // Cancel the booking
+        //    var cancelResult = await _bookingservice.CancelBooking(bookingId);
 
-            if (cancelResult)
-            {
-                return Ok("Booking cancelled successfully");
-            }
-            else
-            {
-                return StatusCode(500, "Failed to cancel booking or process refund");
-            }
-        }
+        //    if (cancelResult)
+        //    {
+        //        return Ok("Booking cancelled successfully");
+        //    }
+        //    else
+        //    {
+        //        return StatusCode(500, "Failed to cancel booking or process refund");
+        //    }
+        //}
         [HttpGet("Cancelledbookings")]
         public async Task<IActionResult> GetCancelledHotelBookings(int hotelId)
         {
@@ -240,19 +240,46 @@ namespace Cozy_Haven.Controllers
                 return StatusCode(500, "Internal server error");
             }
         }
-        [HttpPut("UpdateBooking")]
-        public IActionResult UpdateBooking(int id,Booking updatedBooking)
+        //[HttpPut("UpdateBooking")]
+        //public IActionResult UpdateBooking(int id,Booking updatedBooking)
+        //{
+        //    try
+        //    {
+        //        var booking=_bookingservice.UpdateBooking(id, updatedBooking);
+        //        return Ok(booking);
+        //    }
+        //    catch (NoBookingFoundException ex)
+        //    {
+        //        return NotFound(ex.Message);
+        //    }
+        //}
+        [HttpGet("GetHotelBookingsCount")]
+        public async Task<IActionResult> GetHotelBookingsCount(int hotelId)
+        {
+            var count = await _bookingservice.GetHotelBookingsCount(hotelId);
+            return Ok(count);
+        }
+        [HttpGet("GetHotelCollections")]
+        public async Task<ActionResult<float>> GetHotelCollections(int hotelId)
         {
             try
             {
-                var booking=_bookingservice.UpdateBooking(id, updatedBooking);
-                return Ok(booking);
+                var collections = await _bookingservice.GetHotelCollections(hotelId);
+                return Ok(collections);
             }
-            catch (NoBookingFoundException ex)
+            catch (NoHotelFoundException ex)
             {
-                return NotFound(ex.Message);
+                _logger.LogError(ex, "Hotel with ID {HotelId} not found", hotelId);
+                return NotFound();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error getting hotel collections for hotel with ID {HotelId}", hotelId);
+                return StatusCode(500, "Internal server error");
             }
         }
+
+
 
 
 

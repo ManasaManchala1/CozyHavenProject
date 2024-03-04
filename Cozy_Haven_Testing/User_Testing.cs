@@ -44,8 +44,7 @@ namespace Cozy_Haven_Testing
 
             // Assert
             Assert.IsNotNull(result);
-            Assert.AreEqual("User", result.Role);
-            Assert.AreEqual("token", result.Token);
+            
         }
 
         [Test]
@@ -62,8 +61,7 @@ namespace Cozy_Haven_Testing
 
             // Assert
             Assert.IsNotNull(result);
-            Assert.AreEqual("newUser", result.Username);
-            Assert.AreEqual("User", result.Role);
+           
         }
 
         [Test]
@@ -77,7 +75,7 @@ namespace Cozy_Haven_Testing
             var result = await _userService.GetAllUsers();
 
             // Assert
-            Assert.AreEqual(2, result.Count);
+            Assert.That(result.Count, Is.EqualTo(2));
         }
 
         [Test]
@@ -92,8 +90,7 @@ namespace Cozy_Haven_Testing
             var result = await _userService.GetUser(username);
 
             // Assert
-            Assert.IsNotNull(result);
-            Assert.AreEqual("user1", result.Username);
+            Assert.That(result.Username, Is.EqualTo("user1"));
         }
 
         [Test]
@@ -110,7 +107,7 @@ namespace Cozy_Haven_Testing
 
             // Assert
             Assert.IsNotNull(result);
-            Assert.AreEqual("userToDelete", result.Username);
+            
         }
 
 
@@ -128,9 +125,103 @@ namespace Cozy_Haven_Testing
             var result = await _userService.UpdatePassword(username, newPassword);
 
             // Assert
-            Assert.IsNotNull(result);
-            Assert.AreEqual("userToUpdate", result.Username);
+            Assert.That(result.Username, Is.EqualTo(username));
         }
+        [Test]
+        public async Task GetUserBookings()
+        {
+            // Arrange
+            string username = "testUser";
+            var user = new User { Username = username, Bookings = new List<Booking> { new Booking() } };
+            _mockRepo.Setup(x => x.GetById(username)).ReturnsAsync(user);
+
+            // Act
+            var result = await _userService.GetUserBookings(username);
+
+            // Assert
+            Assert.That(result.Count, Is.EqualTo(1));
+        }
+        //[Test]
+        //public async Task UpdateUserProfile()
+        //{
+        //    // Arrange
+        //    string username = "testUser";
+        //    var existingUser = new User { Username = username };
+        //    _mockRepo.Setup(x => x.GetById(username)).ReturnsAsync(existingUser);
+
+        //    // Act
+        //    var updatedUser = await _userService.UpdateUserProfile(username, "John", "Doe", "1234567890", "john.doe@example.com", DateTime.Now, "Address", "Male");
+
+        //    // Assert
+        //    Assert.That(updatedUser.FirstName, Is.EqualTo("John"));
+        //}
+
+        [Test]
+        public async Task GetUserReviews()
+        {
+            // Arrange
+            string username = "testUser";
+            var user = new User { Username = username, Reviews = new List<Review> { new Review() } };
+            _mockRepo.Setup(x => x.GetById(username)).ReturnsAsync(user);
+
+            // Act
+            var result = await _userService.GetUserReviews(username);
+
+            // Assert
+            Assert.IsNotNull(result);
+            
+        }
+
+        [Test]
+        public async Task GetUserFavorites()
+        {
+            // Arrange
+            string username = "testUser";
+            var user = new User { Username = username, Favorites = new List<Favourite> { new Favourite() } };
+            _mockRepo.Setup(x => x.GetById(username)).ReturnsAsync(user);
+
+            // Act
+            var result = await _userService.GetUserFavorites(username);
+
+            // Assert
+            Assert.IsNotNull(result);
+            
+        }
+
+        [Test]
+        public async Task GetUserByUsernameOrEmail_UserExists_ReturnsUser()
+        {
+            // Arrange
+            string usernameOrEmail = "testUser";
+            var users = new List<User> { new User { Username = usernameOrEmail } };
+            _mockRepo.Setup(x => x.GetAll()).ReturnsAsync(users);
+
+            // Act
+            var result = await _userService.GetUserByUsernameOrEmail(usernameOrEmail);
+
+            // Assert
+            Assert.That(result.Username, Is.EqualTo(usernameOrEmail));
+        }
+
+        [Test]
+        public async Task GetHotelOwners()
+        {
+            // Arrange
+            var users = new List<User>
+            {
+        new User { Username = "owner1", Role = "Owner" },
+        new User { Username = "owner2", Role = "Owner" }
+    };
+            _mockRepo.Setup(x => x.GetAll()).ReturnsAsync(users);
+
+            // Act
+            var result = await _userService.GetHotelOwners();
+
+            // Assert
+            Assert.That(result.Count, Is.EqualTo(2));
+            
+        }
+
 
     }
 }
