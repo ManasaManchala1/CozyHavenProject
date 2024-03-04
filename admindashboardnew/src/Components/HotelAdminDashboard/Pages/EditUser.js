@@ -186,7 +186,9 @@ function EditUser() {
       .then((response) => response.json())
       .then((data) => {
         // Format dateOfBirth if it exists
+        console.log(data.dateOfBirth);
         const dateOfBirth = data.dateOfBirth ? new Date(data.dateOfBirth).toISOString().split('T')[0] : '';
+        
         setUserData({
           ...data,
           dateOfBirth: dateOfBirth
@@ -211,6 +213,7 @@ function EditUser() {
       body: JSON.stringify(userData)
     })
       .then((response) => response.json())
+      .then(res=>console.log(res))
       .then((data) => {
         console.log("User updated:", data);
         alert("User updated successfully");

@@ -10,6 +10,7 @@ function Header() {
   const handlelogout=()=>{
     sessionStorage.clear();
   }
+  const username=sessionStorage.getItem('username');
   return (
     <div className="header">
       <div className="header-left">
@@ -41,7 +42,7 @@ function Header() {
                 <img src="/assets/img/profiles/avatar-01.jpg" alt="User Image" className="avatar-img rounded-circle"/>
               </div>
               <div className="user-text">
-                <h6>Manasa</h6>
+                <h6>{username}</h6>
                 <p className="text-muted mb-0">Administrator</p>
               </div>
             </div>

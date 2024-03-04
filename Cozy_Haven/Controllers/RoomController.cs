@@ -53,7 +53,7 @@ namespace Cozy_Haven.Controllers
             }
 
         }
-        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Owner")]
         [HttpPost("AddRoom")]
         public async Task<ActionResult<Room>> AddRoom(RoomDTO room)
         {
@@ -68,6 +68,7 @@ namespace Cozy_Haven.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, $"Error: {ex.Message}");
             }
         }
+        [Authorize(Roles = "Owner")]
         [HttpPut("UpdatePrice")]
         public async Task<ActionResult<Room>> UpdatePrice(int id,int price)
         {
@@ -81,6 +82,7 @@ namespace Cozy_Haven.Controllers
                 return NotFound(ex.Message);
             }
         }
+        [Authorize(Roles = "Owner")]
         [HttpDelete("DeleteRoom")]
         public async Task<ActionResult<Room>> DeleteRoom(int id)
         {
@@ -115,7 +117,7 @@ namespace Cozy_Haven.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, $"Error: {ex.Message}");
             }
         }
-        //[Authorize(Roles = "Admin,Owner")]
+        [Authorize(Roles = "Owner")]
         [HttpPut("UpdateDetails")]
         public async Task<ActionResult<Room>> UpdateRoomDetails(Room room)
         {

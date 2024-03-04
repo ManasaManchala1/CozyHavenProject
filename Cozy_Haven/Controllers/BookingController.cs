@@ -53,18 +53,7 @@ namespace Cozy_Haven.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, $"An error occurred: {ex.Message}");
             }
         }
-        //[HttpPost("AddBooking")]
-        //public async Task<ActionResult<Booking>> AddBooking(BookingDTO booking)
-        //{
-        //    try
-        //    {
-        //        return await _bookingservice.AddBooking(booking);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return StatusCode(StatusCodes.Status500InternalServerError, $"An error occurred: {ex.Message}");
-        //    }
-        //}
+        
         [HttpPut("UpdateBookingStatus")]
         public async Task<ActionResult<Booking>> UpdateBooking(int id,string status)
         {

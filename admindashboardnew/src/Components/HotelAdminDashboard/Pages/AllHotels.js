@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 function AllHotels() {
   const [hotels, setHotels] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
     fetch("http://localhost:5272/api/Hotel/GetAllHotels")
@@ -27,6 +28,10 @@ function AllHotels() {
       .catch((error) => console.error('Error deleting hotel:', error));
     }
   };
+  const filteredHotels = hotels.filter(hotel => 
+    hotel.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    hotel.address.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
     <div className="page-wrapper">
@@ -35,6 +40,13 @@ function AllHotels() {
           <div className="row align-items-center">
             <div className="col">
               <h3 className="page-title mt-5">Hotels</h3>
+              <input 
+                type="text" 
+                className="form-control mt-3" 
+                placeholder="Search hotels by name or address" 
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+              />
             </div>
           </div>
         </div>
@@ -56,7 +68,7 @@ function AllHotels() {
                       </tr>
                     </thead>
                     <tbody>
-                      {hotels.map((hotel) => (
+                      {filteredHotels.map((hotel) => (
                         <tr key={hotel.hotelId}>
                           <td>{hotel.hotelId}</td>
                           <td>{hotel.destinationId}</td>

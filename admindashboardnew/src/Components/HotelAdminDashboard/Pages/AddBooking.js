@@ -239,12 +239,25 @@ function AddBooking() {
       .then((response) => response.json())
       .then((data) => {
         console.log("Booking created:", data);
+        setBookingData({
+          userId: 0,
+    roomId: 0,
+    checkInDate: '',
+    checkOutDate: '',
+    adults: 0,
+    children: 0,
+    totalPrice: 0,
+    status: "Booked", // Default status
+    bookedDate: new Date().toISOString().slice(0, 10),
+        }
+
+        )
         alert("Booking created successfully!");
         // Optionally, you can redirect the user to a different page or show a success message
       })
       .catch((error) => {
         console.error("Error creating booking:", error);
-        alert("Failed to create booking");
+        alert("Booking is already done for the specified dates.Please choose other dates");
         // Handle error
       });
   };
@@ -373,6 +386,7 @@ function AddBooking() {
                       name="bookedDate"
                       value={bookingData.bookedDate}
                       onChange={handleChange}
+                      disabled
                     />
                   </div>
                 </div>

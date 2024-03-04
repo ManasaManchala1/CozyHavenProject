@@ -244,12 +244,12 @@ function AllBookings() {
                                 <i className="fas fa-ellipsis-v ellipse_color" />
                               </Link>
                               <div className="dropdown-menu dropdown-menu-right">
-                                <Link
+                                {/* <Link
                                   to={`edit-booking/${booking.bookingId}`}
                                   className="dropdown-item"
                                 >
                                   <i className="fas fa-pencil-alt m-r-5" /> Edit
-                                </Link>
+                                </Link> */}
                                 <Link
                                   to="#"
                                   className="dropdown-item"

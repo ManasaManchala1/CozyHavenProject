@@ -27,6 +27,7 @@ function Login() {
         sessionStorage.setItem("token", data.token);
         sessionStorage.setItem("username", data.username);
         sessionStorage.setItem("userId", data.userId);
+        sessionStorage.setItem("role",data.role);
         alert("Login success - " + data.username);
         setLoggedin(true);
     

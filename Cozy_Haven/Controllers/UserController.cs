@@ -73,7 +73,7 @@ namespace Cozy_Haven.Controllers
                 return NotFound(ex.Message);
             }
         }
-        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
         [HttpGet("GetAllUsers")]
         public async Task<ActionResult<List<User>>> GetUsers()
         {
@@ -88,7 +88,6 @@ namespace Cozy_Haven.Controllers
             }
         }
 
-        //[Authorize(Roles = "Admin")]
         [HttpGet("GetByUsername")]
         public async Task<ActionResult<User>> GetUserByUsername(string username)
         {

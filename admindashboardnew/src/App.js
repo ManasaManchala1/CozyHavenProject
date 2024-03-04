@@ -38,7 +38,6 @@ function App() {
         <Route path="/owner-dashboard/*" element={<OwnerDashboard />} />
         <Route path="/owned-hotels/*" element={<OwnedHotels/>}/>
         <Route path="/login" element={<Login />} />
-        <Route path="*" element={<Error />} />
         
       </Routes>
     </Router>

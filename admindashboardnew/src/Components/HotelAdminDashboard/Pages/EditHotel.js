@@ -10,11 +10,42 @@ const EditHotel = () => {
     description: ""
   });
 
+  // useEffect(() => {
+  //   fetch(`http://localhost:5272/api/Hotel/GetById?id=${hotelId}`,{
+  //     method:'PUT',
+      
+  //   })
+  //     .then((response) => response.json())
+  //     .then((data) => setHotelData(data))
+  //     .catch((error) => console.error("Error fetching hotel:", error));
+  // }, [hotelId]);
   useEffect(() => {
-    fetch(`http://localhost:5272/api/Hotel/GetById?id=${hotelId}`)
-      .then((response) => response.json())
-      .then((data) => setHotelData(data))
-      .catch((error) => console.error("Error fetching hotel:", error));
+    const token = sessionStorage.getItem('token');
+    if (!token) {
+      console.error('Token not found');
+      return;
+    }
+  
+    fetch(`http://localhost:5272/api/Hotel/GetById?id=${hotelId}`, {
+      method:'PUT',
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json'
+      }
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Failed to fetch users');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setHotelData(data);
+      })
+      .catch((error) => {
+        console.error('Error fetching users:', error);
+        // Handle error
+      });
   }, [hotelId]);
 
   const handleChange = (e) => {

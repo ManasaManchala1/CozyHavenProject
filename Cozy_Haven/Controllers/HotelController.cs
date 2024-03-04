@@ -4,6 +4,7 @@ using Cozy_Haven.Helper;
 using Cozy_Haven.Interfaces;
 using Cozy_Haven.Models;
 using Cozy_Haven.Models.DTOs;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -75,7 +76,7 @@ namespace Cozy_Haven.Controllers
         //        return StatusCode(500, ex.Message);
         //    }
         //}
-
+        [Authorize(Roles = "Admin")]
         [HttpPost("AddHotel")]
         public async Task<IActionResult> AddHotel(HotelDTO hotel)
         {
@@ -107,7 +108,7 @@ namespace Cozy_Haven.Controllers
                 return StatusCode(500, ex.Message);
             }
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpDelete("DeleteHotel")]
         public async Task<IActionResult> DeleteHotel(int id)
         {
@@ -192,6 +193,7 @@ namespace Cozy_Haven.Controllers
                 return NotFound(ex.Message);
             }
         }
+        [Authorize(Roles = "Admin")]
         [HttpPut("UpdateHotelDetails")]
         public async Task<IActionResult> UpdateHotelDetails(Hotel hotel)
         {

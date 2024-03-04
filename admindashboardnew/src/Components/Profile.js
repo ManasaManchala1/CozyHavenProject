@@ -176,7 +176,7 @@ function Profile() {
   useEffect(() => {
     fetch(`http://localhost:5272/api/User/GetByUsername?username=${username}`)
       .then(response => response.json())
-      .then(data => setUserData(data))
+      .then(data =>setUserData(data))
       .catch(error => console.error('Error fetching user details:', error));
   }, [username]);
 
@@ -191,10 +191,10 @@ function Profile() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setUserData({
-      ...userData,
+    setUserData(prevUserData => ({
+      ...prevUserData,
       [name]: value
-    });
+    }));
   };
 
   return (

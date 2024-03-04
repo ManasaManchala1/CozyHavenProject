@@ -13,8 +13,9 @@ function OwnedHotels() {
   };
 
   return (
-    <div className="page-wrapper">
-      <div className="content container-fluid">
+    // <div className="page-wrapper">
+    //   <div className="content container-fluid">
+    <div style={{padding:'2rem'}}>
         <div className="page-header">
           <h3 className="page-title">Owned Hotels</h3>
         </div>
@@ -36,8 +37,9 @@ function OwnedHotels() {
             </div>
           ))}
         </div>
-      </div>
-    </div>
+        </div>
+    //   </div>
+    // </div>
   );
 }
 

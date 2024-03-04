@@ -48,6 +48,7 @@ namespace Cozy_Haven.Repository
             if(review != null)
             {
                 _context.Entry<Review>(item).State=EntityState.Modified;
+                _context.SaveChanges();
                 return item;
             }
             return null;

@@ -18,6 +18,7 @@ namespace Cozy_Haven.Mappers
             user.FirstName = register.FirstName;
             user.LastName = register.LastName;
             user.ContactNumber = register.ContactNumber;
+            user.DateofBirth = register.DateofBirth;
             user.Address = register.Address;
             user.Gender = register.Gender;
         }
