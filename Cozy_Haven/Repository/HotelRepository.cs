@@ -26,6 +26,8 @@ namespace Cozy_Haven.Repository
             var hotel=await GetById(key);
             if(hotel!=null)
             {
+                _context.HotelImages.RemoveRange(_context.HotelImages.Where(image => image.HotelId == hotel.HotelId));
+                _context.SaveChanges();
                 _context.Hotels.Remove(hotel);
                 _context.SaveChanges();
                 return hotel;

@@ -2,32 +2,96 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 function AllHotels() {
+  // const [hotels, setHotels] = useState([]);
+  // const [searchTerm, setSearchTerm] = useState('');
+
+  // useEffect(() => {
+  //   fetch("http://localhost:5272/api/Hotel/GetAllHotels")
+  //     .then((response) => response.json())
+  //     .then((data) => setHotels(data))
+  //     .catch((error) => console.error("Error fetching hotels:", error));
+  // }, []);
+  // const handleDelete = (id) => {
+  //   if (window.confirm('Are you sure you want to delete this hotel?')) {
+  //   fetch(`http://localhost:5272/api/Hotel/DeleteHotel?id=${id}`, {
+  //     method: 'DELETE',
+  //   })
+  //     .then((response) => {
+  //       if (response.ok) {
+  //         setHotels(hotels.filter((hotel) => hotel.hotelId !== id));
+  //         alert("Deleted Successfully")
+  //       } else {
+  //         console.error('Failed to delete hotel');
+  //         alert("Failed to delete")
+  //       }
+  //     })
+  //     .catch((error) => console.error('Error deleting hotel:', error));
+  //   }
+  // };
+  // const filteredHotels = hotels.filter(hotel => 
+  //   hotel.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+  //   hotel.address.toLowerCase().includes(searchTerm.toLowerCase())
+  // );
   const [hotels, setHotels] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
-    fetch("http://localhost:5272/api/Hotel/GetAllHotels")
-      .then((response) => response.json())
-      .then((data) => setHotels(data))
-      .catch((error) => console.error("Error fetching hotels:", error));
-  }, []);
-  const handleDelete = (id) => {
-    if (window.confirm('Are you sure you want to delete this hotel?')) {
-    fetch(`http://localhost:5272/api/Hotel/DeleteHotel?id=${id}`, {
-      method: 'DELETE',
+    const token = sessionStorage.getItem('token'); 
+    if (!token) {
+      console.error('Token not found');
+      return;
+    }
+  
+    fetch("http://localhost:5272/api/Hotel/GetAllHotels", {
+      method:'GET',
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json'
+      }
     })
       .then((response) => {
-        if (response.ok) {
-          setHotels(hotels.filter((hotel) => hotel.hotelId !== id));
-          alert("Deleted Successfully")
-        } else {
-          console.error('Failed to delete hotel');
-          alert("Failed to delete")
+        if (!response.ok) {
+          throw new Error('Failed to fetch hotels');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setHotels(data);
+      })
+      .catch((error) => {
+        console.error('Error fetching hotels:', error);
+        // Handle error
+      });
+  }, []);
+
+  const handleDelete = (id) => {
+    const token = sessionStorage.getItem('token'); 
+    if (!token) {
+      console.error('Token not found');
+      return;
+    }
+
+    if (window.confirm('Are you sure you want to delete this hotel?')) {
+      fetch(`http://localhost:5272/api/Hotel/DeleteHotel?id=${id}`, {
+        method: 'DELETE',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json'
         }
       })
-      .catch((error) => console.error('Error deleting hotel:', error));
+        .then((response) => {
+          if (response.ok) {
+            setHotels(hotels.filter((hotel) => hotel.hotelId !== id));
+            alert("Deleted Successfully")
+          } else {
+            console.error('Failed to delete hotel');
+            alert("Failed to delete")
+          }
+        })
+        .catch((error) => console.error('Error deleting hotel:', error));
     }
   };
+
   const filteredHotels = hotels.filter(hotel => 
     hotel.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
     hotel.address.toLowerCase().includes(searchTerm.toLowerCase())

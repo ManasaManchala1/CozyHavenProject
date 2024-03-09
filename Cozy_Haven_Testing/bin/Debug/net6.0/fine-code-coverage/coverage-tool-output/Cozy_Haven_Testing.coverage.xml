@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<coverage line-rate="0.4628" branch-rate="0.3669" version="1.9" timestamp="1709553333" lines-covered="1334" lines-valid="2882" branches-covered="91" branches-valid="248">
+<coverage line-rate="0.4646" branch-rate="0.37189999999999995" version="1.9" timestamp="1709624671" lines-covered="1328" lines-valid="2858" branches-covered="90" branches-valid="242">
   <sources>
     <source>C:\</source>
   </sources>
   <packages>
-    <package name="Cozy_Haven" line-rate="0.31739999999999996" branch-rate="0.3669" complexity="604">
+    <package name="Cozy_Haven" line-rate="0.3181" branch-rate="0.37189999999999995" complexity="598">
       <classes>
         <class name="Cozy_Haven.Program" filename="CozyHavenProject\Cozy_Haven\Program.cs" line-rate="0" branch-rate="0" complexity="2">
           <methods>
@@ -224,61 +224,60 @@
           <methods>
             <method name="CalculateTotalPrice" signature="(Cozy_Haven.Models.Booking)" line-rate="0.8" branch-rate="0.6875" complexity="16">
               <lines>
-                <line number="191" hits="2" branch="False" />
-                <line number="193" hits="2" branch="False" />
-                <line number="195" hits="2" branch="True" condition-coverage="50% (1/2)">
+                <line number="192" hits="2" branch="False" />
+                <line number="194" hits="2" branch="False" />
+                <line number="196" hits="2" branch="True" condition-coverage="50% (1/2)">
                   <conditions>
                     <condition number="32" type="jump" coverage="50%" />
                   </conditions>
                 </line>
-                <line number="196" hits="0" branch="False" />
                 <line number="197" hits="0" branch="False" />
-                <line number="202" hits="2" branch="True" condition-coverage="66.66% (4/6)">
+                <line number="198" hits="0" branch="False" />
+                <line number="203" hits="2" branch="True" condition-coverage="66.66% (4/6)">
                   <conditions>
                     <condition number="70" type="jump" coverage="100%" />
                     <condition number="84" type="jump" coverage="50%" />
                     <condition number="98" type="jump" coverage="50%" />
                   </conditions>
                 </line>
-                <line number="205" hits="1" branch="False" />
                 <line number="206" hits="1" branch="False" />
-                <line number="208" hits="0" branch="False" />
+                <line number="207" hits="1" branch="False" />
                 <line number="209" hits="0" branch="False" />
-                <line number="211" hits="0" branch="False" />
+                <line number="210" hits="0" branch="False" />
                 <line number="212" hits="0" branch="False" />
-                <line number="214" hits="1" branch="False" />
-                <line number="218" hits="2" branch="False" />
-                <line number="220" hits="2" branch="False" />
+                <line number="213" hits="0" branch="False" />
+                <line number="215" hits="1" branch="False" />
+                <line number="219" hits="2" branch="False" />
                 <line number="221" hits="2" branch="False" />
-                <line number="223" hits="2" branch="True" condition-coverage="100% (2/2)">
+                <line number="222" hits="2" branch="False" />
+                <line number="224" hits="2" branch="True" condition-coverage="100% (2/2)">
                   <conditions>
                     <condition number="172" type="jump" coverage="100%" />
                   </conditions>
                 </line>
-                <line number="224" hits="1" branch="False" />
                 <line number="225" hits="1" branch="False" />
-                <line number="227" hits="1" branch="False" />
-                <line number="229" hits="1" branch="True" condition-coverage="66.66% (4/6)">
+                <line number="226" hits="1" branch="False" />
+                <line number="228" hits="1" branch="False" />
+                <line number="230" hits="1" branch="True" condition-coverage="66.66% (4/6)">
                   <conditions>
                     <condition number="213" type="jump" coverage="50%" />
                     <condition number="231" type="jump" coverage="50%" />
                     <condition number="256" type="jump" coverage="100%" />
                   </conditions>
                 </line>
-                <line number="230" hits="1" branch="False" />
                 <line number="231" hits="1" branch="False" />
                 <line number="232" hits="1" branch="False" />
                 <line number="233" hits="1" branch="False" />
                 <line number="234" hits="1" branch="False" />
-                <line number="236" hits="2" branch="False" />
+                <line number="235" hits="1" branch="False" />
                 <line number="237" hits="2" branch="False" />
-                <line number="239" hits="2" branch="False" />
+                <line number="238" hits="2" branch="False" />
                 <line number="240" hits="2" branch="False" />
+                <line number="241" hits="2" branch="False" />
               </lines>
             </method>
             <method name=".ctor" signature="(Cozy_Haven.Interfaces.IRepository`2&lt;System.Int32,Cozy_Haven.Models.Booking&gt;,Cozy_Haven.Interfaces.IRepository`2&lt;System.Int32,Cozy_Haven.Models.Room&gt;,Cozy_Haven.Interfaces.IRepository`2&lt;System.String,Cozy_Haven.Models.User&gt;,Cozy_Haven.Interfaces.IPaymentService,Microsoft.Extensions.Logging.ILogger`1&lt;Cozy_Haven.Services.BookingService&gt;)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="21" hits="18" branch="False" />
                 <line number="22" hits="18" branch="False" />
                 <line number="23" hits="18" branch="False" />
                 <line number="24" hits="18" branch="False" />
@@ -289,62 +288,62 @@
                 <line number="29" hits="18" branch="False" />
                 <line number="30" hits="18" branch="False" />
                 <line number="31" hits="18" branch="False" />
-                <line number="33" hits="18" branch="False" />
+                <line number="32" hits="18" branch="False" />
+                <line number="34" hits="18" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="191" hits="2" branch="False" />
-            <line number="193" hits="2" branch="False" />
-            <line number="195" hits="2" branch="True" condition-coverage="50% (1/2)">
+            <line number="192" hits="2" branch="False" />
+            <line number="194" hits="2" branch="False" />
+            <line number="196" hits="2" branch="True" condition-coverage="50% (1/2)">
               <conditions>
                 <condition number="32" type="jump" coverage="50%" />
               </conditions>
             </line>
-            <line number="196" hits="0" branch="False" />
             <line number="197" hits="0" branch="False" />
-            <line number="202" hits="2" branch="True" condition-coverage="66.66% (4/6)">
+            <line number="198" hits="0" branch="False" />
+            <line number="203" hits="2" branch="True" condition-coverage="66.66% (4/6)">
               <conditions>
                 <condition number="70" type="jump" coverage="100%" />
                 <condition number="84" type="jump" coverage="50%" />
                 <condition number="98" type="jump" coverage="50%" />
               </conditions>
             </line>
-            <line number="205" hits="1" branch="False" />
             <line number="206" hits="1" branch="False" />
-            <line number="208" hits="0" branch="False" />
+            <line number="207" hits="1" branch="False" />
             <line number="209" hits="0" branch="False" />
-            <line number="211" hits="0" branch="False" />
+            <line number="210" hits="0" branch="False" />
             <line number="212" hits="0" branch="False" />
-            <line number="214" hits="1" branch="False" />
-            <line number="218" hits="2" branch="False" />
-            <line number="220" hits="2" branch="False" />
+            <line number="213" hits="0" branch="False" />
+            <line number="215" hits="1" branch="False" />
+            <line number="219" hits="2" branch="False" />
             <line number="221" hits="2" branch="False" />
-            <line number="223" hits="2" branch="True" condition-coverage="100% (2/2)">
+            <line number="222" hits="2" branch="False" />
+            <line number="224" hits="2" branch="True" condition-coverage="100% (2/2)">
               <conditions>
                 <condition number="172" type="jump" coverage="100%" />
               </conditions>
             </line>
-            <line number="224" hits="1" branch="False" />
             <line number="225" hits="1" branch="False" />
-            <line number="227" hits="1" branch="False" />
-            <line number="229" hits="1" branch="True" condition-coverage="66.66% (4/6)">
+            <line number="226" hits="1" branch="False" />
+            <line number="228" hits="1" branch="False" />
+            <line number="230" hits="1" branch="True" condition-coverage="66.66% (4/6)">
               <conditions>
                 <condition number="213" type="jump" coverage="50%" />
                 <condition number="231" type="jump" coverage="50%" />
                 <condition number="256" type="jump" coverage="100%" />
               </conditions>
             </line>
-            <line number="230" hits="1" branch="False" />
             <line number="231" hits="1" branch="False" />
             <line number="232" hits="1" branch="False" />
             <line number="233" hits="1" branch="False" />
             <line number="234" hits="1" branch="False" />
-            <line number="236" hits="2" branch="False" />
+            <line number="235" hits="1" branch="False" />
             <line number="237" hits="2" branch="False" />
-            <line number="239" hits="2" branch="False" />
+            <line number="238" hits="2" branch="False" />
             <line number="240" hits="2" branch="False" />
-            <line number="21" hits="18" branch="False" />
+            <line number="241" hits="2" branch="False" />
             <line number="22" hits="18" branch="False" />
             <line number="23" hits="18" branch="False" />
             <line number="24" hits="18" branch="False" />
@@ -355,19 +354,20 @@
             <line number="29" hits="18" branch="False" />
             <line number="30" hits="18" branch="False" />
             <line number="31" hits="18" branch="False" />
-            <line number="33" hits="18" branch="False" />
+            <line number="32" hits="18" branch="False" />
+            <line number="34" hits="18" branch="False" />
           </lines>
         </class>
         <class name="Cozy_Haven.Services.BookingService/&lt;&gt;c" filename="CozyHavenProject\Cozy_Haven\Services\BookingService.cs" line-rate="1" branch-rate="1" complexity="10">
           <methods>
             <method name="&lt;GetHotelBookings&gt;b__12_1" signature="(Cozy_Haven.Models.Room)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="121" hits="7" branch="False" />
+                <line number="122" hits="7" branch="False" />
               </lines>
             </method>
             <method name="&lt;GetTotalRevenue&gt;b__17_0" signature="(Cozy_Haven.Models.Booking)" line-rate="1" branch-rate="1" complexity="2">
               <lines>
-                <line number="252" hits="4" branch="True" condition-coverage="100% (2/2)">
+                <line number="253" hits="4" branch="True" condition-coverage="100% (2/2)">
                   <conditions>
                     <condition number="16" type="jump" coverage="100%" />
                   </conditions>
@@ -376,73 +376,73 @@
             </method>
             <method name="&lt;GetTotalRevenue&gt;b__17_1" signature="(Cozy_Haven.Models.Booking)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="253" hits="3" branch="False" />
+                <line number="254" hits="3" branch="False" />
               </lines>
             </method>
             <method name="&lt;GetLineChartData&gt;b__18_0" signature="(Cozy_Haven.Models.Booking)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="260" hits="5" branch="False" />
+                <line number="261" hits="5" branch="False" />
               </lines>
             </method>
             <method name="&lt;GetLineChartData&gt;b__18_1" signature="(System.Linq.IGrouping`2&lt;System.Int32,Cozy_Haven.Models.Booking&gt;)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="261" hits="3" branch="False" />
+                <line number="262" hits="3" branch="False" />
               </lines>
             </method>
             <method name="&lt;GetCancelledHotelBookings&gt;b__19_1" signature="(Cozy_Haven.Models.Room)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="306" hits="6" branch="False" />
+                <line number="308" hits="6" branch="False" />
               </lines>
             </method>
             <method name="&lt;GetHotelBookingsCount&gt;b__20_1" signature="(Cozy_Haven.Models.Room)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="366" hits="6" branch="False" />
+                <line number="369" hits="6" branch="False" />
               </lines>
             </method>
             <method name="&lt;GetHotelCollections&gt;b__21_1" signature="(Cozy_Haven.Models.Room)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="376" hits="6" branch="False" />
+                <line number="379" hits="6" branch="False" />
               </lines>
             </method>
             <method name="&lt;GetHotelCollections&gt;b__21_3" signature="(Cozy_Haven.Models.Booking)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="381" hits="3" branch="False" />
+                <line number="384" hits="3" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="121" hits="7" branch="False" />
-            <line number="252" hits="4" branch="True" condition-coverage="100% (2/2)">
+            <line number="122" hits="7" branch="False" />
+            <line number="253" hits="4" branch="True" condition-coverage="100% (2/2)">
               <conditions>
                 <condition number="16" type="jump" coverage="100%" />
               </conditions>
             </line>
-            <line number="253" hits="3" branch="False" />
-            <line number="260" hits="5" branch="False" />
-            <line number="261" hits="3" branch="False" />
-            <line number="306" hits="6" branch="False" />
-            <line number="366" hits="6" branch="False" />
-            <line number="376" hits="6" branch="False" />
-            <line number="381" hits="3" branch="False" />
+            <line number="254" hits="3" branch="False" />
+            <line number="261" hits="5" branch="False" />
+            <line number="262" hits="3" branch="False" />
+            <line number="308" hits="6" branch="False" />
+            <line number="369" hits="6" branch="False" />
+            <line number="379" hits="6" branch="False" />
+            <line number="384" hits="3" branch="False" />
           </lines>
         </class>
         <class name="Cozy_Haven.Services.BookingService/&lt;&gt;c__DisplayClass12_0" filename="CozyHavenProject\Cozy_Haven\Services\BookingService.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
             <method name="&lt;GetHotelBookings&gt;b__2" signature="(Cozy_Haven.Models.Booking)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="124" hits="5" branch="False" />
+                <line number="125" hits="5" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="124" hits="5" branch="False" />
+            <line number="125" hits="5" branch="False" />
           </lines>
         </class>
         <class name="Cozy_Haven.Services.BookingService/&lt;&gt;c__DisplayClass19_0" filename="CozyHavenProject\Cozy_Haven\Services\BookingService.cs" line-rate="1" branch-rate="0.5" complexity="2">
           <methods>
             <method name="&lt;GetCancelledHotelBookings&gt;b__2" signature="(Cozy_Haven.Models.Booking)" line-rate="1" branch-rate="0.5" complexity="2">
               <lines>
-                <line number="309" hits="4" branch="True" condition-coverage="50% (1/2)">
+                <line number="311" hits="4" branch="True" condition-coverage="50% (1/2)">
                   <conditions>
                     <condition number="17" type="jump" coverage="50%" />
                   </conditions>
@@ -451,7 +451,7 @@
             </method>
           </methods>
           <lines>
-            <line number="309" hits="4" branch="True" condition-coverage="50% (1/2)">
+            <line number="311" hits="4" branch="True" condition-coverage="50% (1/2)">
               <conditions>
                 <condition number="17" type="jump" coverage="50%" />
               </conditions>
@@ -462,19 +462,19 @@
           <methods>
             <method name="&lt;GetHotelBookingsCount&gt;b__2" signature="(Cozy_Haven.Models.Booking)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="369" hits="4" branch="False" />
+                <line number="372" hits="4" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="369" hits="4" branch="False" />
+            <line number="372" hits="4" branch="False" />
           </lines>
         </class>
         <class name="Cozy_Haven.Services.BookingService/&lt;&gt;c__DisplayClass21_0" filename="CozyHavenProject\Cozy_Haven\Services\BookingService.cs" line-rate="1" branch-rate="1" complexity="4">
           <methods>
             <method name="&lt;GetHotelCollections&gt;b__2" signature="(Cozy_Haven.Models.Booking)" line-rate="1" branch-rate="1" complexity="4">
               <lines>
-                <line number="379" hits="4" branch="True" condition-coverage="100% (4/4)">
+                <line number="382" hits="4" branch="True" condition-coverage="100% (4/4)">
                   <conditions>
                     <condition number="17" type="jump" coverage="100%" />
                     <condition number="35" type="jump" coverage="100%" />
@@ -484,7 +484,7 @@
             </method>
           </methods>
           <lines>
-            <line number="379" hits="4" branch="True" condition-coverage="100% (4/4)">
+            <line number="382" hits="4" branch="True" condition-coverage="100% (4/4)">
               <conditions>
                 <condition number="17" type="jump" coverage="100%" />
                 <condition number="35" type="jump" coverage="100%" />
@@ -496,60 +496,59 @@
           <methods>
             <method name="&lt;GetBookingsByRoomId&gt;b__0" signature="(Cozy_Haven.Models.Booking)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="73" hits="8" branch="False" />
+                <line number="74" hits="8" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="73" hits="8" branch="False" />
+            <line number="74" hits="8" branch="False" />
           </lines>
         </class>
         <class name="Cozy_Haven.Services.BookingService/&lt;AddBooking&gt;d__14" filename="CozyHavenProject\Cozy_Haven\Services\BookingService.cs" line-rate="0.6551" branch-rate="0.5" complexity="10">
           <methods>
             <method name="MoveNext" signature="()" line-rate="0.6551" branch-rate="0.5" complexity="10">
               <lines>
-                <line number="146" hits="1" branch="False" />
                 <line number="147" hits="1" branch="False" />
                 <line number="148" hits="1" branch="False" />
                 <line number="149" hits="1" branch="False" />
-                <line number="150" hits="1" branch="True" condition-coverage="50% (1/2)">
+                <line number="150" hits="1" branch="False" />
+                <line number="151" hits="1" branch="True" condition-coverage="50% (1/2)">
                   <conditions>
                     <condition number="265" type="jump" coverage="50%" />
                   </conditions>
                 </line>
-                <line number="151" hits="0" branch="False" />
                 <line number="152" hits="0" branch="False" />
-                <line number="155" hits="1" branch="False" />
-                <line number="156" hits="1" branch="True" condition-coverage="50% (1/2)">
+                <line number="153" hits="0" branch="False" />
+                <line number="156" hits="1" branch="False" />
+                <line number="157" hits="1" branch="True" condition-coverage="50% (1/2)">
                   <conditions>
                     <condition number="431" type="jump" coverage="50%" />
                   </conditions>
                 </line>
-                <line number="157" hits="0" branch="False" />
                 <line number="158" hits="0" branch="False" />
-                <line number="161" hits="1" branch="True" condition-coverage="50% (1/2)">
+                <line number="159" hits="0" branch="False" />
+                <line number="162" hits="1" branch="True" condition-coverage="50% (1/2)">
                   <conditions>
                     <condition number="476" type="jump" coverage="50%" />
                   </conditions>
                 </line>
-                <line number="162" hits="0" branch="False" />
                 <line number="163" hits="0" branch="False" />
-                <line number="166" hits="1" branch="True" condition-coverage="50% (1/2)">
+                <line number="164" hits="0" branch="False" />
+                <line number="167" hits="1" branch="True" condition-coverage="50% (1/2)">
                   <conditions>
                     <condition number="533" type="jump" coverage="50%" />
                   </conditions>
                 </line>
-                <line number="167" hits="0" branch="False" />
                 <line number="168" hits="0" branch="False" />
-                <line number="171" hits="1" branch="False" />
-                <line number="172" hits="1" branch="True" condition-coverage="50% (1/2)">
+                <line number="169" hits="0" branch="False" />
+                <line number="172" hits="1" branch="False" />
+                <line number="173" hits="1" branch="True" condition-coverage="50% (1/2)">
                   <conditions>
                     <condition number="704" type="jump" coverage="50%" />
                   </conditions>
                 </line>
-                <line number="173" hits="0" branch="False" />
                 <line number="174" hits="0" branch="False" />
-                <line number="182" hits="1" branch="False" />
+                <line number="175" hits="0" branch="False" />
                 <line number="183" hits="1" branch="False" />
                 <line number="184" hits="1" branch="False" />
                 <line number="185" hits="1" branch="False" />
@@ -557,52 +556,52 @@
                 <line number="187" hits="1" branch="False" />
                 <line number="188" hits="1" branch="False" />
                 <line number="189" hits="1" branch="False" />
+                <line number="190" hits="1" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="146" hits="1" branch="False" />
             <line number="147" hits="1" branch="False" />
             <line number="148" hits="1" branch="False" />
             <line number="149" hits="1" branch="False" />
-            <line number="150" hits="1" branch="True" condition-coverage="50% (1/2)">
+            <line number="150" hits="1" branch="False" />
+            <line number="151" hits="1" branch="True" condition-coverage="50% (1/2)">
               <conditions>
                 <condition number="265" type="jump" coverage="50%" />
               </conditions>
             </line>
-            <line number="151" hits="0" branch="False" />
             <line number="152" hits="0" branch="False" />
-            <line number="155" hits="1" branch="False" />
-            <line number="156" hits="1" branch="True" condition-coverage="50% (1/2)">
+            <line number="153" hits="0" branch="False" />
+            <line number="156" hits="1" branch="False" />
+            <line number="157" hits="1" branch="True" condition-coverage="50% (1/2)">
               <conditions>
                 <condition number="431" type="jump" coverage="50%" />
               </conditions>
             </line>
-            <line number="157" hits="0" branch="False" />
             <line number="158" hits="0" branch="False" />
-            <line number="161" hits="1" branch="True" condition-coverage="50% (1/2)">
+            <line number="159" hits="0" branch="False" />
+            <line number="162" hits="1" branch="True" condition-coverage="50% (1/2)">
               <conditions>
                 <condition number="476" type="jump" coverage="50%" />
               </conditions>
             </line>
-            <line number="162" hits="0" branch="False" />
             <line number="163" hits="0" branch="False" />
-            <line number="166" hits="1" branch="True" condition-coverage="50% (1/2)">
+            <line number="164" hits="0" branch="False" />
+            <line number="167" hits="1" branch="True" condition-coverage="50% (1/2)">
               <conditions>
                 <condition number="533" type="jump" coverage="50%" />
               </conditions>
             </line>
-            <line number="167" hits="0" branch="False" />
             <line number="168" hits="0" branch="False" />
-            <line number="171" hits="1" branch="False" />
-            <line number="172" hits="1" branch="True" condition-coverage="50% (1/2)">
+            <line number="169" hits="0" branch="False" />
+            <line number="172" hits="1" branch="False" />
+            <line number="173" hits="1" branch="True" condition-coverage="50% (1/2)">
               <conditions>
                 <condition number="704" type="jump" coverage="50%" />
               </conditions>
             </line>
-            <line number="173" hits="0" branch="False" />
             <line number="174" hits="0" branch="False" />
-            <line number="182" hits="1" branch="False" />
+            <line number="175" hits="0" branch="False" />
             <line number="183" hits="1" branch="False" />
             <line number="184" hits="1" branch="False" />
             <line number="185" hits="1" branch="False" />
@@ -610,322 +609,323 @@
             <line number="187" hits="1" branch="False" />
             <line number="188" hits="1" branch="False" />
             <line number="189" hits="1" branch="False" />
+            <line number="190" hits="1" branch="False" />
           </lines>
         </class>
         <class name="Cozy_Haven.Services.BookingService/&lt;DeleteBooking&gt;d__6" filename="CozyHavenProject\Cozy_Haven\Services\BookingService.cs" line-rate="0.8887999999999999" branch-rate="0.5" complexity="2">
           <methods>
             <method name="MoveNext" signature="()" line-rate="0.8887999999999999" branch-rate="0.5" complexity="2">
               <lines>
-                <line number="36" hits="1" branch="False" />
                 <line number="37" hits="1" branch="False" />
                 <line number="38" hits="1" branch="False" />
-                <line number="39" hits="1" branch="True" condition-coverage="50% (1/2)">
+                <line number="39" hits="1" branch="False" />
+                <line number="40" hits="1" branch="True" condition-coverage="50% (1/2)">
                   <conditions>
                     <condition number="197" type="jump" coverage="50%" />
                   </conditions>
                 </line>
-                <line number="40" hits="1" branch="False" />
                 <line number="41" hits="1" branch="False" />
                 <line number="42" hits="1" branch="False" />
-                <line number="44" hits="0" branch="False" />
-                <line number="45" hits="1" branch="False" />
+                <line number="43" hits="1" branch="False" />
+                <line number="45" hits="0" branch="False" />
+                <line number="46" hits="1" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="36" hits="1" branch="False" />
             <line number="37" hits="1" branch="False" />
             <line number="38" hits="1" branch="False" />
-            <line number="39" hits="1" branch="True" condition-coverage="50% (1/2)">
+            <line number="39" hits="1" branch="False" />
+            <line number="40" hits="1" branch="True" condition-coverage="50% (1/2)">
               <conditions>
                 <condition number="197" type="jump" coverage="50%" />
               </conditions>
             </line>
-            <line number="40" hits="1" branch="False" />
             <line number="41" hits="1" branch="False" />
             <line number="42" hits="1" branch="False" />
-            <line number="44" hits="0" branch="False" />
-            <line number="45" hits="1" branch="False" />
+            <line number="43" hits="1" branch="False" />
+            <line number="45" hits="0" branch="False" />
+            <line number="46" hits="1" branch="False" />
           </lines>
         </class>
         <class name="Cozy_Haven.Services.BookingService/&lt;GetAllBookings&gt;d__7" filename="CozyHavenProject\Cozy_Haven\Services\BookingService.cs" line-rate="0.8332999999999999" branch-rate="0.5" complexity="2">
           <methods>
             <method name="MoveNext" signature="()" line-rate="0.8332999999999999" branch-rate="0.5" complexity="2">
               <lines>
-                <line number="48" hits="9" branch="False" />
                 <line number="49" hits="9" branch="False" />
                 <line number="50" hits="9" branch="False" />
-                <line number="51" hits="27" branch="True" condition-coverage="50% (1/2)">
+                <line number="51" hits="9" branch="False" />
+                <line number="52" hits="27" branch="True" condition-coverage="50% (1/2)">
                   <conditions>
                     <condition number="185" type="jump" coverage="50%" />
                   </conditions>
                 </line>
-                <line number="52" hits="0" branch="False" />
-                <line number="54" hits="9" branch="False" />
+                <line number="53" hits="0" branch="False" />
+                <line number="55" hits="9" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="48" hits="9" branch="False" />
             <line number="49" hits="9" branch="False" />
             <line number="50" hits="9" branch="False" />
-            <line number="51" hits="27" branch="True" condition-coverage="50% (1/2)">
+            <line number="51" hits="9" branch="False" />
+            <line number="52" hits="27" branch="True" condition-coverage="50% (1/2)">
               <conditions>
                 <condition number="185" type="jump" coverage="50%" />
               </conditions>
             </line>
-            <line number="52" hits="0" branch="False" />
-            <line number="54" hits="9" branch="False" />
+            <line number="53" hits="0" branch="False" />
+            <line number="55" hits="9" branch="False" />
           </lines>
         </class>
         <class name="Cozy_Haven.Services.BookingService/&lt;GetBooking&gt;d__8" filename="CozyHavenProject\Cozy_Haven\Services\BookingService.cs" line-rate="1" branch-rate="1" complexity="2">
           <methods>
             <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="2">
               <lines>
-                <line number="57" hits="4" branch="False" />
                 <line number="58" hits="4" branch="False" />
                 <line number="59" hits="4" branch="False" />
-                <line number="60" hits="10" branch="True" condition-coverage="100% (2/2)">
+                <line number="60" hits="4" branch="False" />
+                <line number="61" hits="10" branch="True" condition-coverage="100% (2/2)">
                   <conditions>
                     <condition number="206" type="jump" coverage="100%" />
                   </conditions>
                 </line>
-                <line number="61" hits="1" branch="False" />
-                <line number="62" hits="3" branch="False" />
+                <line number="62" hits="1" branch="False" />
+                <line number="63" hits="3" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="57" hits="4" branch="False" />
             <line number="58" hits="4" branch="False" />
             <line number="59" hits="4" branch="False" />
-            <line number="60" hits="10" branch="True" condition-coverage="100% (2/2)">
+            <line number="60" hits="4" branch="False" />
+            <line number="61" hits="10" branch="True" condition-coverage="100% (2/2)">
               <conditions>
                 <condition number="206" type="jump" coverage="100%" />
               </conditions>
             </line>
-            <line number="61" hits="1" branch="False" />
-            <line number="62" hits="3" branch="False" />
+            <line number="62" hits="1" branch="False" />
+            <line number="63" hits="3" branch="False" />
           </lines>
         </class>
         <class name="Cozy_Haven.Services.BookingService/&lt;GetBookingsByRoomId&gt;d__9" filename="CozyHavenProject\Cozy_Haven\Services\BookingService.cs" line-rate="0.7142000000000001" branch-rate="0.5" complexity="2">
           <methods>
             <method name="MoveNext" signature="()" line-rate="0.7142000000000001" branch-rate="0.5" complexity="2">
               <lines>
-                <line number="65" hits="3" branch="False" />
                 <line number="66" hits="3" branch="False" />
                 <line number="67" hits="3" branch="False" />
-                <line number="68" hits="3" branch="True" condition-coverage="50% (1/2)">
+                <line number="68" hits="3" branch="False" />
+                <line number="69" hits="3" branch="True" condition-coverage="50% (1/2)">
                   <conditions>
                     <condition number="231" type="jump" coverage="50%" />
                   </conditions>
                 </line>
-                <line number="69" hits="0" branch="False" />
                 <line number="70" hits="0" branch="False" />
-                <line number="74" hits="3" branch="False" />
+                <line number="71" hits="0" branch="False" />
+                <line number="75" hits="3" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="65" hits="3" branch="False" />
             <line number="66" hits="3" branch="False" />
             <line number="67" hits="3" branch="False" />
-            <line number="68" hits="3" branch="True" condition-coverage="50% (1/2)">
+            <line number="68" hits="3" branch="False" />
+            <line number="69" hits="3" branch="True" condition-coverage="50% (1/2)">
               <conditions>
                 <condition number="231" type="jump" coverage="50%" />
               </conditions>
             </line>
-            <line number="69" hits="0" branch="False" />
             <line number="70" hits="0" branch="False" />
-            <line number="74" hits="3" branch="False" />
+            <line number="71" hits="0" branch="False" />
+            <line number="75" hits="3" branch="False" />
           </lines>
         </class>
         <class name="Cozy_Haven.Services.BookingService/&lt;GetBookingsCount&gt;d__10" filename="CozyHavenProject\Cozy_Haven\Services\BookingService.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
             <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="91" hits="1" branch="False" />
                 <line number="92" hits="1" branch="False" />
                 <line number="93" hits="1" branch="False" />
                 <line number="94" hits="1" branch="False" />
+                <line number="95" hits="1" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="91" hits="1" branch="False" />
             <line number="92" hits="1" branch="False" />
             <line number="93" hits="1" branch="False" />
             <line number="94" hits="1" branch="False" />
+            <line number="95" hits="1" branch="False" />
           </lines>
         </class>
         <class name="Cozy_Haven.Services.BookingService/&lt;GetCancelledHotelBookings&gt;d__19" filename="CozyHavenProject\Cozy_Haven\Services\BookingService.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
             <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="303" hits="1" branch="False" />
-                <line number="304" hits="1" branch="False" />
                 <line number="305" hits="1" branch="False" />
-                <line number="308" hits="1" branch="False" />
-                <line number="311" hits="1" branch="False" />
-                <line number="312" hits="1" branch="False" />
+                <line number="306" hits="1" branch="False" />
+                <line number="307" hits="1" branch="False" />
+                <line number="310" hits="1" branch="False" />
+                <line number="313" hits="1" branch="False" />
+                <line number="314" hits="1" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="303" hits="1" branch="False" />
-            <line number="304" hits="1" branch="False" />
             <line number="305" hits="1" branch="False" />
-            <line number="308" hits="1" branch="False" />
-            <line number="311" hits="1" branch="False" />
-            <line number="312" hits="1" branch="False" />
+            <line number="306" hits="1" branch="False" />
+            <line number="307" hits="1" branch="False" />
+            <line number="310" hits="1" branch="False" />
+            <line number="313" hits="1" branch="False" />
+            <line number="314" hits="1" branch="False" />
           </lines>
         </class>
         <class name="Cozy_Haven.Services.BookingService/&lt;GetHotelBookings&gt;d__12" filename="CozyHavenProject\Cozy_Haven\Services\BookingService.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
             <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="118" hits="1" branch="False" />
                 <line number="119" hits="1" branch="False" />
                 <line number="120" hits="1" branch="False" />
-                <line number="123" hits="1" branch="False" />
-                <line number="126" hits="1" branch="False" />
+                <line number="121" hits="1" branch="False" />
+                <line number="124" hits="1" branch="False" />
                 <line number="127" hits="1" branch="False" />
+                <line number="128" hits="1" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="118" hits="1" branch="False" />
             <line number="119" hits="1" branch="False" />
             <line number="120" hits="1" branch="False" />
-            <line number="123" hits="1" branch="False" />
-            <line number="126" hits="1" branch="False" />
+            <line number="121" hits="1" branch="False" />
+            <line number="124" hits="1" branch="False" />
             <line number="127" hits="1" branch="False" />
+            <line number="128" hits="1" branch="False" />
           </lines>
         </class>
         <class name="Cozy_Haven.Services.BookingService/&lt;GetHotelBookingsCount&gt;d__20" filename="CozyHavenProject\Cozy_Haven\Services\BookingService.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
             <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="364" hits="1" branch="False" />
-                <line number="365" hits="1" branch="False" />
+                <line number="367" hits="1" branch="False" />
                 <line number="368" hits="1" branch="False" />
                 <line number="371" hits="1" branch="False" />
-                <line number="372" hits="1" branch="False" />
+                <line number="374" hits="1" branch="False" />
+                <line number="375" hits="1" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="364" hits="1" branch="False" />
-            <line number="365" hits="1" branch="False" />
+            <line number="367" hits="1" branch="False" />
             <line number="368" hits="1" branch="False" />
             <line number="371" hits="1" branch="False" />
-            <line number="372" hits="1" branch="False" />
+            <line number="374" hits="1" branch="False" />
+            <line number="375" hits="1" branch="False" />
           </lines>
         </class>
         <class name="Cozy_Haven.Services.BookingService/&lt;GetHotelCollections&gt;d__21" filename="CozyHavenProject\Cozy_Haven\Services\BookingService.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
             <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="374" hits="1" branch="False" />
-                <line number="375" hits="1" branch="False" />
+                <line number="377" hits="1" branch="False" />
                 <line number="378" hits="1" branch="False" />
-                <line number="383" hits="1" branch="False" />
-                <line number="384" hits="1" branch="False" />
+                <line number="381" hits="1" branch="False" />
+                <line number="386" hits="1" branch="False" />
+                <line number="387" hits="1" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="374" hits="1" branch="False" />
-            <line number="375" hits="1" branch="False" />
+            <line number="377" hits="1" branch="False" />
             <line number="378" hits="1" branch="False" />
-            <line number="383" hits="1" branch="False" />
-            <line number="384" hits="1" branch="False" />
+            <line number="381" hits="1" branch="False" />
+            <line number="386" hits="1" branch="False" />
+            <line number="387" hits="1" branch="False" />
           </lines>
         </class>
         <class name="Cozy_Haven.Services.BookingService/&lt;GetLineChartData&gt;d__18" filename="CozyHavenProject\Cozy_Haven\Services\BookingService.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
             <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="257" hits="1" branch="False" />
                 <line number="258" hits="1" branch="False" />
                 <line number="259" hits="1" branch="False" />
-                <line number="262" hits="1" branch="False" />
-                <line number="264" hits="1" branch="False" />
+                <line number="260" hits="1" branch="False" />
+                <line number="263" hits="1" branch="False" />
                 <line number="265" hits="1" branch="False" />
+                <line number="266" hits="1" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="257" hits="1" branch="False" />
             <line number="258" hits="1" branch="False" />
             <line number="259" hits="1" branch="False" />
-            <line number="262" hits="1" branch="False" />
-            <line number="264" hits="1" branch="False" />
+            <line number="260" hits="1" branch="False" />
+            <line number="263" hits="1" branch="False" />
             <line number="265" hits="1" branch="False" />
+            <line number="266" hits="1" branch="False" />
           </lines>
         </class>
         <class name="Cozy_Haven.Services.BookingService/&lt;GetTotalBookings&gt;d__16" filename="CozyHavenProject\Cozy_Haven\Services\BookingService.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
             <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="242" hits="1" branch="False" />
                 <line number="243" hits="1" branch="False" />
                 <line number="244" hits="1" branch="False" />
                 <line number="245" hits="1" branch="False" />
+                <line number="246" hits="1" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="242" hits="1" branch="False" />
             <line number="243" hits="1" branch="False" />
             <line number="244" hits="1" branch="False" />
             <line number="245" hits="1" branch="False" />
+            <line number="246" hits="1" branch="False" />
           </lines>
         </class>
         <class name="Cozy_Haven.Services.BookingService/&lt;GetTotalRevenue&gt;d__17" filename="CozyHavenProject\Cozy_Haven\Services\BookingService.cs" line-rate="1" branch-rate="0.5" complexity="2">
           <methods>
             <method name="MoveNext" signature="()" line-rate="1" branch-rate="0.5" complexity="2">
               <lines>
-                <line number="247" hits="1" branch="False" />
                 <line number="248" hits="1" branch="False" />
-                <line number="249" hits="1" branch="True" condition-coverage="50% (1/2)">
+                <line number="249" hits="1" branch="False" />
+                <line number="250" hits="1" branch="True" condition-coverage="50% (1/2)">
                   <conditions>
                     <condition number="158" type="jump" coverage="50%" />
                   </conditions>
                 </line>
-                <line number="251" hits="1" branch="False" />
-                <line number="254" hits="1" branch="False" />
+                <line number="252" hits="1" branch="False" />
                 <line number="255" hits="1" branch="False" />
+                <line number="256" hits="1" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="247" hits="1" branch="False" />
             <line number="248" hits="1" branch="False" />
-            <line number="249" hits="1" branch="True" condition-coverage="50% (1/2)">
+            <line number="249" hits="1" branch="False" />
+            <line number="250" hits="1" branch="True" condition-coverage="50% (1/2)">
               <conditions>
                 <condition number="158" type="jump" coverage="50%" />
               </conditions>
             </line>
-            <line number="251" hits="1" branch="False" />
-            <line number="254" hits="1" branch="False" />
+            <line number="252" hits="1" branch="False" />
             <line number="255" hits="1" branch="False" />
+            <line number="256" hits="1" branch="False" />
           </lines>
         </class>
         <class name="Cozy_Haven.Services.BookingService/&lt;IsRoomAvailable&gt;d__13" filename="CozyHavenProject\Cozy_Haven\Services\BookingService.cs" line-rate="0.8461" branch-rate="0.7857" complexity="14">
           <methods>
             <method name="MoveNext" signature="()" line-rate="0.8461" branch-rate="0.7857" complexity="14">
               <lines>
-                <line number="129" hits="2" branch="False" />
                 <line number="130" hits="2" branch="False" />
                 <line number="131" hits="2" branch="False" />
-                <line number="132" hits="10" branch="True" condition-coverage="100% (2/2)">
+                <line number="132" hits="2" branch="False" />
+                <line number="133" hits="10" branch="True" condition-coverage="100% (2/2)">
                   <conditions>
                     <condition number="392" type="jump" coverage="100%" />
                   </conditions>
                 </line>
-                <line number="133" hits="2" branch="False" />
-                <line number="134" hits="2" branch="True" condition-coverage="75% (9/12)">
+                <line number="134" hits="2" branch="False" />
+                <line number="135" hits="2" branch="True" condition-coverage="75% (9/12)">
                   <conditions>
                     <condition number="236" type="jump" coverage="100%" />
                     <condition number="260" type="jump" coverage="50%" />
@@ -935,27 +935,27 @@
                     <condition number="366" type="jump" coverage="50%" />
                   </conditions>
                 </line>
-                <line number="135" hits="2" branch="False" />
                 <line number="136" hits="2" branch="False" />
-                <line number="137" hits="0" branch="False" />
+                <line number="137" hits="2" branch="False" />
                 <line number="138" hits="0" branch="False" />
-                <line number="140" hits="2" branch="False" />
-                <line number="142" hits="2" branch="False" />
+                <line number="139" hits="0" branch="False" />
+                <line number="141" hits="2" branch="False" />
                 <line number="143" hits="2" branch="False" />
+                <line number="144" hits="2" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="129" hits="2" branch="False" />
             <line number="130" hits="2" branch="False" />
             <line number="131" hits="2" branch="False" />
-            <line number="132" hits="10" branch="True" condition-coverage="100% (2/2)">
+            <line number="132" hits="2" branch="False" />
+            <line number="133" hits="10" branch="True" condition-coverage="100% (2/2)">
               <conditions>
                 <condition number="392" type="jump" coverage="100%" />
               </conditions>
             </line>
-            <line number="133" hits="2" branch="False" />
-            <line number="134" hits="2" branch="True" condition-coverage="75% (9/12)">
+            <line number="134" hits="2" branch="False" />
+            <line number="135" hits="2" branch="True" condition-coverage="75% (9/12)">
               <conditions>
                 <condition number="236" type="jump" coverage="100%" />
                 <condition number="260" type="jump" coverage="50%" />
@@ -965,85 +965,85 @@
                 <condition number="366" type="jump" coverage="50%" />
               </conditions>
             </line>
-            <line number="135" hits="2" branch="False" />
             <line number="136" hits="2" branch="False" />
-            <line number="137" hits="0" branch="False" />
+            <line number="137" hits="2" branch="False" />
             <line number="138" hits="0" branch="False" />
-            <line number="140" hits="2" branch="False" />
-            <line number="142" hits="2" branch="False" />
+            <line number="139" hits="0" branch="False" />
+            <line number="141" hits="2" branch="False" />
             <line number="143" hits="2" branch="False" />
+            <line number="144" hits="2" branch="False" />
           </lines>
         </class>
         <class name="Cozy_Haven.Services.BookingService/&lt;UpdateBookingStatus&gt;d__11" filename="CozyHavenProject\Cozy_Haven\Services\BookingService.cs" line-rate="0.7222" branch-rate="0.5" complexity="8">
           <methods>
             <method name="MoveNext" signature="()" line-rate="0.7222" branch-rate="0.5" complexity="8">
               <lines>
-                <line number="97" hits="1" branch="False" />
                 <line number="98" hits="1" branch="False" />
                 <line number="99" hits="1" branch="False" />
-                <line number="100" hits="1" branch="True" condition-coverage="50% (1/2)">
+                <line number="100" hits="1" branch="False" />
+                <line number="101" hits="1" branch="True" condition-coverage="50% (1/2)">
                   <conditions>
                     <condition number="197" type="jump" coverage="50%" />
                   </conditions>
                 </line>
-                <line number="101" hits="1" branch="False" />
                 <line number="102" hits="1" branch="False" />
-                <line number="103" hits="1" branch="True" condition-coverage="50% (2/4)">
+                <line number="103" hits="1" branch="False" />
+                <line number="104" hits="1" branch="True" condition-coverage="50% (2/4)">
                   <conditions>
                     <condition number="237" type="jump" coverage="50%" />
                     <condition number="262" type="jump" coverage="50%" />
                   </conditions>
                 </line>
-                <line number="104" hits="1" branch="False" />
                 <line number="105" hits="1" branch="False" />
                 <line number="106" hits="1" branch="False" />
-                <line number="107" hits="0" branch="True" condition-coverage="50% (1/2)">
+                <line number="107" hits="1" branch="False" />
+                <line number="108" hits="0" branch="True" condition-coverage="50% (1/2)">
                   <conditions>
                     <condition number="306" type="jump" coverage="50%" />
                   </conditions>
                 </line>
-                <line number="108" hits="0" branch="False" />
-                <line number="110" hits="0" branch="False" />
+                <line number="109" hits="0" branch="False" />
                 <line number="111" hits="0" branch="False" />
-                <line number="112" hits="1" branch="False" />
+                <line number="112" hits="0" branch="False" />
                 <line number="113" hits="1" branch="False" />
-                <line number="115" hits="0" branch="False" />
-                <line number="116" hits="1" branch="False" />
+                <line number="114" hits="1" branch="False" />
+                <line number="116" hits="0" branch="False" />
+                <line number="117" hits="1" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="97" hits="1" branch="False" />
             <line number="98" hits="1" branch="False" />
             <line number="99" hits="1" branch="False" />
-            <line number="100" hits="1" branch="True" condition-coverage="50% (1/2)">
+            <line number="100" hits="1" branch="False" />
+            <line number="101" hits="1" branch="True" condition-coverage="50% (1/2)">
               <conditions>
                 <condition number="197" type="jump" coverage="50%" />
               </conditions>
             </line>
-            <line number="101" hits="1" branch="False" />
             <line number="102" hits="1" branch="False" />
-            <line number="103" hits="1" branch="True" condition-coverage="50% (2/4)">
+            <line number="103" hits="1" branch="False" />
+            <line number="104" hits="1" branch="True" condition-coverage="50% (2/4)">
               <conditions>
                 <condition number="237" type="jump" coverage="50%" />
                 <condition number="262" type="jump" coverage="50%" />
               </conditions>
             </line>
-            <line number="104" hits="1" branch="False" />
             <line number="105" hits="1" branch="False" />
             <line number="106" hits="1" branch="False" />
-            <line number="107" hits="0" branch="True" condition-coverage="50% (1/2)">
+            <line number="107" hits="1" branch="False" />
+            <line number="108" hits="0" branch="True" condition-coverage="50% (1/2)">
               <conditions>
                 <condition number="306" type="jump" coverage="50%" />
               </conditions>
             </line>
-            <line number="108" hits="0" branch="False" />
-            <line number="110" hits="0" branch="False" />
+            <line number="109" hits="0" branch="False" />
             <line number="111" hits="0" branch="False" />
-            <line number="112" hits="1" branch="False" />
+            <line number="112" hits="0" branch="False" />
             <line number="113" hits="1" branch="False" />
-            <line number="115" hits="0" branch="False" />
-            <line number="116" hits="1" branch="False" />
+            <line number="114" hits="1" branch="False" />
+            <line number="116" hits="0" branch="False" />
+            <line number="117" hits="1" branch="False" />
           </lines>
         </class>
         <class name="Cozy_Haven.Services.HotelService" filename="CozyHavenProject\Cozy_Haven\Services\HotelService.cs" line-rate="0.9" branch-rate="0.5" complexity="3">
@@ -2250,141 +2250,91 @@
             <line number="44" hits="1" branch="False" />
           </lines>
         </class>
-        <class name="Cozy_Haven.Services.UserService" filename="CozyHavenProject\Cozy_Haven\Services\UserService.cs" line-rate="0.8332999999999999" branch-rate="0.375" complexity="10">
+        <class name="Cozy_Haven.Services.UserService" filename="CozyHavenProject\Cozy_Haven\Services\UserService.cs" line-rate="0.9411" branch-rate="0.5" complexity="5">
           <methods>
-            <method name="ComparePasswords" signature="(System.Byte[],System.Byte[])" line-rate="0.5" branch-rate="0.25" complexity="4">
-              <lines>
-                <line number="46" hits="1" branch="False" />
-                <line number="47" hits="2" branch="True" condition-coverage="50% (1/2)">
-                  <conditions>
-                    <condition number="38" type="jump" coverage="50%" />
-                  </conditions>
-                </line>
-                <line number="48" hits="0" branch="False" />
-                <line number="49" hits="0" branch="True" condition-coverage="0% (0/2)">
-                  <conditions>
-                    <condition number="19" type="jump" coverage="0%" />
-                  </conditions>
-                </line>
-                <line number="50" hits="0" branch="False" />
-                <line number="51" hits="0" branch="False" />
-                <line number="52" hits="1" branch="False" />
-                <line number="53" hits="1" branch="False" />
-              </lines>
-            </method>
-            <method name="GetPasswordEncrypted" signature="(System.String,System.Byte[])" line-rate="1" branch-rate="1" complexity="1">
-              <lines>
-                <line number="56" hits="2" branch="False" />
-                <line number="57" hits="2" branch="False" />
-                <line number="58" hits="2" branch="False" />
-                <line number="59" hits="2" branch="False" />
-                <line number="60" hits="2" branch="False" />
-              </lines>
-            </method>
             <method name="GetAllUsers" signature="()" line-rate="0.8332999999999999" branch-rate="0.5" complexity="2">
               <lines>
-                <line number="76" hits="1" branch="False" />
-                <line number="77" hits="1" branch="False" />
                 <line number="78" hits="1" branch="False" />
-                <line number="79" hits="2" branch="True" condition-coverage="50% (1/2)">
+                <line number="79" hits="1" branch="False" />
+                <line number="80" hits="1" branch="False" />
+                <line number="81" hits="2" branch="True" condition-coverage="50% (1/2)">
                   <conditions>
                     <condition number="41" type="jump" coverage="50%" />
                   </conditions>
                 </line>
-                <line number="80" hits="0" branch="False" />
-                <line number="81" hits="1" branch="False" />
+                <line number="82" hits="0" branch="False" />
+                <line number="83" hits="1" branch="False" />
               </lines>
             </method>
             <method name="GetUser" signature="(System.String)" line-rate="1" branch-rate="0.5" complexity="2">
               <lines>
-                <line number="84" hits="4" branch="False" />
-                <line number="85" hits="4" branch="False" />
-                <line number="86" hits="4" branch="False" />
-                <line number="87" hits="4" branch="True" condition-coverage="50% (1/2)">
+                <line number="87" hits="4" branch="False" />
+                <line number="88" hits="4" branch="False" />
+                <line number="89" hits="4" branch="False" />
+                <line number="90" hits="4" branch="True" condition-coverage="50% (1/2)">
                   <conditions>
                     <condition number="47" type="jump" coverage="50%" />
                   </conditions>
                 </line>
-                <line number="88" hits="4" branch="False" />
-                <line number="89" hits="4" branch="False" />
+                <line number="91" hits="4" branch="False" />
+                <line number="92" hits="4" branch="False" />
               </lines>
             </method>
             <method name=".ctor" signature="(Cozy_Haven.Interfaces.IRepository`2&lt;System.String,Cozy_Haven.Models.User&gt;,Microsoft.Extensions.Logging.ILogger`1&lt;Cozy_Haven.Services.UserService&gt;,Cozy_Haven.Interfaces.ITokenService)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="19" hits="22" branch="False" />
-                <line number="20" hits="11" branch="False" />
+                <line number="20" hits="22" branch="False" />
                 <line number="21" hits="11" branch="False" />
                 <line number="22" hits="11" branch="False" />
                 <line number="23" hits="11" branch="False" />
+                <line number="24" hits="11" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="46" hits="1" branch="False" />
-            <line number="47" hits="2" branch="True" condition-coverage="50% (1/2)">
-              <conditions>
-                <condition number="38" type="jump" coverage="50%" />
-              </conditions>
-            </line>
-            <line number="48" hits="0" branch="False" />
-            <line number="49" hits="0" branch="True" condition-coverage="0% (0/2)">
-              <conditions>
-                <condition number="19" type="jump" coverage="0%" />
-              </conditions>
-            </line>
-            <line number="50" hits="0" branch="False" />
-            <line number="51" hits="0" branch="False" />
-            <line number="52" hits="1" branch="False" />
-            <line number="53" hits="1" branch="False" />
-            <line number="56" hits="2" branch="False" />
-            <line number="57" hits="2" branch="False" />
-            <line number="58" hits="2" branch="False" />
-            <line number="59" hits="2" branch="False" />
-            <line number="60" hits="2" branch="False" />
-            <line number="76" hits="1" branch="False" />
-            <line number="77" hits="1" branch="False" />
             <line number="78" hits="1" branch="False" />
-            <line number="79" hits="2" branch="True" condition-coverage="50% (1/2)">
+            <line number="79" hits="1" branch="False" />
+            <line number="80" hits="1" branch="False" />
+            <line number="81" hits="2" branch="True" condition-coverage="50% (1/2)">
               <conditions>
                 <condition number="41" type="jump" coverage="50%" />
               </conditions>
             </line>
-            <line number="80" hits="0" branch="False" />
-            <line number="81" hits="1" branch="False" />
-            <line number="84" hits="4" branch="False" />
-            <line number="85" hits="4" branch="False" />
-            <line number="86" hits="4" branch="False" />
-            <line number="87" hits="4" branch="True" condition-coverage="50% (1/2)">
+            <line number="82" hits="0" branch="False" />
+            <line number="83" hits="1" branch="False" />
+            <line number="87" hits="4" branch="False" />
+            <line number="88" hits="4" branch="False" />
+            <line number="89" hits="4" branch="False" />
+            <line number="90" hits="4" branch="True" condition-coverage="50% (1/2)">
               <conditions>
                 <condition number="47" type="jump" coverage="50%" />
               </conditions>
             </line>
-            <line number="88" hits="4" branch="False" />
-            <line number="89" hits="4" branch="False" />
-            <line number="19" hits="22" branch="False" />
-            <line number="20" hits="11" branch="False" />
+            <line number="91" hits="4" branch="False" />
+            <line number="92" hits="4" branch="False" />
+            <line number="20" hits="22" branch="False" />
             <line number="21" hits="11" branch="False" />
             <line number="22" hits="11" branch="False" />
             <line number="23" hits="11" branch="False" />
+            <line number="24" hits="11" branch="False" />
           </lines>
         </class>
         <class name="Cozy_Haven.Services.UserService/&lt;&gt;c" filename="CozyHavenProject\Cozy_Haven\Services\UserService.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
             <method name="&lt;GetHotelOwners&gt;b__17_0" signature="(Cozy_Haven.Models.User)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="194" hits="3" branch="False" />
+                <line number="198" hits="3" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="194" hits="3" branch="False" />
+            <line number="198" hits="3" branch="False" />
           </lines>
         </class>
         <class name="Cozy_Haven.Services.UserService/&lt;&gt;c__DisplayClass16_0" filename="CozyHavenProject\Cozy_Haven\Services\UserService.cs" line-rate="1" branch-rate="0.5" complexity="2">
           <methods>
             <method name="&lt;GetUserByUsernameOrEmail&gt;b__0" signature="(Cozy_Haven.Models.User)" line-rate="1" branch-rate="0.5" complexity="2">
               <lines>
-                <line number="181" hits="2" branch="True" condition-coverage="50% (1/2)">
+                <line number="185" hits="2" branch="True" condition-coverage="50% (1/2)">
                   <conditions>
                     <condition number="17" type="jump" coverage="50%" />
                   </conditions>
@@ -2393,7 +2343,7 @@
             </method>
           </methods>
           <lines>
-            <line number="181" hits="2" branch="True" condition-coverage="50% (1/2)">
+            <line number="185" hits="2" branch="True" condition-coverage="50% (1/2)">
               <conditions>
                 <condition number="17" type="jump" coverage="50%" />
               </conditions>
@@ -2404,308 +2354,306 @@
           <methods>
             <method name="MoveNext" signature="()" line-rate="0.8887999999999999" branch-rate="0.5" complexity="2">
               <lines>
-                <line number="92" hits="1" branch="False" />
-                <line number="93" hits="1" branch="False" />
-                <line number="94" hits="1" branch="False" />
-                <line number="95" hits="1" branch="True" condition-coverage="50% (1/2)">
+                <line number="95" hits="1" branch="False" />
+                <line number="96" hits="1" branch="False" />
+                <line number="97" hits="1" branch="False" />
+                <line number="98" hits="1" branch="True" condition-coverage="50% (1/2)">
                   <conditions>
                     <condition number="207" type="jump" coverage="50%" />
                   </conditions>
                 </line>
-                <line number="96" hits="1" branch="False" />
-                <line number="97" hits="1" branch="False" />
-                <line number="98" hits="1" branch="False" />
-                <line number="100" hits="0" branch="False" />
+                <line number="99" hits="1" branch="False" />
+                <line number="100" hits="1" branch="False" />
                 <line number="101" hits="1" branch="False" />
+                <line number="103" hits="0" branch="False" />
+                <line number="104" hits="1" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="92" hits="1" branch="False" />
-            <line number="93" hits="1" branch="False" />
-            <line number="94" hits="1" branch="False" />
-            <line number="95" hits="1" branch="True" condition-coverage="50% (1/2)">
+            <line number="95" hits="1" branch="False" />
+            <line number="96" hits="1" branch="False" />
+            <line number="97" hits="1" branch="False" />
+            <line number="98" hits="1" branch="True" condition-coverage="50% (1/2)">
               <conditions>
                 <condition number="207" type="jump" coverage="50%" />
               </conditions>
             </line>
-            <line number="96" hits="1" branch="False" />
-            <line number="97" hits="1" branch="False" />
-            <line number="98" hits="1" branch="False" />
-            <line number="100" hits="0" branch="False" />
+            <line number="99" hits="1" branch="False" />
+            <line number="100" hits="1" branch="False" />
             <line number="101" hits="1" branch="False" />
+            <line number="103" hits="0" branch="False" />
+            <line number="104" hits="1" branch="False" />
           </lines>
         </class>
         <class name="Cozy_Haven.Services.UserService/&lt;GetHotelOwners&gt;d__17" filename="CozyHavenProject\Cozy_Haven\Services\UserService.cs" line-rate="0.7142000000000001" branch-rate="0.5" complexity="4">
           <methods>
             <method name="MoveNext" signature="()" line-rate="0.7142000000000001" branch-rate="0.5" complexity="4">
               <lines>
-                <line number="186" hits="1" branch="False" />
-                <line number="187" hits="1" branch="False" />
-                <line number="188" hits="1" branch="False" />
-                <line number="189" hits="1" branch="True" condition-coverage="50% (2/4)">
+                <line number="190" hits="1" branch="False" />
+                <line number="191" hits="1" branch="False" />
+                <line number="192" hits="1" branch="False" />
+                <line number="193" hits="1" branch="True" condition-coverage="50% (2/4)">
                   <conditions>
                     <condition number="178" type="jump" coverage="50%" />
                     <condition number="201" type="jump" coverage="50%" />
                   </conditions>
                 </line>
-                <line number="190" hits="0" branch="False" />
-                <line number="191" hits="0" branch="False" />
-                <line number="195" hits="1" branch="False" />
+                <line number="194" hits="0" branch="False" />
+                <line number="195" hits="0" branch="False" />
+                <line number="199" hits="1" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="186" hits="1" branch="False" />
-            <line number="187" hits="1" branch="False" />
-            <line number="188" hits="1" branch="False" />
-            <line number="189" hits="1" branch="True" condition-coverage="50% (2/4)">
+            <line number="190" hits="1" branch="False" />
+            <line number="191" hits="1" branch="False" />
+            <line number="192" hits="1" branch="False" />
+            <line number="193" hits="1" branch="True" condition-coverage="50% (2/4)">
               <conditions>
                 <condition number="178" type="jump" coverage="50%" />
                 <condition number="201" type="jump" coverage="50%" />
               </conditions>
             </line>
-            <line number="190" hits="0" branch="False" />
-            <line number="191" hits="0" branch="False" />
-            <line number="195" hits="1" branch="False" />
+            <line number="194" hits="0" branch="False" />
+            <line number="195" hits="0" branch="False" />
+            <line number="199" hits="1" branch="False" />
           </lines>
         </class>
         <class name="Cozy_Haven.Services.UserService/&lt;GetUserBookings&gt;d__12" filename="CozyHavenProject\Cozy_Haven\Services\UserService.cs" line-rate="0.9" branch-rate="0.5" complexity="4">
           <methods>
             <method name="MoveNext" signature="()" line-rate="0.9" branch-rate="0.5" complexity="4">
               <lines>
-                <line number="122" hits="1" branch="False" />
-                <line number="123" hits="1" branch="False" />
-                <line number="124" hits="1" branch="False" />
-                <line number="125" hits="1" branch="True" condition-coverage="50% (1/2)">
-                  <conditions>
-                    <condition number="201" type="jump" coverage="50%" />
-                  </conditions>
-                </line>
+                <line number="125" hits="1" branch="False" />
                 <line number="126" hits="1" branch="False" />
                 <line number="127" hits="1" branch="False" />
                 <line number="128" hits="1" branch="True" condition-coverage="50% (1/2)">
                   <conditions>
-                    <condition number="236" type="jump" coverage="50%" />
+                    <condition number="201" type="jump" coverage="50%" />
                   </conditions>
                 </line>
                 <line number="129" hits="1" branch="False" />
-                <line number="131" hits="0" branch="False" />
+                <line number="130" hits="1" branch="False" />
+                <line number="131" hits="1" branch="True" condition-coverage="50% (1/2)">
+                  <conditions>
+                    <condition number="236" type="jump" coverage="50%" />
+                  </conditions>
+                </line>
                 <line number="132" hits="1" branch="False" />
+                <line number="134" hits="0" branch="False" />
+                <line number="135" hits="1" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="122" hits="1" branch="False" />
-            <line number="123" hits="1" branch="False" />
-            <line number="124" hits="1" branch="False" />
-            <line number="125" hits="1" branch="True" condition-coverage="50% (1/2)">
-              <conditions>
-                <condition number="201" type="jump" coverage="50%" />
-              </conditions>
-            </line>
+            <line number="125" hits="1" branch="False" />
             <line number="126" hits="1" branch="False" />
             <line number="127" hits="1" branch="False" />
             <line number="128" hits="1" branch="True" condition-coverage="50% (1/2)">
               <conditions>
-                <condition number="236" type="jump" coverage="50%" />
+                <condition number="201" type="jump" coverage="50%" />
               </conditions>
             </line>
             <line number="129" hits="1" branch="False" />
-            <line number="131" hits="0" branch="False" />
+            <line number="130" hits="1" branch="False" />
+            <line number="131" hits="1" branch="True" condition-coverage="50% (1/2)">
+              <conditions>
+                <condition number="236" type="jump" coverage="50%" />
+              </conditions>
+            </line>
             <line number="132" hits="1" branch="False" />
+            <line number="134" hits="0" branch="False" />
+            <line number="135" hits="1" branch="False" />
           </lines>
         </class>
         <class name="Cozy_Haven.Services.UserService/&lt;GetUserByUsernameOrEmail&gt;d__16" filename="CozyHavenProject\Cozy_Haven\Services\UserService.cs" line-rate="0.8332999999999999" branch-rate="0.5" complexity="2">
           <methods>
             <method name="MoveNext" signature="()" line-rate="0.8332999999999999" branch-rate="0.5" complexity="2">
               <lines>
-                <line number="178" hits="1" branch="False" />
-                <line number="179" hits="1" branch="False" />
-                <line number="180" hits="1" branch="False" />
-                <line number="182" hits="2" branch="True" condition-coverage="50% (1/2)">
+                <line number="182" hits="1" branch="False" />
+                <line number="183" hits="1" branch="False" />
+                <line number="184" hits="1" branch="False" />
+                <line number="186" hits="2" branch="True" condition-coverage="50% (1/2)">
                   <conditions>
                     <condition number="265" type="jump" coverage="50%" />
                   </conditions>
                 </line>
-                <line number="183" hits="0" branch="False" />
-                <line number="184" hits="1" branch="False" />
+                <line number="187" hits="0" branch="False" />
+                <line number="188" hits="1" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="178" hits="1" branch="False" />
-            <line number="179" hits="1" branch="False" />
-            <line number="180" hits="1" branch="False" />
-            <line number="182" hits="2" branch="True" condition-coverage="50% (1/2)">
+            <line number="182" hits="1" branch="False" />
+            <line number="183" hits="1" branch="False" />
+            <line number="184" hits="1" branch="False" />
+            <line number="186" hits="2" branch="True" condition-coverage="50% (1/2)">
               <conditions>
                 <condition number="265" type="jump" coverage="50%" />
               </conditions>
             </line>
-            <line number="183" hits="0" branch="False" />
-            <line number="184" hits="1" branch="False" />
+            <line number="187" hits="0" branch="False" />
+            <line number="188" hits="1" branch="False" />
           </lines>
         </class>
         <class name="Cozy_Haven.Services.UserService/&lt;GetUserFavorites&gt;d__15" filename="CozyHavenProject\Cozy_Haven\Services\UserService.cs" line-rate="0.9" branch-rate="0.5" complexity="4">
           <methods>
             <method name="MoveNext" signature="()" line-rate="0.9" branch-rate="0.5" complexity="4">
               <lines>
-                <line number="166" hits="1" branch="False" />
-                <line number="167" hits="1" branch="False" />
-                <line number="168" hits="1" branch="False" />
-                <line number="169" hits="1" branch="True" condition-coverage="50% (1/2)">
+                <line number="170" hits="1" branch="False" />
+                <line number="171" hits="1" branch="False" />
+                <line number="172" hits="1" branch="False" />
+                <line number="173" hits="1" branch="True" condition-coverage="50% (1/2)">
                   <conditions>
                     <condition number="196" type="jump" coverage="50%" />
                   </conditions>
                 </line>
-                <line number="170" hits="1" branch="False" />
-                <line number="171" hits="1" branch="False" />
-                <line number="172" hits="1" branch="True" condition-coverage="50% (1/2)">
+                <line number="174" hits="1" branch="False" />
+                <line number="175" hits="1" branch="False" />
+                <line number="176" hits="1" branch="True" condition-coverage="50% (1/2)">
                   <conditions>
                     <condition number="231" type="jump" coverage="50%" />
                   </conditions>
                 </line>
-                <line number="173" hits="1" branch="False" />
-                <line number="175" hits="0" branch="False" />
-                <line number="176" hits="1" branch="False" />
+                <line number="177" hits="1" branch="False" />
+                <line number="179" hits="0" branch="False" />
+                <line number="180" hits="1" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="166" hits="1" branch="False" />
-            <line number="167" hits="1" branch="False" />
-            <line number="168" hits="1" branch="False" />
-            <line number="169" hits="1" branch="True" condition-coverage="50% (1/2)">
+            <line number="170" hits="1" branch="False" />
+            <line number="171" hits="1" branch="False" />
+            <line number="172" hits="1" branch="False" />
+            <line number="173" hits="1" branch="True" condition-coverage="50% (1/2)">
               <conditions>
                 <condition number="196" type="jump" coverage="50%" />
               </conditions>
             </line>
-            <line number="170" hits="1" branch="False" />
-            <line number="171" hits="1" branch="False" />
-            <line number="172" hits="1" branch="True" condition-coverage="50% (1/2)">
+            <line number="174" hits="1" branch="False" />
+            <line number="175" hits="1" branch="False" />
+            <line number="176" hits="1" branch="True" condition-coverage="50% (1/2)">
               <conditions>
                 <condition number="231" type="jump" coverage="50%" />
               </conditions>
             </line>
-            <line number="173" hits="1" branch="False" />
-            <line number="175" hits="0" branch="False" />
-            <line number="176" hits="1" branch="False" />
+            <line number="177" hits="1" branch="False" />
+            <line number="179" hits="0" branch="False" />
+            <line number="180" hits="1" branch="False" />
           </lines>
         </class>
         <class name="Cozy_Haven.Services.UserService/&lt;GetUserReviews&gt;d__14" filename="CozyHavenProject\Cozy_Haven\Services\UserService.cs" line-rate="0.9" branch-rate="0.5" complexity="4">
           <methods>
             <method name="MoveNext" signature="()" line-rate="0.9" branch-rate="0.5" complexity="4">
               <lines>
-                <line number="154" hits="1" branch="False" />
-                <line number="155" hits="1" branch="False" />
-                <line number="156" hits="1" branch="False" />
-                <line number="157" hits="1" branch="True" condition-coverage="50% (1/2)">
+                <line number="158" hits="1" branch="False" />
+                <line number="159" hits="1" branch="False" />
+                <line number="160" hits="1" branch="False" />
+                <line number="161" hits="1" branch="True" condition-coverage="50% (1/2)">
                   <conditions>
                     <condition number="196" type="jump" coverage="50%" />
                   </conditions>
                 </line>
-                <line number="158" hits="1" branch="False" />
-                <line number="159" hits="1" branch="False" />
-                <line number="160" hits="1" branch="True" condition-coverage="50% (1/2)">
+                <line number="162" hits="1" branch="False" />
+                <line number="163" hits="1" branch="False" />
+                <line number="164" hits="1" branch="True" condition-coverage="50% (1/2)">
                   <conditions>
                     <condition number="231" type="jump" coverage="50%" />
                   </conditions>
                 </line>
-                <line number="161" hits="1" branch="False" />
-                <line number="163" hits="0" branch="False" />
-                <line number="164" hits="1" branch="False" />
+                <line number="165" hits="1" branch="False" />
+                <line number="167" hits="0" branch="False" />
+                <line number="168" hits="1" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="154" hits="1" branch="False" />
-            <line number="155" hits="1" branch="False" />
-            <line number="156" hits="1" branch="False" />
-            <line number="157" hits="1" branch="True" condition-coverage="50% (1/2)">
+            <line number="158" hits="1" branch="False" />
+            <line number="159" hits="1" branch="False" />
+            <line number="160" hits="1" branch="False" />
+            <line number="161" hits="1" branch="True" condition-coverage="50% (1/2)">
               <conditions>
                 <condition number="196" type="jump" coverage="50%" />
               </conditions>
             </line>
-            <line number="158" hits="1" branch="False" />
-            <line number="159" hits="1" branch="False" />
-            <line number="160" hits="1" branch="True" condition-coverage="50% (1/2)">
+            <line number="162" hits="1" branch="False" />
+            <line number="163" hits="1" branch="False" />
+            <line number="164" hits="1" branch="True" condition-coverage="50% (1/2)">
               <conditions>
                 <condition number="231" type="jump" coverage="50%" />
               </conditions>
             </line>
-            <line number="161" hits="1" branch="False" />
-            <line number="163" hits="0" branch="False" />
-            <line number="164" hits="1" branch="False" />
+            <line number="165" hits="1" branch="False" />
+            <line number="167" hits="0" branch="False" />
+            <line number="168" hits="1" branch="False" />
           </lines>
         </class>
         <class name="Cozy_Haven.Services.UserService/&lt;Login&gt;d__4" filename="CozyHavenProject\Cozy_Haven\Services\UserService.cs" line-rate="0.8332999999999999" branch-rate="0.5" complexity="4">
           <methods>
             <method name="MoveNext" signature="()" line-rate="0.8332999999999999" branch-rate="0.5" complexity="4">
               <lines>
-                <line number="25" hits="1" branch="False" />
                 <line number="26" hits="1" branch="False" />
                 <line number="27" hits="1" branch="False" />
-                <line number="28" hits="1" branch="True" condition-coverage="50% (1/2)">
+                <line number="28" hits="1" branch="False" />
+                <line number="29" hits="1" branch="True" condition-coverage="50% (1/2)">
                   <conditions>
                     <condition number="225" type="jump" coverage="50%" />
                   </conditions>
                 </line>
-                <line number="29" hits="0" branch="False" />
                 <line number="30" hits="0" branch="False" />
-                <line number="32" hits="1" branch="False" />
+                <line number="31" hits="0" branch="False" />
                 <line number="33" hits="1" branch="False" />
-                <line number="34" hits="1" branch="True" condition-coverage="50% (1/2)">
+                <line number="34" hits="1" branch="False" />
+                <line number="35" hits="1" branch="True" condition-coverage="50% (1/2)">
                   <conditions>
                     <condition number="359" type="jump" coverage="50%" />
                   </conditions>
                 </line>
-                <line number="35" hits="1" branch="False" />
                 <line number="36" hits="1" branch="False" />
                 <line number="37" hits="1" branch="False" />
                 <line number="38" hits="1" branch="False" />
                 <line number="39" hits="1" branch="False" />
                 <line number="40" hits="1" branch="False" />
                 <line number="41" hits="1" branch="False" />
-                <line number="43" hits="0" branch="False" />
-                <line number="44" hits="1" branch="False" />
+                <line number="42" hits="1" branch="False" />
+                <line number="44" hits="0" branch="False" />
+                <line number="45" hits="1" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="25" hits="1" branch="False" />
             <line number="26" hits="1" branch="False" />
             <line number="27" hits="1" branch="False" />
-            <line number="28" hits="1" branch="True" condition-coverage="50% (1/2)">
+            <line number="28" hits="1" branch="False" />
+            <line number="29" hits="1" branch="True" condition-coverage="50% (1/2)">
               <conditions>
                 <condition number="225" type="jump" coverage="50%" />
               </conditions>
             </line>
-            <line number="29" hits="0" branch="False" />
             <line number="30" hits="0" branch="False" />
-            <line number="32" hits="1" branch="False" />
+            <line number="31" hits="0" branch="False" />
             <line number="33" hits="1" branch="False" />
-            <line number="34" hits="1" branch="True" condition-coverage="50% (1/2)">
+            <line number="34" hits="1" branch="False" />
+            <line number="35" hits="1" branch="True" condition-coverage="50% (1/2)">
               <conditions>
                 <condition number="359" type="jump" coverage="50%" />
               </conditions>
             </line>
-            <line number="35" hits="1" branch="False" />
             <line number="36" hits="1" branch="False" />
             <line number="37" hits="1" branch="False" />
             <line number="38" hits="1" branch="False" />
             <line number="39" hits="1" branch="False" />
             <line number="40" hits="1" branch="False" />
             <line number="41" hits="1" branch="False" />
-            <line number="43" hits="0" branch="False" />
-            <line number="44" hits="1" branch="False" />
+            <line number="42" hits="1" branch="False" />
+            <line number="44" hits="0" branch="False" />
+            <line number="45" hits="1" branch="False" />
           </lines>
         </class>
         <class name="Cozy_Haven.Services.UserService/&lt;Register&gt;d__7" filename="CozyHavenProject\Cozy_Haven\Services\UserService.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
             <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="63" hits="1" branch="False" />
-                <line number="64" hits="1" branch="False" />
                 <line number="65" hits="1" branch="False" />
                 <line number="66" hits="1" branch="False" />
                 <line number="67" hits="1" branch="False" />
@@ -2715,12 +2663,12 @@
                 <line number="71" hits="1" branch="False" />
                 <line number="72" hits="1" branch="False" />
                 <line number="73" hits="1" branch="False" />
+                <line number="74" hits="1" branch="False" />
+                <line number="75" hits="1" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="63" hits="1" branch="False" />
-            <line number="64" hits="1" branch="False" />
             <line number="65" hits="1" branch="False" />
             <line number="66" hits="1" branch="False" />
             <line number="67" hits="1" branch="False" />
@@ -2730,104 +2678,54 @@
             <line number="71" hits="1" branch="False" />
             <line number="72" hits="1" branch="False" />
             <line number="73" hits="1" branch="False" />
+            <line number="74" hits="1" branch="False" />
+            <line number="75" hits="1" branch="False" />
           </lines>
         </class>
         <class name="Cozy_Haven.Services.UserService/&lt;UpdatePassword&gt;d__11" filename="CozyHavenProject\Cozy_Haven\Services\UserService.cs" line-rate="0.9285" branch-rate="0.5" complexity="2">
           <methods>
             <method name="MoveNext" signature="()" line-rate="0.9285" branch-rate="0.5" complexity="2">
               <lines>
-                <line number="104" hits="1" branch="False" />
-                <line number="105" hits="1" branch="False" />
-                <line number="106" hits="1" branch="False" />
-                <line number="107" hits="1" branch="True" condition-coverage="50% (1/2)">
+                <line number="107" hits="1" branch="False" />
+                <line number="108" hits="1" branch="False" />
+                <line number="109" hits="1" branch="False" />
+                <line number="110" hits="1" branch="True" condition-coverage="50% (1/2)">
                   <conditions>
                     <condition number="212" type="jump" coverage="50%" />
                   </conditions>
                 </line>
-                <line number="108" hits="1" branch="False" />
-                <line number="109" hits="1" branch="False" />
-                <line number="110" hits="1" branch="False" />
+                <line number="111" hits="1" branch="False" />
                 <line number="112" hits="1" branch="False" />
                 <line number="113" hits="1" branch="False" />
-                <line number="114" hits="1" branch="False" />
                 <line number="115" hits="1" branch="False" />
                 <line number="116" hits="1" branch="False" />
-                <line number="118" hits="0" branch="False" />
+                <line number="117" hits="1" branch="False" />
+                <line number="118" hits="1" branch="False" />
                 <line number="119" hits="1" branch="False" />
+                <line number="121" hits="0" branch="False" />
+                <line number="122" hits="1" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="104" hits="1" branch="False" />
-            <line number="105" hits="1" branch="False" />
-            <line number="106" hits="1" branch="False" />
-            <line number="107" hits="1" branch="True" condition-coverage="50% (1/2)">
+            <line number="107" hits="1" branch="False" />
+            <line number="108" hits="1" branch="False" />
+            <line number="109" hits="1" branch="False" />
+            <line number="110" hits="1" branch="True" condition-coverage="50% (1/2)">
               <conditions>
                 <condition number="212" type="jump" coverage="50%" />
               </conditions>
             </line>
-            <line number="108" hits="1" branch="False" />
-            <line number="109" hits="1" branch="False" />
-            <line number="110" hits="1" branch="False" />
+            <line number="111" hits="1" branch="False" />
             <line number="112" hits="1" branch="False" />
             <line number="113" hits="1" branch="False" />
-            <line number="114" hits="1" branch="False" />
             <line number="115" hits="1" branch="False" />
             <line number="116" hits="1" branch="False" />
-            <line number="118" hits="0" branch="False" />
+            <line number="117" hits="1" branch="False" />
+            <line number="118" hits="1" branch="False" />
             <line number="119" hits="1" branch="False" />
-          </lines>
-        </class>
-        <class name="Cozy_Haven.Services.UserService/&lt;UpdateUserProfile&gt;d__13" filename="CozyHavenProject\Cozy_Haven\Services\UserService.cs" line-rate="0" branch-rate="0" complexity="2">
-          <methods>
-            <method name="MoveNext" signature="()" line-rate="0" branch-rate="0" complexity="2">
-              <lines>
-                <line number="134" hits="0" branch="False" />
-                <line number="135" hits="0" branch="False" />
-                <line number="136" hits="0" branch="False" />
-                <line number="137" hits="0" branch="True" condition-coverage="0% (0/2)">
-                  <conditions>
-                    <condition number="207" type="jump" coverage="0%" />
-                  </conditions>
-                </line>
-                <line number="138" hits="0" branch="False" />
-                <line number="139" hits="0" branch="False" />
-                <line number="140" hits="0" branch="False" />
-                <line number="141" hits="0" branch="False" />
-                <line number="142" hits="0" branch="False" />
-                <line number="143" hits="0" branch="False" />
-                <line number="144" hits="0" branch="False" />
-                <line number="145" hits="0" branch="False" />
-                <line number="146" hits="0" branch="False" />
-                <line number="148" hits="0" branch="False" />
-                <line number="149" hits="0" branch="False" />
-                <line number="151" hits="0" branch="False" />
-                <line number="152" hits="0" branch="False" />
-              </lines>
-            </method>
-          </methods>
-          <lines>
-            <line number="134" hits="0" branch="False" />
-            <line number="135" hits="0" branch="False" />
-            <line number="136" hits="0" branch="False" />
-            <line number="137" hits="0" branch="True" condition-coverage="0% (0/2)">
-              <conditions>
-                <condition number="207" type="jump" coverage="0%" />
-              </conditions>
-            </line>
-            <line number="138" hits="0" branch="False" />
-            <line number="139" hits="0" branch="False" />
-            <line number="140" hits="0" branch="False" />
-            <line number="141" hits="0" branch="False" />
-            <line number="142" hits="0" branch="False" />
-            <line number="143" hits="0" branch="False" />
-            <line number="144" hits="0" branch="False" />
-            <line number="145" hits="0" branch="False" />
-            <line number="146" hits="0" branch="False" />
-            <line number="148" hits="0" branch="False" />
-            <line number="149" hits="0" branch="False" />
-            <line number="151" hits="0" branch="False" />
-            <line number="152" hits="0" branch="False" />
+            <line number="121" hits="0" branch="False" />
+            <line number="122" hits="1" branch="False" />
           </lines>
         </class>
         <class name="Cozy_Haven.Repository.BookingRepository" filename="CozyHavenProject\Cozy_Haven\Repository\BookingRepository.cs" line-rate="0" branch-rate="1" complexity="1">
@@ -3344,15 +3242,17 @@
                 <line number="26" hits="0" branch="False" />
                 <line number="27" hits="0" branch="True" condition-coverage="0% (0/2)">
                   <conditions>
-                    <condition number="159" type="jump" coverage="0%" />
+                    <condition number="180" type="jump" coverage="0%" />
                   </conditions>
                 </line>
                 <line number="28" hits="0" branch="False" />
                 <line number="29" hits="0" branch="False" />
                 <line number="30" hits="0" branch="False" />
                 <line number="31" hits="0" branch="False" />
+                <line number="32" hits="0" branch="False" />
                 <line number="33" hits="0" branch="False" />
-                <line number="34" hits="0" branch="False" />
+                <line number="35" hits="0" branch="False" />
+                <line number="36" hits="0" branch="False" />
               </lines>
             </method>
           </methods>
@@ -3361,101 +3261,103 @@
             <line number="26" hits="0" branch="False" />
             <line number="27" hits="0" branch="True" condition-coverage="0% (0/2)">
               <conditions>
-                <condition number="159" type="jump" coverage="0%" />
+                <condition number="180" type="jump" coverage="0%" />
               </conditions>
             </line>
             <line number="28" hits="0" branch="False" />
             <line number="29" hits="0" branch="False" />
             <line number="30" hits="0" branch="False" />
             <line number="31" hits="0" branch="False" />
+            <line number="32" hits="0" branch="False" />
             <line number="33" hits="0" branch="False" />
-            <line number="34" hits="0" branch="False" />
+            <line number="35" hits="0" branch="False" />
+            <line number="36" hits="0" branch="False" />
           </lines>
         </class>
         <class name="Cozy_Haven.Repository.HotelRepository/&lt;GetAll&gt;d__4" filename="CozyHavenProject\Cozy_Haven\Repository\HotelRepository.cs" line-rate="0" branch-rate="1" complexity="1">
           <methods>
             <method name="MoveNext" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="37" hits="0" branch="False" />
-                <line number="38" hits="0" branch="False" />
                 <line number="39" hits="0" branch="False" />
                 <line number="40" hits="0" branch="False" />
                 <line number="41" hits="0" branch="False" />
                 <line number="42" hits="0" branch="False" />
                 <line number="43" hits="0" branch="False" />
                 <line number="44" hits="0" branch="False" />
+                <line number="45" hits="0" branch="False" />
+                <line number="46" hits="0" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="37" hits="0" branch="False" />
-            <line number="38" hits="0" branch="False" />
             <line number="39" hits="0" branch="False" />
             <line number="40" hits="0" branch="False" />
             <line number="41" hits="0" branch="False" />
             <line number="42" hits="0" branch="False" />
             <line number="43" hits="0" branch="False" />
             <line number="44" hits="0" branch="False" />
+            <line number="45" hits="0" branch="False" />
+            <line number="46" hits="0" branch="False" />
           </lines>
         </class>
         <class name="Cozy_Haven.Repository.HotelRepository/&lt;GetById&gt;d__5" filename="CozyHavenProject\Cozy_Haven\Repository\HotelRepository.cs" line-rate="0" branch-rate="1" complexity="1">
           <methods>
             <method name="MoveNext" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="47" hits="0" branch="False" />
-                <line number="48" hits="0" branch="False" />
                 <line number="49" hits="0" branch="False" />
                 <line number="50" hits="0" branch="False" />
                 <line number="51" hits="0" branch="False" />
                 <line number="52" hits="0" branch="False" />
+                <line number="53" hits="0" branch="False" />
                 <line number="54" hits="0" branch="False" />
+                <line number="56" hits="0" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="47" hits="0" branch="False" />
-            <line number="48" hits="0" branch="False" />
             <line number="49" hits="0" branch="False" />
             <line number="50" hits="0" branch="False" />
             <line number="51" hits="0" branch="False" />
             <line number="52" hits="0" branch="False" />
+            <line number="53" hits="0" branch="False" />
             <line number="54" hits="0" branch="False" />
+            <line number="56" hits="0" branch="False" />
           </lines>
         </class>
         <class name="Cozy_Haven.Repository.HotelRepository/&lt;Update&gt;d__6" filename="CozyHavenProject\Cozy_Haven\Repository\HotelRepository.cs" line-rate="0" branch-rate="0" complexity="2">
           <methods>
             <method name="MoveNext" signature="()" line-rate="0" branch-rate="0" complexity="2">
               <lines>
-                <line number="57" hits="0" branch="False" />
-                <line number="58" hits="0" branch="False" />
-                <line number="59" hits="0" branch="True" condition-coverage="0% (0/2)">
+                <line number="59" hits="0" branch="False" />
+                <line number="60" hits="0" branch="False" />
+                <line number="61" hits="0" branch="True" condition-coverage="0% (0/2)">
                   <conditions>
                     <condition number="164" type="jump" coverage="0%" />
                   </conditions>
                 </line>
-                <line number="60" hits="0" branch="False" />
-                <line number="61" hits="0" branch="False" />
                 <line number="62" hits="0" branch="False" />
                 <line number="63" hits="0" branch="False" />
+                <line number="64" hits="0" branch="False" />
                 <line number="65" hits="0" branch="False" />
-                <line number="66" hits="0" branch="False" />
+                <line number="67" hits="0" branch="False" />
+                <line number="68" hits="0" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="57" hits="0" branch="False" />
-            <line number="58" hits="0" branch="False" />
-            <line number="59" hits="0" branch="True" condition-coverage="0% (0/2)">
+            <line number="59" hits="0" branch="False" />
+            <line number="60" hits="0" branch="False" />
+            <line number="61" hits="0" branch="True" condition-coverage="0% (0/2)">
               <conditions>
                 <condition number="164" type="jump" coverage="0%" />
               </conditions>
             </line>
-            <line number="60" hits="0" branch="False" />
-            <line number="61" hits="0" branch="False" />
             <line number="62" hits="0" branch="False" />
             <line number="63" hits="0" branch="False" />
+            <line number="64" hits="0" branch="False" />
             <line number="65" hits="0" branch="False" />
-            <line number="66" hits="0" branch="False" />
+            <line number="67" hits="0" branch="False" />
+            <line number="68" hits="0" branch="False" />
           </lines>
         </class>
         <class name="Cozy_Haven.Repository.PaymentRepository" filename="CozyHavenProject\Cozy_Haven\Repository\PaymentRepository.cs" line-rate="0" branch-rate="1" complexity="1">
@@ -3788,15 +3690,17 @@
                 <line number="25" hits="0" branch="False" />
                 <line number="26" hits="0" branch="True" condition-coverage="0% (0/2)">
                   <conditions>
-                    <condition number="159" type="jump" coverage="0%" />
+                    <condition number="180" type="jump" coverage="0%" />
                   </conditions>
                 </line>
                 <line number="27" hits="0" branch="False" />
                 <line number="28" hits="0" branch="False" />
                 <line number="29" hits="0" branch="False" />
                 <line number="30" hits="0" branch="False" />
+                <line number="31" hits="0" branch="False" />
                 <line number="32" hits="0" branch="False" />
-                <line number="33" hits="0" branch="False" />
+                <line number="34" hits="0" branch="False" />
+                <line number="35" hits="0" branch="False" />
               </lines>
             </method>
           </methods>
@@ -3805,89 +3709,91 @@
             <line number="25" hits="0" branch="False" />
             <line number="26" hits="0" branch="True" condition-coverage="0% (0/2)">
               <conditions>
-                <condition number="159" type="jump" coverage="0%" />
+                <condition number="180" type="jump" coverage="0%" />
               </conditions>
             </line>
             <line number="27" hits="0" branch="False" />
             <line number="28" hits="0" branch="False" />
             <line number="29" hits="0" branch="False" />
             <line number="30" hits="0" branch="False" />
+            <line number="31" hits="0" branch="False" />
             <line number="32" hits="0" branch="False" />
-            <line number="33" hits="0" branch="False" />
+            <line number="34" hits="0" branch="False" />
+            <line number="35" hits="0" branch="False" />
           </lines>
         </class>
         <class name="Cozy_Haven.Repository.RoomRepository/&lt;GetAll&gt;d__4" filename="CozyHavenProject\Cozy_Haven\Repository\RoomRepository.cs" line-rate="0" branch-rate="1" complexity="1">
           <methods>
             <method name="MoveNext" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="36" hits="0" branch="False" />
-                <line number="37" hits="0" branch="False" />
                 <line number="38" hits="0" branch="False" />
                 <line number="39" hits="0" branch="False" />
+                <line number="40" hits="0" branch="False" />
+                <line number="41" hits="0" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="36" hits="0" branch="False" />
-            <line number="37" hits="0" branch="False" />
             <line number="38" hits="0" branch="False" />
             <line number="39" hits="0" branch="False" />
+            <line number="40" hits="0" branch="False" />
+            <line number="41" hits="0" branch="False" />
           </lines>
         </class>
         <class name="Cozy_Haven.Repository.RoomRepository/&lt;GetById&gt;d__5" filename="CozyHavenProject\Cozy_Haven\Repository\RoomRepository.cs" line-rate="0" branch-rate="1" complexity="1">
           <methods>
             <method name="MoveNext" signature="()" line-rate="0" branch-rate="1" complexity="1">
               <lines>
-                <line number="42" hits="0" branch="False" />
-                <line number="43" hits="0" branch="False" />
                 <line number="44" hits="0" branch="False" />
                 <line number="45" hits="0" branch="False" />
                 <line number="46" hits="0" branch="False" />
+                <line number="47" hits="0" branch="False" />
+                <line number="48" hits="0" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="42" hits="0" branch="False" />
-            <line number="43" hits="0" branch="False" />
             <line number="44" hits="0" branch="False" />
             <line number="45" hits="0" branch="False" />
             <line number="46" hits="0" branch="False" />
+            <line number="47" hits="0" branch="False" />
+            <line number="48" hits="0" branch="False" />
           </lines>
         </class>
         <class name="Cozy_Haven.Repository.RoomRepository/&lt;Update&gt;d__6" filename="CozyHavenProject\Cozy_Haven\Repository\RoomRepository.cs" line-rate="0" branch-rate="0" complexity="2">
           <methods>
             <method name="MoveNext" signature="()" line-rate="0" branch-rate="0" complexity="2">
               <lines>
-                <line number="49" hits="0" branch="False" />
-                <line number="50" hits="0" branch="False" />
-                <line number="51" hits="0" branch="True" condition-coverage="0% (0/2)">
+                <line number="51" hits="0" branch="False" />
+                <line number="52" hits="0" branch="False" />
+                <line number="53" hits="0" branch="True" condition-coverage="0% (0/2)">
                   <conditions>
                     <condition number="164" type="jump" coverage="0%" />
                   </conditions>
                 </line>
-                <line number="52" hits="0" branch="False" />
-                <line number="53" hits="0" branch="False" />
                 <line number="54" hits="0" branch="False" />
                 <line number="55" hits="0" branch="False" />
+                <line number="56" hits="0" branch="False" />
                 <line number="57" hits="0" branch="False" />
                 <line number="59" hits="0" branch="False" />
+                <line number="61" hits="0" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="49" hits="0" branch="False" />
-            <line number="50" hits="0" branch="False" />
-            <line number="51" hits="0" branch="True" condition-coverage="0% (0/2)">
+            <line number="51" hits="0" branch="False" />
+            <line number="52" hits="0" branch="False" />
+            <line number="53" hits="0" branch="True" condition-coverage="0% (0/2)">
               <conditions>
                 <condition number="164" type="jump" coverage="0%" />
               </conditions>
             </line>
-            <line number="52" hits="0" branch="False" />
-            <line number="53" hits="0" branch="False" />
             <line number="54" hits="0" branch="False" />
             <line number="55" hits="0" branch="False" />
+            <line number="56" hits="0" branch="False" />
             <line number="57" hits="0" branch="False" />
             <line number="59" hits="0" branch="False" />
+            <line number="61" hits="0" branch="False" />
           </lines>
         </class>
         <class name="Cozy_Haven.Repository.UserRepository" filename="CozyHavenProject\Cozy_Haven\Repository\UserRepository.cs" line-rate="0" branch-rate="1" complexity="1">
@@ -4664,7 +4570,7 @@
             <line number="11" hits="0" branch="False" />
           </lines>
         </class>
-        <class name="Cozy_Haven.Models.User" filename="CozyHavenProject\Cozy_Haven\Models\User.cs" line-rate="0.875" branch-rate="1" complexity="16">
+        <class name="Cozy_Haven.Models.User" filename="CozyHavenProject\Cozy_Haven\Models\User.cs" line-rate="0.9375" branch-rate="1" complexity="16">
           <methods>
             <method name="get_UserId" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
@@ -4686,9 +4592,9 @@
                 <line number="19" hits="1" branch="False" />
               </lines>
             </method>
-            <method name="get_DateofBirth" signature="()" line-rate="0" branch-rate="1" complexity="1">
+            <method name="get_DateofBirth" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="20" hits="0" branch="False" />
+                <line number="20" hits="1" branch="False" />
               </lines>
             </method>
             <method name="get_Email" signature="()" line-rate="1" branch-rate="1" complexity="1">
@@ -4752,7 +4658,7 @@
             <line number="13" hits="19" branch="False" />
             <line number="16" hits="1" branch="False" />
             <line number="19" hits="1" branch="False" />
-            <line number="20" hits="0" branch="False" />
+            <line number="20" hits="1" branch="False" />
             <line number="23" hits="1" branch="False" />
             <line number="24" hits="1" branch="False" />
             <line number="25" hits="1" branch="False" />
@@ -4922,7 +4828,7 @@
             <line number="12" hits="1" branch="False" />
           </lines>
         </class>
-        <class name="Cozy_Haven.Models.DTOs.RegisterUserDTO" filename="CozyHavenProject\Cozy_Haven\Models\DTOs\RegisterUserDTO.cs" line-rate="1" branch-rate="1" complexity="9">
+        <class name="Cozy_Haven.Models.DTOs.RegisterUserDTO" filename="CozyHavenProject\Cozy_Haven\Models\DTOs\RegisterUserDTO.cs" line-rate="1" branch-rate="1" complexity="10">
           <methods>
             <method name="get_Username" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
@@ -4939,34 +4845,39 @@
                 <line number="11" hits="1" branch="False" />
               </lines>
             </method>
-            <method name="get_ContactNumber" signature="()" line-rate="1" branch-rate="1" complexity="1">
+            <method name="get_DateofBirth" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
                 <line number="12" hits="1" branch="False" />
               </lines>
             </method>
+            <method name="get_ContactNumber" signature="()" line-rate="1" branch-rate="1" complexity="1">
+              <lines>
+                <line number="13" hits="1" branch="False" />
+              </lines>
+            </method>
             <method name="get_Email" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="14" hits="1" branch="False" />
+                <line number="15" hits="1" branch="False" />
               </lines>
             </method>
             <method name="get_Password" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="16" hits="2" branch="False" />
+                <line number="17" hits="2" branch="False" />
               </lines>
             </method>
             <method name="get_Role" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="18" hits="1" branch="False" />
+                <line number="19" hits="1" branch="False" />
               </lines>
             </method>
             <method name="get_Address" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="19" hits="1" branch="False" />
+                <line number="20" hits="1" branch="False" />
               </lines>
             </method>
             <method name="get_Gender" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="20" hits="1" branch="False" />
+                <line number="21" hits="1" branch="False" />
               </lines>
             </method>
           </methods>
@@ -4975,11 +4886,12 @@
             <line number="9" hits="1" branch="False" />
             <line number="11" hits="1" branch="False" />
             <line number="12" hits="1" branch="False" />
-            <line number="14" hits="1" branch="False" />
-            <line number="16" hits="2" branch="False" />
-            <line number="18" hits="1" branch="False" />
+            <line number="13" hits="1" branch="False" />
+            <line number="15" hits="1" branch="False" />
+            <line number="17" hits="2" branch="False" />
             <line number="19" hits="1" branch="False" />
             <line number="20" hits="1" branch="False" />
+            <line number="21" hits="1" branch="False" />
           </lines>
         </class>
         <class name="Cozy_Haven.Models.DTOs.ReviewDTO" filename="CozyHavenProject\Cozy_Haven\Models\DTOs\ReviewDTO.cs" line-rate="1" branch-rate="1" complexity="5">
@@ -5342,18 +5254,18 @@
           <methods>
             <method name="GetPassword" signature="(System.String)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="25" hits="1" branch="False" />
                 <line number="26" hits="1" branch="False" />
                 <line number="27" hits="1" branch="False" />
                 <line number="28" hits="1" branch="False" />
                 <line number="29" hits="1" branch="False" />
+                <line number="30" hits="1" branch="False" />
               </lines>
             </method>
             <method name="GetUser" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="31" hits="1" branch="False" />
                 <line number="32" hits="1" branch="False" />
                 <line number="33" hits="1" branch="False" />
+                <line number="34" hits="1" branch="False" />
               </lines>
             </method>
             <method name=".ctor" signature="(Cozy_Haven.Models.DTOs.RegisterUserDTO)" line-rate="1" branch-rate="1" complexity="1">
@@ -5371,18 +5283,19 @@
                 <line number="21" hits="1" branch="False" />
                 <line number="22" hits="1" branch="False" />
                 <line number="23" hits="1" branch="False" />
+                <line number="24" hits="1" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="25" hits="1" branch="False" />
             <line number="26" hits="1" branch="False" />
             <line number="27" hits="1" branch="False" />
             <line number="28" hits="1" branch="False" />
             <line number="29" hits="1" branch="False" />
-            <line number="31" hits="1" branch="False" />
+            <line number="30" hits="1" branch="False" />
             <line number="32" hits="1" branch="False" />
             <line number="33" hits="1" branch="False" />
+            <line number="34" hits="1" branch="False" />
             <line number="11" hits="1" branch="False" />
             <line number="12" hits="1" branch="False" />
             <line number="13" hits="1" branch="False" />
@@ -5396,6 +5309,7 @@
             <line number="21" hits="1" branch="False" />
             <line number="22" hits="1" branch="False" />
             <line number="23" hits="1" branch="False" />
+            <line number="24" hits="1" branch="False" />
           </lines>
         </class>
         <class name="Cozy_Haven.Helper.APIResponse" filename="CozyHavenProject\Cozy_Haven\Helper\APIResponse.cs" line-rate="0" branch-rate="1" complexity="3">
@@ -10350,38 +10264,38 @@
           <methods>
             <method name="&lt;UpdatePasswordTest&gt;b__10_2" signature="(Cozy_Haven.Models.User)" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="122" hits="2" branch="False" />
+                <line number="123" hits="2" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="122" hits="2" branch="False" />
+            <line number="123" hits="2" branch="False" />
           </lines>
         </class>
         <class name="Cozy_Haven_Testing.User_Testing/&lt;DeleteUserTest&gt;d__9" filename="CozyHavenProject\Cozy_Haven_Testing\User_Testing.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
             <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="98" hits="1" branch="False" />
-                <line number="100" hits="1" branch="False" />
+                <line number="99" hits="1" branch="False" />
                 <line number="101" hits="1" branch="False" />
                 <line number="102" hits="1" branch="False" />
                 <line number="103" hits="1" branch="False" />
-                <line number="106" hits="1" branch="False" />
-                <line number="109" hits="1" branch="False" />
-                <line number="111" hits="1" branch="False" />
+                <line number="104" hits="1" branch="False" />
+                <line number="107" hits="1" branch="False" />
+                <line number="110" hits="1" branch="False" />
+                <line number="112" hits="1" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="98" hits="1" branch="False" />
-            <line number="100" hits="1" branch="False" />
+            <line number="99" hits="1" branch="False" />
             <line number="101" hits="1" branch="False" />
             <line number="102" hits="1" branch="False" />
             <line number="103" hits="1" branch="False" />
-            <line number="106" hits="1" branch="False" />
-            <line number="109" hits="1" branch="False" />
-            <line number="111" hits="1" branch="False" />
+            <line number="104" hits="1" branch="False" />
+            <line number="107" hits="1" branch="False" />
+            <line number="110" hits="1" branch="False" />
+            <line number="112" hits="1" branch="False" />
           </lines>
         </class>
         <class name="Cozy_Haven_Testing.User_Testing/&lt;GetAllUsersTest&gt;d__7" filename="CozyHavenProject\Cozy_Haven_Testing\User_Testing.cs" line-rate="1" branch-rate="1" complexity="1">
@@ -10410,150 +10324,150 @@
           <methods>
             <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="208" hits="1" branch="False" />
-                <line number="210" hits="1" branch="False" />
+                <line number="196" hits="1" branch="False" />
+                <line number="198" hits="1" branch="False" />
+                <line number="199" hits="1" branch="False" />
+                <line number="200" hits="1" branch="False" />
+                <line number="201" hits="1" branch="False" />
+                <line number="202" hits="1" branch="False" />
+                <line number="203" hits="1" branch="False" />
+                <line number="206" hits="1" branch="False" />
+                <line number="209" hits="1" branch="False" />
                 <line number="211" hits="1" branch="False" />
-                <line number="212" hits="1" branch="False" />
-                <line number="213" hits="1" branch="False" />
-                <line number="214" hits="1" branch="False" />
-                <line number="215" hits="1" branch="False" />
-                <line number="218" hits="1" branch="False" />
-                <line number="221" hits="1" branch="False" />
-                <line number="223" hits="1" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="208" hits="1" branch="False" />
-            <line number="210" hits="1" branch="False" />
+            <line number="196" hits="1" branch="False" />
+            <line number="198" hits="1" branch="False" />
+            <line number="199" hits="1" branch="False" />
+            <line number="200" hits="1" branch="False" />
+            <line number="201" hits="1" branch="False" />
+            <line number="202" hits="1" branch="False" />
+            <line number="203" hits="1" branch="False" />
+            <line number="206" hits="1" branch="False" />
+            <line number="209" hits="1" branch="False" />
             <line number="211" hits="1" branch="False" />
-            <line number="212" hits="1" branch="False" />
-            <line number="213" hits="1" branch="False" />
-            <line number="214" hits="1" branch="False" />
-            <line number="215" hits="1" branch="False" />
-            <line number="218" hits="1" branch="False" />
-            <line number="221" hits="1" branch="False" />
-            <line number="223" hits="1" branch="False" />
           </lines>
         </class>
         <class name="Cozy_Haven_Testing.User_Testing/&lt;GetUserBookings&gt;d__11" filename="CozyHavenProject\Cozy_Haven_Testing\User_Testing.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
             <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="132" hits="1" branch="False" />
-                <line number="134" hits="1" branch="False" />
+                <line number="133" hits="1" branch="False" />
                 <line number="135" hits="1" branch="False" />
                 <line number="136" hits="1" branch="False" />
-                <line number="139" hits="1" branch="False" />
-                <line number="142" hits="1" branch="False" />
+                <line number="137" hits="1" branch="False" />
+                <line number="140" hits="1" branch="False" />
                 <line number="143" hits="1" branch="False" />
+                <line number="144" hits="1" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="132" hits="1" branch="False" />
-            <line number="134" hits="1" branch="False" />
+            <line number="133" hits="1" branch="False" />
             <line number="135" hits="1" branch="False" />
             <line number="136" hits="1" branch="False" />
-            <line number="139" hits="1" branch="False" />
-            <line number="142" hits="1" branch="False" />
+            <line number="137" hits="1" branch="False" />
+            <line number="140" hits="1" branch="False" />
             <line number="143" hits="1" branch="False" />
+            <line number="144" hits="1" branch="False" />
           </lines>
         </class>
         <class name="Cozy_Haven_Testing.User_Testing/&lt;GetUserByUsernameOrEmail_UserExists_ReturnsUser&gt;d__14" filename="CozyHavenProject\Cozy_Haven_Testing\User_Testing.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
             <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="193" hits="1" branch="False" />
-                <line number="195" hits="1" branch="False" />
-                <line number="196" hits="1" branch="False" />
-                <line number="197" hits="1" branch="False" />
-                <line number="200" hits="1" branch="False" />
-                <line number="203" hits="1" branch="False" />
-                <line number="204" hits="1" branch="False" />
+                <line number="181" hits="1" branch="False" />
+                <line number="183" hits="1" branch="False" />
+                <line number="184" hits="1" branch="False" />
+                <line number="185" hits="1" branch="False" />
+                <line number="188" hits="1" branch="False" />
+                <line number="191" hits="1" branch="False" />
+                <line number="192" hits="1" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="193" hits="1" branch="False" />
-            <line number="195" hits="1" branch="False" />
-            <line number="196" hits="1" branch="False" />
-            <line number="197" hits="1" branch="False" />
-            <line number="200" hits="1" branch="False" />
-            <line number="203" hits="1" branch="False" />
-            <line number="204" hits="1" branch="False" />
+            <line number="181" hits="1" branch="False" />
+            <line number="183" hits="1" branch="False" />
+            <line number="184" hits="1" branch="False" />
+            <line number="185" hits="1" branch="False" />
+            <line number="188" hits="1" branch="False" />
+            <line number="191" hits="1" branch="False" />
+            <line number="192" hits="1" branch="False" />
           </lines>
         </class>
         <class name="Cozy_Haven_Testing.User_Testing/&lt;GetUserFavorites&gt;d__13" filename="CozyHavenProject\Cozy_Haven_Testing\User_Testing.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
             <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
+                <line number="165" hits="1" branch="False" />
+                <line number="167" hits="1" branch="False" />
+                <line number="168" hits="1" branch="False" />
+                <line number="169" hits="1" branch="False" />
+                <line number="172" hits="1" branch="False" />
+                <line number="175" hits="1" branch="False" />
                 <line number="177" hits="1" branch="False" />
-                <line number="179" hits="1" branch="False" />
-                <line number="180" hits="1" branch="False" />
-                <line number="181" hits="1" branch="False" />
-                <line number="184" hits="1" branch="False" />
-                <line number="187" hits="1" branch="False" />
-                <line number="189" hits="1" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
+            <line number="165" hits="1" branch="False" />
+            <line number="167" hits="1" branch="False" />
+            <line number="168" hits="1" branch="False" />
+            <line number="169" hits="1" branch="False" />
+            <line number="172" hits="1" branch="False" />
+            <line number="175" hits="1" branch="False" />
             <line number="177" hits="1" branch="False" />
-            <line number="179" hits="1" branch="False" />
-            <line number="180" hits="1" branch="False" />
-            <line number="181" hits="1" branch="False" />
-            <line number="184" hits="1" branch="False" />
-            <line number="187" hits="1" branch="False" />
-            <line number="189" hits="1" branch="False" />
           </lines>
         </class>
         <class name="Cozy_Haven_Testing.User_Testing/&lt;GetUserReviews&gt;d__12" filename="CozyHavenProject\Cozy_Haven_Testing\User_Testing.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
             <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
+                <line number="149" hits="1" branch="False" />
+                <line number="151" hits="1" branch="False" />
+                <line number="152" hits="1" branch="False" />
+                <line number="153" hits="1" branch="False" />
+                <line number="156" hits="1" branch="False" />
+                <line number="159" hits="1" branch="False" />
                 <line number="161" hits="1" branch="False" />
-                <line number="163" hits="1" branch="False" />
-                <line number="164" hits="1" branch="False" />
-                <line number="165" hits="1" branch="False" />
-                <line number="168" hits="1" branch="False" />
-                <line number="171" hits="1" branch="False" />
-                <line number="173" hits="1" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
+            <line number="149" hits="1" branch="False" />
+            <line number="151" hits="1" branch="False" />
+            <line number="152" hits="1" branch="False" />
+            <line number="153" hits="1" branch="False" />
+            <line number="156" hits="1" branch="False" />
+            <line number="159" hits="1" branch="False" />
             <line number="161" hits="1" branch="False" />
-            <line number="163" hits="1" branch="False" />
-            <line number="164" hits="1" branch="False" />
-            <line number="165" hits="1" branch="False" />
-            <line number="168" hits="1" branch="False" />
-            <line number="171" hits="1" branch="False" />
-            <line number="173" hits="1" branch="False" />
           </lines>
         </class>
         <class name="Cozy_Haven_Testing.User_Testing/&lt;GetUserTest&gt;d__8" filename="CozyHavenProject\Cozy_Haven_Testing\User_Testing.cs" line-rate="1" branch-rate="1" complexity="1">
           <methods>
             <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="83" hits="1" branch="False" />
-                <line number="85" hits="1" branch="False" />
+                <line number="84" hits="1" branch="False" />
                 <line number="86" hits="1" branch="False" />
                 <line number="87" hits="1" branch="False" />
-                <line number="90" hits="1" branch="False" />
-                <line number="93" hits="1" branch="False" />
+                <line number="88" hits="1" branch="False" />
+                <line number="91" hits="1" branch="False" />
                 <line number="94" hits="1" branch="False" />
+                <line number="95" hits="1" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="83" hits="1" branch="False" />
-            <line number="85" hits="1" branch="False" />
+            <line number="84" hits="1" branch="False" />
             <line number="86" hits="1" branch="False" />
             <line number="87" hits="1" branch="False" />
-            <line number="90" hits="1" branch="False" />
-            <line number="93" hits="1" branch="False" />
+            <line number="88" hits="1" branch="False" />
+            <line number="91" hits="1" branch="False" />
             <line number="94" hits="1" branch="False" />
+            <line number="95" hits="1" branch="False" />
           </lines>
         </class>
         <class name="Cozy_Haven_Testing.User_Testing/&lt;LoginSuccessTest&gt;d__5" filename="CozyHavenProject\Cozy_Haven_Testing\User_Testing.cs" line-rate="1" branch-rate="1" complexity="1">
@@ -10610,26 +10524,26 @@
           <methods>
             <method name="MoveNext" signature="()" line-rate="1" branch-rate="1" complexity="1">
               <lines>
-                <line number="116" hits="1" branch="False" />
-                <line number="118" hits="1" branch="False" />
+                <line number="117" hits="1" branch="False" />
                 <line number="119" hits="1" branch="False" />
                 <line number="120" hits="1" branch="False" />
                 <line number="121" hits="1" branch="False" />
-                <line number="125" hits="1" branch="False" />
-                <line number="128" hits="1" branch="False" />
+                <line number="122" hits="1" branch="False" />
+                <line number="126" hits="1" branch="False" />
                 <line number="129" hits="1" branch="False" />
+                <line number="130" hits="1" branch="False" />
               </lines>
             </method>
           </methods>
           <lines>
-            <line number="116" hits="1" branch="False" />
-            <line number="118" hits="1" branch="False" />
+            <line number="117" hits="1" branch="False" />
             <line number="119" hits="1" branch="False" />
             <line number="120" hits="1" branch="False" />
             <line number="121" hits="1" branch="False" />
-            <line number="125" hits="1" branch="False" />
-            <line number="128" hits="1" branch="False" />
+            <line number="122" hits="1" branch="False" />
+            <line number="126" hits="1" branch="False" />
             <line number="129" hits="1" branch="False" />
+            <line number="130" hits="1" branch="False" />
           </lines>
         </class>
       </classes>

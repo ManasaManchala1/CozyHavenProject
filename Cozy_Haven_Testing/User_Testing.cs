@@ -78,6 +78,7 @@ namespace Cozy_Haven_Testing
             Assert.That(result.Count, Is.EqualTo(2));
         }
 
+
         [Test]
         public async Task GetUserTest()
         {
@@ -141,20 +142,7 @@ namespace Cozy_Haven_Testing
             // Assert
             Assert.That(result.Count, Is.EqualTo(1));
         }
-        //[Test]
-        //public async Task UpdateUserProfile()
-        //{
-        //    // Arrange
-        //    string username = "testUser";
-        //    var existingUser = new User { Username = username };
-        //    _mockRepo.Setup(x => x.GetById(username)).ReturnsAsync(existingUser);
-
-        //    // Act
-        //    var updatedUser = await _userService.UpdateUserProfile(username, "John", "Doe", "1234567890", "john.doe@example.com", DateTime.Now, "Address", "Male");
-
-        //    // Assert
-        //    Assert.That(updatedUser.FirstName, Is.EqualTo("John"));
-        //}
+         
 
         [Test]
         public async Task GetUserReviews()

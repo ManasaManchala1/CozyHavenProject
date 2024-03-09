@@ -50,7 +50,7 @@ function Login() {
         } else {
           // Redirect to guest dashboard
           // window.location.href = '/guest-dashboard';
-          navigate('/guest-dashboard')
+          navigate('/admin-dashboard')
         }
       } else {
         alert("Invalid username or password");

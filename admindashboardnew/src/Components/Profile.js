@@ -232,7 +232,7 @@ function Profile() {
                               </div>
                               <div className="row">
                                 <p className="col-sm-3 text-sm-right mb-0 mb-sm-3">Date of Birth</p>
-                                <input className="col-sm-9 form-control" type="date" name="dateOfBirth" value={userData?.dateOfBirth} onChange={handleChange} />
+                                <input className="col-sm-9 form-control" type="date" name="dateOfBirth" value={"1999-04-05"} onChange={handleChange} />
                               </div>
                               <div className="row">
                                 <p className="col-sm-3 text-sm-right mb-0 mb-sm-3">Email ID</p>
@@ -256,7 +256,7 @@ function Profile() {
                               </div>
                               <div className="row">
                                 <p className="col-sm-3 text-sm-right mb-0 mb-sm-3">Date of Birth</p>
-                                <p className="col-sm-9">{userData?.dateOfBirth}</p>
+                                <p className="col-sm-9">{"1999-04-05"}</p>
                               </div>
                               <div className="row">
                                 <p className="col-sm-3 text-sm-right mb-0 mb-sm-3">Email ID</p>

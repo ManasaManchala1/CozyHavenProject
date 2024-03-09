@@ -195,20 +195,88 @@ function AddHotel() {
     return isValid;
   };
 
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+
+  //   if (validateForm()) {
+  //     const token = sessionStorage.getItem('token');
+  //   if (!token) {
+  //     console.error('Token not found');
+  //     return;
+  //   }
+  //     // Form is valid, continue with submission
+  //     fetch("http://localhost:5272/api/Hotel/AddHotel", {
+  //       method: "POST",
+        
+  //       headers: {
+  //         'Authorization': `Bearer ${token}`,
+  //         "Content-Type": "application/json"
+  //       },
+  //       body: JSON.stringify(hotelData)
+  //     })
+  //       .then(res=>console.log(res))
+  //       .then((response) => response.json())
+  //       .then((data) => {
+  //         console.log("Success:", data);
+          
+  //         const hotelId = data.hotelId;
+  //         const formData = new FormData();
+  //         Array.from(images).forEach((image, index) => {
+  //           formData.append("filecollection",image);
+  //         });
+
+  //         fetch(`http://localhost:5272/api/Hotel/DBMultiUploadImage1?hotelId=${hotelId}`, {
+  //           method: "POST",
+  //           body: formData
+  //         })
+  //           .then((response) => response.json())
+  //           .then((data) => {
+  //             console.log("Success uploading image:", data);
+  //             alert("Hotel Added Successfully.");
+  //             setImages([]);
+  //             setHotelData({
+  //               destinationId: "",
+  //               ownerId: "",
+  //               name: "",
+  //               address: "",
+  //               description: ""
+  //             });
+              
+  //           })
+  //           .catch((error) => {
+  //             console.error("Error uploading image:", error);
+  //           });
+  //       })
+  //       .catch((error) => {
+  //         console.error("Error adding hotel:", error);
+  //       });
+  //   }
+  // };
   const handleSubmit = (e) => {
     e.preventDefault();
-
+  
     if (validateForm()) {
+      const token = sessionStorage.getItem('token');
+      if (!token) {
+        console.error('Token not found');
+        return;
+      }
+  
       // Form is valid, continue with submission
       fetch("http://localhost:5272/api/Hotel/AddHotel", {
         method: "POST",
         headers: {
+          'Authorization': `Bearer ${token}`,
           "Content-Type": "application/json"
         },
         body: JSON.stringify(hotelData)
       })
-        .then(res=>console.log(res))
-        .then((response) => response.json())
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error('Failed to add hotel');
+          }
+          return response.json();
+        })
         .then((data) => {
           console.log("Success:", data);
           
@@ -217,12 +285,17 @@ function AddHotel() {
           Array.from(images).forEach((image, index) => {
             formData.append("filecollection",image);
           });
-
+  
           fetch(`http://localhost:5272/api/Hotel/DBMultiUploadImage1?hotelId=${hotelId}`, {
             method: "POST",
             body: formData
           })
-            .then((response) => response.json())
+            .then((response) => {
+              if (!response.ok) {
+                throw new Error('Failed to upload image');
+              }
+              return response.json();
+            })
             .then((data) => {
               console.log("Success uploading image:", data);
               alert("Hotel Added Successfully.");
@@ -234,7 +307,6 @@ function AddHotel() {
                 address: "",
                 description: ""
               });
-              
             })
             .catch((error) => {
               console.error("Error uploading image:", error);
@@ -245,6 +317,7 @@ function AddHotel() {
         });
     }
   };
+  
 
   return (
     <div className="page-wrapper">

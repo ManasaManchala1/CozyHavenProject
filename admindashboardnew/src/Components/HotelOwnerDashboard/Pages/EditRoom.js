@@ -30,9 +30,15 @@ const EditRoom = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const token = sessionStorage.getItem('token');
+      if (!token) {
+        console.error('Token not found');
+        return;
+      }
     fetch("http://localhost:5272/api/Room/UpdateDetails", {
       method: "PUT",
       headers: {
+        'Authorization': `Bearer ${token}`,
         "Content-Type": "application/json"
       },
       body: JSON.stringify(roomData)

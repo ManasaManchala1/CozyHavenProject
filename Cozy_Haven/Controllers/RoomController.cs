@@ -68,7 +68,7 @@ namespace Cozy_Haven.Controllers
                 return StatusCode(StatusCodes.Status500InternalServerError, $"Error: {ex.Message}");
             }
         }
-        [Authorize(Roles = "Owner")]
+
         [HttpPut("UpdatePrice")]
         public async Task<ActionResult<Room>> UpdatePrice(int id,int price)
         {

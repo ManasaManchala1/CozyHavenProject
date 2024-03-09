@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using Cozy_Haven.Repository;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Cozy_Haven.Services
 {
@@ -263,6 +264,7 @@ namespace Cozy_Haven.Services
 
             return data;
         }
+        
         //public async Task<bool> CancelBooking(int bookingId)
         //{
         //    var booking =await GetBooking(bookingId);
@@ -285,7 +287,7 @@ namespace Cozy_Haven.Services
 
         //    return refundSuccess; // Return whether refund was successful
         //}
-
+        
         //private bool IsBookingCancellable(Booking booking)
         //{
         //    // Implement your logic to determine if a booking can be cancelled
@@ -310,6 +312,7 @@ namespace Cozy_Haven.Services
 
             return hotelBookings;
         }
+        
         //public async Task<Booking> UpdateBooking(int id, Booking updatedBooking)
         //{
         //    var existingBooking =await GetBooking(id) ;

@@ -13,21 +13,32 @@ function AllRooms() {
   }, [hotelid]);
   const handleDelete = (id) => {
     if (window.confirm('Are you sure you want to delete this room?')) {
-    fetch(`http://localhost:5272/api/Room/DeleteRoom?id=${id}`, {
-      method: 'DELETE',
-    })
-      .then((response) => {
-        if (response.ok) {
-          setRooms(rooms.filter((room) => room.roomId !== id));
-          alert("Deleted Successfully")
-        } else {
-          console.error('Failed to delete room');
-          alert("Failed to delete")
-        }
+      const token = sessionStorage.getItem('token');
+      if (!token) {
+        console.error('Token not found');
+        return;
+      }
+  
+      fetch(`http://localhost:5272/api/Room/DeleteRoom?id=${id}`, {
+        method: 'DELETE',
+        headers: {
+          'Authorization': `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
       })
-      .catch((error) => console.error('Error deleting room:', error));
+        .then((response) => {
+          if (response.ok) {
+            setRooms(rooms.filter((room) => room.roomId !== id));
+            alert("Deleted Successfully")
+          } else {
+            console.error('Failed to delete room');
+            alert("Failed to delete")
+          }
+        })
+        .catch((error) => console.error('Error deleting room:', error));
     }
   };
+  
 
   return (
     <div className="page-wrapper">

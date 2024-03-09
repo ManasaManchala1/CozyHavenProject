@@ -258,7 +258,7 @@ namespace Cozy_Haven_Testing
             var result = await _hotelService.GetAvailableRoomsCount(hotelId);
 
             // Assert
-            Assert.That(result, Is.EqualTo(2)); // Expecting 2 available rooms for the hotel
+            Assert.That(result, Is.EqualTo(2)); 
         }
 
 

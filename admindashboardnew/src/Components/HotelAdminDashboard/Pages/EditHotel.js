@@ -27,9 +27,8 @@ const EditHotel = () => {
     }
   
     fetch(`http://localhost:5272/api/Hotel/GetById?id=${hotelId}`, {
-      method:'PUT',
+      method:'GET',
       headers: {
-        'Authorization': `Bearer ${token}`,
         'Content-Type': 'application/json'
       }
     })
@@ -58,9 +57,15 @@ const EditHotel = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const token = sessionStorage.getItem('token');
+    if (!token) {
+      console.error('Token not found');
+      return;
+    }
     fetch("http://localhost:5272/api/Hotel/UpdateHotelDetails", {
-      method: "PUT",
+      method: 'PUT',
       headers: {
+        'Authorization': `Bearer ${token}`,
         "Content-Type": "application/json"
       },
       body: JSON.stringify(hotelData)
@@ -69,6 +74,14 @@ const EditHotel = () => {
       .then((data) => {
         console.log("Success:", data);
         alert("Updated Successfully");
+        setHotelData({
+          destinationId: "",
+    ownerId: "",
+    name: "",
+    address: "",
+    description: ""
+
+        })
         // Optionally, redirect to a different page after successful update
       })
       .catch((error) => {

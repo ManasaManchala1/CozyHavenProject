@@ -25,6 +25,8 @@ namespace Cozy_Haven.Repository
             var room=await GetById(key);
             if (room!=null)
             {
+                _context.RoomImages.RemoveRange(_context.RoomImages.Where(image => image.RoomId == room.RoomId));
+                _context.SaveChanges();
                 _context.Rooms.Remove(room);
                 _context.SaveChanges();
                 return room;

@@ -454,33 +454,102 @@ function AddRoom() {
     return isValid;
   };
 
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+
+  //   if (validateForm()) {
+  //     // Form is valid, continue with submission
+  //     fetch("http://localhost:5272/api/Room/AddRoom", {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json"
+  //       },
+  //       body: JSON.stringify(roomData)
+  //     })
+  //       .then((response) => response.json())
+  //       .then((data) => {
+  //         console.log("Success:", data);
+
+  //         const roomId = data.roomId;
+  //         const formData = new FormData();
+  //         Array.from(images).forEach((image, index) => {
+  //           formData.append("filecollection", image);
+  //         });
+
+  //         fetch(`http://localhost:5272/api/Room/DBMultiUploadImage1?roomId=${roomId}`, {
+  //           method: "POST",
+  //           body: formData
+  //         })
+  //           .then((response) => response.json())
+  //           .then((data) => {
+  //             console.log("Success uploading images:", data);
+  //             alert("Room Added Successfully.");
+  //             setImages([]);
+  //             setRoomData({
+  //               hotelId: sessionStorage.getItem("selectedHotelId") || "",
+  //               roomSize: "",
+  //               roomType: "",
+  //               bedType: "",
+  //               baseFare: "",
+  //               maxOccupancy: "",
+  //               ac: true,
+  //               available: true
+  //             });
+
+  //           })
+  //           .catch((error) => {
+  //             console.error("Error uploading images:", error);
+  //           });
+  //       })
+  //       .catch((error) => {
+  //         console.error("Error adding room:", error);
+  //       });
+  //   }
+  // };
   const handleSubmit = (e) => {
     e.preventDefault();
-
+  
     if (validateForm()) {
+      const token = sessionStorage.getItem('token');
+      if (!token) {
+        console.error('Token not found');
+        return;
+      }
+  
       // Form is valid, continue with submission
       fetch("http://localhost:5272/api/Room/AddRoom", {
         method: "POST",
         headers: {
+          'Authorization': `Bearer ${token}`,
           "Content-Type": "application/json"
         },
         body: JSON.stringify(roomData)
       })
-        .then((response) => response.json())
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error('Failed to add room');
+          }
+          return response.json();
+        })
         .then((data) => {
           console.log("Success:", data);
-
+  
           const roomId = data.roomId;
           const formData = new FormData();
           Array.from(images).forEach((image, index) => {
             formData.append("filecollection", image);
           });
-
+  
           fetch(`http://localhost:5272/api/Room/DBMultiUploadImage1?roomId=${roomId}`, {
             method: "POST",
             body: formData
           })
-            .then((response) => response.json())
+            .then((response) => {
+              if (!response.ok) {
+                throw new Error('Failed to upload image');
+              }
+              return response.json();
+            })
             .then((data) => {
               console.log("Success uploading images:", data);
               alert("Room Added Successfully.");
@@ -495,7 +564,7 @@ function AddRoom() {
                 ac: true,
                 available: true
               });
-
+  
             })
             .catch((error) => {
               console.error("Error uploading images:", error);
@@ -505,7 +574,7 @@ function AddRoom() {
           console.error("Error adding room:", error);
         });
     }
-  };
+  };  
 
   return (
     <div className="page-wrapper">

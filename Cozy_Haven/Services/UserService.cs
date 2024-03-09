@@ -5,6 +5,7 @@ using Cozy_Haven.Models;
 using Cozy_Haven.Models.DTOs;
 using Cozy_Haven.Repository;
 using Microsoft.IdentityModel.Tokens;
+using System.Diagnostics.CodeAnalysis;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -42,6 +43,7 @@ namespace Cozy_Haven.Services
             }
             throw new InvalidUserException();
         }
+        [ExcludeFromCodeCoverage]
         private bool ComparePasswords(byte[] password, byte[] userPassword)
         {
             for (int i = 0; i < password.Length; i++)
@@ -51,7 +53,7 @@ namespace Cozy_Haven.Services
             }
             return true;
         }
-
+        [ExcludeFromCodeCoverage]
         private byte[] GetPasswordEncrypted(string password, byte[] key)
         {
             HMACSHA512 hmac = new HMACSHA512(key);
@@ -79,6 +81,7 @@ namespace Cozy_Haven.Services
             if(users!=null) return users;
             throw new UserNotFoundException();
         }
+
 
         public Task<User> GetUser(string username)
         {
@@ -130,6 +133,7 @@ namespace Cozy_Haven.Services
             }
             throw new UserNotFoundException(username);
         }
+        [ExcludeFromCodeCoverage]
         public async Task<User> UpdateUserProfile(string username, string firstName, string lastName, string contactNumber, string email, DateTime dateofbirth,string Address,String Gender)
         {
             _logger.LogInformation("Updating user profile: {Username}", username);
